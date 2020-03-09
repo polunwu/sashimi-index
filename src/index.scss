@@ -95,7 +95,7 @@ button:focus {outline:0;}
 }
 
 .hide {
-	disaply: none;
+	display: none;
 	visibility: hidden;
 	opacity: 0;
 }
@@ -461,6 +461,7 @@ $nav-slide-speed: 0.3s;
 	top: 80%;
 	left: calc(50% - 17.075px);
 	z-index: 100;
+	transition: opacity .5s 1.7s ease-in;
 
 	cursor: pointer;
 
@@ -480,6 +481,7 @@ $nav-slide-speed: 0.3s;
 	top: 88%;
 	left: calc(50% - 25px);
 	z-index: 100;
+	transition: opacity .5s 1.7s ease-in;
 
 	@media screen and (max-width: 768px) {
 		display: none;
@@ -530,13 +532,12 @@ $nav-slide-speed: 0.3s;
 .p-nav__links--layout{
 	li {
 		list-style-type: none;
-		letter-spacing: 0.2em;
 	}
-	li:hover{ font-weight: bold; }
 	a {
 		color: #fff;
 		text-decoration: none;
 	}
+	font-weight: 900;
 	position: fixed;
 	top: 0px;
 	right: 0px;
@@ -565,11 +566,12 @@ $nav-slide-speed: 0.3s;
 		color: #fff;
 	}
 	.p-nav__social--layout{
-		opacity: 0.6;
 		padding: 0;
 		margin: 0px 0px 20px 20px;
 		flex-direction: row;
+		li:hover {opacity: 1;}
 		li {
+			opacity: 0.6;
 			width: 100px;
 			height: 100px;
 			padding: 0;
@@ -621,6 +623,7 @@ $nav-slide-speed: 0.3s;
 		
 	}
 	@media screen and (min-width: 1280px) {
+		font-weight: 300;
 		font-size: 14px;
 		transform: translateX(0px);
 		background: transparent;
@@ -629,6 +632,7 @@ $nav-slide-speed: 0.3s;
 		align-items: center;
 		height: 127.6px;
 		width: 800px;
+		li:hover{ text-shadow: 0 0 .9px #fff, 0 0 .9px #fff; }
 		.p-nav__main--layout{
 			position: static;
 			flex-direction: row;
@@ -709,6 +713,9 @@ nav .p-collapsed {
 /* end of nav */
 
 /* video indicator */ 
+.p-video-ui--hide {
+	opacity: 0;
+}
 .p-video-indicator {
 	position: absolute;
   top: 50%;
@@ -716,6 +723,7 @@ nav .p-collapsed {
   transform: translateY(-50%);
   width: 30px;
 	z-index: 100;
+	transition: opacity .5s 1.2s ease-in;
 	
 	span {
 		display: flex;

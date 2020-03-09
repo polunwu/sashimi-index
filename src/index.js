@@ -11,12 +11,18 @@ window.addEventListener("load", function () {
 	const vw = getViewWidth();
 
 	const nav = document.getElementById('nav');
+	const videoIndicator = document.getElementById('videoIndicator');
+	const arrow = document.getElementById('arrow');
+	const directionIconUse = document.getElementById('directionIconUse');
 
 	revealer.style.display = 'flex';
 	circles[0].addEventListener('animationstart', () => {
 		setTimeout(() => {
 			loader.style.display = 'none';
 			nav.classList.remove('p-nav--hide');
+			videoIndicator.classList.remove('p-video-ui--hide');
+			arrow.classList.remove('p-video-ui--hide');
+			directionIconUse.parentNode.classList.remove('p-video-ui--hide');
 		}, 2750); // After ($revealer-speed * 0.5) ms -> hide loader -> show nav
 	});
 	circles[0].addEventListener('animationend', () => {
@@ -49,9 +55,6 @@ window.addEventListener("load", function () {
 	const saftyOffset = 50; // must greater than scrollSpeed
 	const changePageThreshold = 300;
 	const clippedVideos = document.querySelectorAll('.clipped');
-	const videoIndicator = document.getElementById('videoIndicator');
-	const arrow = document.getElementById('arrow');
-	const directionIconUse = document.getElementById('directionIconUse');
 	console.dir(directionIconUse);
 
 	if (arrow) { arrow.addEventListener('click', handleScroll); }
