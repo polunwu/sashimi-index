@@ -11,12 +11,6 @@ $revealer-iteration      : 1;
 $revealer-C01-timingFunction : ease-in;
 $revealer-C2-timingFunction : ease-in-out;
 
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 html, body {
     height: 100%;
     overflow: hidden;
@@ -474,10 +468,14 @@ $nav-slide-speed: 0.3s;
 	transform: translateX(100%);
 	transition: transform  $nav-slide-speed ease-out;
 	.p-nav__main--layout{
+		position: absolute;
+		left: 20px;
+		top: 129px;
 		flex-direction: column;
-		margin: 0px 0px 20px 20px;
+		padding: 0;
 		li {
-			margin-top: 5px;
+			padding: 0;
+			margin: 3.75vh 0;
 		}
 	}
 	.p-nav__social-text--layout {
@@ -487,11 +485,13 @@ $nav-slide-speed: 0.3s;
 	}
 	.p-nav__social--layout{
 		opacity: 0.6;
+		padding: 0;
 		margin: 0px 0px 20px 20px;
 		flex-direction: row;
 		li {
 			width: 100px;
 			height: 100px;
+			padding: 0;
 			margin-right: 20px;
 			border: 2px solid #fff;
 			a {
@@ -519,8 +519,13 @@ $nav-slide-speed: 0.3s;
 		font-size: 30px;
 		.p-nav__main--layout{
 			flex-direction: column;
-			margin: 0 auto;
-			margin-bottom: 20px;
+			top:40%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			li {
+				margin-left: auto;
+				margin-right: auto;
+			}
 			li::after{
 				content: "  ___>";
 				color: #fff;
@@ -544,6 +549,7 @@ $nav-slide-speed: 0.3s;
 		height: 127.6px;
 		width: 800px;
 		.p-nav__main--layout{
+			position: static;
 			flex-direction: row;
 			justify-content: flex-end;
 			margin: 0px 37px 0px 0px;
