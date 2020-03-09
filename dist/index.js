@@ -55,7 +55,6 @@ window.addEventListener("load", function () {
 	const saftyOffset = 50; // must greater than scrollSpeed
 	const changePageThreshold = 300;
 	const clippedVideos = document.querySelectorAll('.clipped');
-	console.dir(directionIconUse);
 
 	if (arrow) { arrow.addEventListener('click', handleScroll); }
 	if (videoIndicator) { videoIndicator.addEventListener('click', handleJumpTo); }

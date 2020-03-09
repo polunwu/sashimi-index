@@ -567,6 +567,12 @@ button:focus {
     .p-nav__links--layout .p-nav__main--layout li {
       padding: 0;
       margin: 3.75vh 0; }
+    .p-nav__links--layout .p-nav__main--layout li svg {
+      transform: translate(14px, 4px); }
+    .p-nav__links--layout .p-nav__main--layout li a {
+      display: flex;
+      width: 180px;
+      justify-content: space-between; }
   .p-nav__links--layout .p-nav__social-text--layout {
     opacity: 0.6;
     margin: 0px 0px 20px 20px;
@@ -594,10 +600,7 @@ button:focus {
           transform: scale(2); }
   @media screen and (min-width: 370px) {
     .p-nav__links--layout {
-      font-size: 21px; }
-      .p-nav__links--layout .p-nav__main--layout li::after {
-        content: "  ___>";
-        color: #fff; } }
+      font-size: 21px; } }
   @media screen and (min-width: 768px) {
     .p-nav__links--layout {
       font-size: 30px; }
@@ -609,9 +612,14 @@ button:focus {
         .p-nav__links--layout .p-nav__main--layout li {
           margin-left: auto;
           margin-right: auto; }
-        .p-nav__links--layout .p-nav__main--layout li::after {
-          content: "  ___>";
-          color: #fff; }
+        .p-nav__links--layout .p-nav__main--layout li svg {
+          width: 79px;
+          height: 26px;
+          transform: translate(20px, 9px); }
+        .p-nav__links--layout .p-nav__main--layout li a {
+          display: flex;
+          width: 240px;
+          justify-content: space-between; }
       .p-nav__links--layout .p-nav__social-text--layout {
         margin: 0px 0px 20px 37px; }
       .p-nav__links--layout .p-nav__social--layout {
@@ -637,8 +645,10 @@ button:focus {
         transform: translate(0%, 0%); }
         .p-nav__links--layout .p-nav__main--layout li {
           margin: 0px 0px 0px 46px; }
-        .p-nav__links--layout .p-nav__main--layout li::after {
-          content: ""; }
+        .p-nav__links--layout .p-nav__main--layout li svg {
+          display: none; }
+        .p-nav__links--layout .p-nav__main--layout li a {
+          display: inline; }
       .p-nav__links--layout .p-nav__social-text--layout {
         display: none;
         font-size: 0; }
