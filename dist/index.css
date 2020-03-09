@@ -621,18 +621,22 @@ nav .p-collapsed {
 .p-video-indicator {
   position: absolute;
   top: 50%;
-  left: 19px;
+  left: 37px;
   transform: translateY(-50%);
-  width: 15px;
+  width: 30px;
   z-index: 100; }
   .p-video-indicator span {
-    display: block;
-    height: 25px;
-    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 0px;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.4;
     cursor: pointer; }
+  .p-video-indicator span:nth-of-type(3) {
+    height: 75px; }
   .p-video-indicator span.p-video-indicator__index--active {
-    color: white; }
+    opacity: 1; }
 
 /* End of video indicator */
