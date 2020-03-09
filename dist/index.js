@@ -172,6 +172,8 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					scrollIndex = 0;
+				} else if (curVideoIndex == clippedVideos.length && isAbleToChange) {
+					videoIndicator.children[0].click();
 				} else {
 					scrollIndex = 0;
 				}
@@ -196,6 +198,8 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					scrollIndex = 0;
+				} else if (curVideoIndex == 0) {
+					videoIndicator.children[4].click();
 				} else {
 					scrollIndex = 0;
 				}
