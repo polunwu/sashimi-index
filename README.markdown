@@ -1,4 +1,4 @@
-# sashimi-index
+# sashimi
 
 
  
