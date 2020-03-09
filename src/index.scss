@@ -403,6 +403,10 @@ $nav-slide-speed: 0.3s;
 	z-index: 100;
 
 	cursor: pointer;
+
+	@media screen and (max-width: 768px) {
+		top: 88%;
+	}
 }
 .p-arrow--animate{
 	animation: animation-bounce 2s infinite;
@@ -416,6 +420,10 @@ $nav-slide-speed: 0.3s;
 	top: 88%;
 	left: calc(50% - 25px);
 	z-index: 100;
+
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
 }
 
 /* End of arrow & direction Icon */
@@ -666,6 +674,10 @@ nav .p-collapsed {
 	
 	span.p-video-indicator__index--active {
 		opacity: 1;
+	}
+
+	@media screen and (max-width: 768px) {
+		display: none;
 	}
 }
 /* End of video indicator */

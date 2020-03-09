@@ -432,6 +432,9 @@ button:focus {
   left: calc(50% - 17.075px);
   z-index: 100;
   cursor: pointer; }
+  @media screen and (max-width: 768px) {
+    .p-arrow--layout {
+      top: 88%; } }
 
 .p-arrow--animate {
   animation: animation-bounce 2s infinite; }
@@ -444,6 +447,9 @@ button:focus {
   top: 88%;
   left: calc(50% - 25px);
   z-index: 100; }
+  @media screen and (max-width: 768px) {
+    .p-direction-icon--layout {
+      display: none; } }
 
 /* End of arrow & direction Icon */
 /* nav */
@@ -649,5 +655,8 @@ nav .p-collapsed {
     height: 75px; }
   .p-video-indicator span.p-video-indicator__index--active {
     opacity: 1; }
+  @media screen and (max-width: 768px) {
+    .p-video-indicator {
+      display: none; } }
 
 /* End of video indicator */
