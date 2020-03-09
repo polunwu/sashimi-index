@@ -497,7 +497,7 @@ button:focus {
   height: 40px;
   position: fixed;
   top: 88%;
-  left: calc(50% - 25px);
+  left: calc(50% - 20px);
   z-index: 100;
   transition: opacity .5s 1.7s ease-in; }
   @media screen and (max-width: 768px) {
