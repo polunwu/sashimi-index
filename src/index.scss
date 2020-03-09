@@ -393,11 +393,12 @@ button:focus {outline:0;}
 
 $nav-slide-speed: 0.3s;
 
+/* arrow & direction Icon */
 .p-arrow--layout {
 	width: 34.15px;
 	height: 36.96px;
 	position: fixed;
-	top: 85%;
+	top: 80%;
 	left: calc(50% - 17.075px);
 	z-index: 100;
 
@@ -406,6 +407,18 @@ $nav-slide-speed: 0.3s;
 .p-arrow--animate{
 	animation: animation-bounce 2s infinite;
 }
+
+.p-direction-icon--layout {
+	fill: #fff;
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	top: 88%;
+	left: calc(50% - 25px);
+	z-index: 100;
+}
+
+/* End of arrow & direction Icon */
 
 /* nav */
 .p-nav--hide{

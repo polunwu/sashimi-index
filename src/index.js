@@ -51,6 +51,8 @@ window.addEventListener("load", function () {
 	const clippedVideos = document.querySelectorAll('.clipped');
 	const videoIndicator = document.getElementById('videoIndicator');
 	const arrow = document.getElementById('arrow');
+	const directionIconUse = document.getElementById('directionIconUse');
+	console.dir(directionIconUse);
 
 	if (arrow) { arrow.addEventListener('click', handleScroll); }
 	if (videoIndicator) { videoIndicator.addEventListener('click', handleJumpTo); }
@@ -90,6 +92,10 @@ window.addEventListener("load", function () {
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
+					directionIconUse.setAttributeNS(
+						'http://www.w3.org/1999/xlink',
+						'xlink:href',
+						`#a${Number(curVideoIndex + 1)}`);
 					break;
 				case -2:
 				case -3:
@@ -110,6 +116,10 @@ window.addEventListener("load", function () {
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
+					directionIconUse.setAttributeNS(
+						'http://www.w3.org/1999/xlink',
+						'xlink:href',
+						`#a${Number(curVideoIndex + 1)}`);
 					break;
 			}
 		}
@@ -157,6 +167,10 @@ window.addEventListener("load", function () {
 					// -- Safari
 					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(${maxViewRaduis}px at center)`;
 					curVideoIndex += 1;
+					directionIconUse.setAttributeNS(
+						'http://www.w3.org/1999/xlink',
+						'xlink:href',
+						`#a${Number(curVideoIndex + 1)}`);
 					scrollIndex = 0;
 				} else {
 					scrollIndex = 0;
@@ -177,6 +191,10 @@ window.addEventListener("load", function () {
 					clippedVideos[curVideoIndex].style.clipPath = `circle(0px at center)`;
 					// -- Safari
 					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(0px at center)`;
+					directionIconUse.setAttributeNS(
+						'http://www.w3.org/1999/xlink',
+						'xlink:href',
+						`#a${Number(curVideoIndex + 1)}`);
 					scrollIndex = 0;
 				} else {
 					scrollIndex = 0;
