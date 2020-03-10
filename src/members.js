@@ -31,7 +31,7 @@ window.addEventListener("load", function () {
     });
 
     function countUp(target, endVal, intervalTime) {
-      let num = 0;
+      let num = -1;
       let counter = setInterval(() => {
         num++;
         target.innerHTML = num;
