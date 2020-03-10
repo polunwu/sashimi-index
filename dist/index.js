@@ -98,6 +98,7 @@ window.addEventListener("load", function () {
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
+					resetHomePageOrangeCircle(false);
 					break;
 				case -2:
 				case -3:
@@ -122,6 +123,7 @@ window.addEventListener("load", function () {
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
+					resetHomePageOrangeCircle(false);
 					break;
 			}
 		}
@@ -173,6 +175,7 @@ window.addEventListener("load", function () {
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
+					resetHomePageOrangeCircle(false);
 					scrollIndex = 0;
 				} else if (curVideoIndex == clippedVideos.length && isAbleToChange) {
 					videoIndicator.children[0].click();
@@ -199,6 +202,7 @@ window.addEventListener("load", function () {
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
+					resetHomePageOrangeCircle(false);
 					scrollIndex = 0;
 				} else if (curVideoIndex == 0) {
 					videoIndicator.children[4].click();
@@ -228,6 +232,34 @@ window.addEventListener("load", function () {
 	});
 	// === End of navBar toggle to collapse control
 
+
+	// === Auto Loop ===
+	setTimeout(function () {
+		// 第一次加入橘色圓圈動畫
+		document.querySelector(".js-btn-circle").classList.add("animate");
+		// 隔五秒開始第一次輪播 Interval
+		window.pagesHomeCounter = setInterval(function () {
+			document.querySelector("#arrow").dispatchEvent(new Event('click'))
+			document.querySelector(".js-btn-circle").classList.remove("animate")
+			setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
+		}, 5000)
+	}, 5000)
+	var resetHomePageOrangeCircle = function (customTrigger) {
+		// 重置橘色圓圈
+		document.querySelector(".js-btn-circle").classList.remove("animate")
+		setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
+
+		// 重置 interval
+		if (customTrigger != true) {
+			clearInterval(window.pagesHomeCounter);
+			window.pagesHomeCounter = setInterval(function () {
+				document.querySelector("#arrow").dispatchEvent(new Event('click'))
+				document.querySelector(".js-btn-circle").classList.remove("animate")
+				setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
+			}, 5000);
+		}
+	}
+	// === End of Auto Loop ===
 });
 
 // global functions for getting device meta-data
