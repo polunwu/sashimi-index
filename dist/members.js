@@ -1,8 +1,25 @@
 window.addEventListener("load", function () {
 
-  // members page loaded
-  if (document.body.classList.contains('pages-members')) {
+  // 每個頁面都會放 navbar toggle 功能，否則無法開啟 menu
+  // === NavBar toggle to collapse control
+  let showNav = false;
+  const navToggleBtn = document.getElementById('navToggleBtn');
+  const navToCollapse = document.getElementById('navToCollapse');
+  navToggleBtn.addEventListener('click', function () {
+    if (showNav) {
+      navToCollapse.classList.remove('p-nav__links--show');
+      navToggleBtn.classList.add('p-collapsed');
+      showNav = !showNav;
+    } else {
+      navToCollapse.classList.add('p-nav__links--show');
+      navToggleBtn.classList.remove('p-collapsed');
+      showNav = !showNav;
+    }
+  });
+  // === End of navBar toggle to collapse control
 
+  // members page 動態
+  if (document.body.classList.contains('pages-members')) {
     document.querySelectorAll('.pages-members__group h3').forEach(element => {
       element.classList.add('animated', 'faster', 'zoomIn');
     });
@@ -21,7 +38,6 @@ window.addEventListener("load", function () {
         if (num == endVal) { clearInterval(counter); }
       }, intervalTime);
     }
-
   }
 
 
