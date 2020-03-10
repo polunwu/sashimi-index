@@ -164,7 +164,7 @@ window.addEventListener("load", function () {
 						this.removeEventListener('transitionend', endHandler);
 					});
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
-					videoIndicator.children[curVideoIndex + 1].classList.add('p-video-indicator__index--active');
+					videoIndicator.children[Number(curVideoIndex + 1)].classList.add('p-video-indicator__index--active');
 					clippedVideos[curVideoIndex].style.clipPath = `circle(${maxViewRaduis}px at center)`;
 					// -- Safari
 					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(${maxViewRaduis}px at center)`;
@@ -190,7 +190,7 @@ window.addEventListener("load", function () {
 						isAbleToChange = true;
 						this.removeEventListener('transitionend', endHandler);
 					});
-					videoIndicator.children[curVideoIndex + 1].classList.remove('p-video-indicator__index--active');
+					videoIndicator.children[Number(curVideoIndex + 1)].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[curVideoIndex].classList.add('p-video-indicator__index--active');
 					clippedVideos[curVideoIndex].style.clipPath = `circle(0px at center)`;
 					// -- Safari
