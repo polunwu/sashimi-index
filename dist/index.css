@@ -137,7 +137,7 @@ button:focus {
 
 .animate-logo--zoomOut {
   transform: 50% 50%;
-  animation: animation-logoZoomOut 0.6s 1;
+  animation: animation-logoZoomOut 0.6s 0.15s 1;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards; }
 
@@ -343,10 +343,7 @@ button:focus {
   0% {
     transform: scale(0);
     opacity: 1; }
-  10% {
-    transform: scale(0);
-    opacity: 1; }
-  55% {
+  50% {
     transform: scale(1);
     opacity: 1; }
   100% {
@@ -357,10 +354,10 @@ button:focus {
   0% {
     transform: scale(0);
     opacity: 1; }
-  25% {
+  15% {
     transform: scale(0);
     opacity: 1; }
-  55% {
+  50% {
     transform: scale(1);
     opacity: 1; }
   100% {
@@ -370,7 +367,7 @@ button:focus {
 @keyframes animationC2 {
   0% {
     transform: scale(0); }
-  40% {
+  30% {
     transform: scale(0); }
   50% {
     stroke-width: 6000; }
@@ -383,7 +380,7 @@ button:focus {
 @keyframes animationC2--1280 {
   0% {
     transform: scale(0); }
-  40% {
+  30% {
     transform: scale(0); }
   50% {
     stroke-width: 6000; }
@@ -396,7 +393,7 @@ button:focus {
 @keyframes animationC2--3500 {
   0% {
     transform: scale(0); }
-  40% {
+  30% {
     transform: scale(0); }
   50% {
     stroke-width: 6000; }

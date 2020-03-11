@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
 			videoIndicator.classList.remove('p-video-ui--hide');
 			arrow.classList.remove('p-video-ui--hide');
 			directionIconUse.parentNode.classList.remove('p-video-ui--hide');
-		}, 2750); // After ($revealer-speed * 0.5) ms -> hide loader -> show nav
+		}, 2250); // After ($revealer-speed * 0.5) ms -> hide loader -> show nav
 	});
 	circles[0].addEventListener('animationend', () => {
 		// hide revealer after circle ends
