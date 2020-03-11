@@ -366,11 +366,14 @@ button:focus {
 
 @keyframes animationC2 {
   0% {
-    transform: scale(0); }
+    transform: scale(0);
+    stroke: #e65600; }
   30% {
-    transform: scale(0); }
+    transform: scale(0);
+    stroke: #e65600; }
   50% {
-    stroke-width: 6000; }
+    stroke-width: 6000;
+    stroke: #ff6000; }
   80% {
     transform: scale(1); }
   100% {
@@ -379,11 +382,14 @@ button:focus {
 
 @keyframes animationC2--1280 {
   0% {
-    transform: scale(0); }
+    transform: scale(0);
+    stroke: #e65600; }
   30% {
-    transform: scale(0); }
+    transform: scale(0);
+    stroke: #e65600; }
   50% {
-    stroke-width: 6000; }
+    stroke-width: 6000;
+    stroke: #ff6000; }
   70% {
     transform: scale(1); }
   100% {
@@ -392,11 +398,14 @@ button:focus {
 
 @keyframes animationC2--3500 {
   0% {
-    transform: scale(0); }
+    transform: scale(0);
+    stroke: #e65600; }
   30% {
-    transform: scale(0); }
+    transform: scale(0);
+    stroke: #e65600; }
   50% {
-    stroke-width: 6000; }
+    stroke-width: 6000;
+    stroke: #ff6000; }
   60% {
     transform: scale(1); }
   100% {
