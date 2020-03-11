@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
 
 	const circles = document.getElementsByName('animate-revealer__circle');
 	const loader = document.getElementById('loader');
+	const loaderLogo = document.getElementById('loaderLogo');
 	const revealer = document.getElementById('revealer');
 	const vw = getViewWidth();
 
@@ -15,6 +16,7 @@ window.addEventListener("load", function () {
 	const arrow = document.getElementById('arrow');
 	const directionIconUse = document.getElementById('directionIconUse');
 
+	loaderLogo.classList.add('animate-logo--zoomOut');
 	revealer.style.display = 'flex';
 	circles[0].addEventListener('animationstart', () => {
 		setTimeout(() => {
