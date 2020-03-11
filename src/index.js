@@ -131,6 +131,10 @@ window.addEventListener("load", function () {
 
 	function handleScroll(e, options) {
 		const maxViewRaduis = getMaxViewRaduis(saftyOffset);
+		if (e.type === 'auto') {
+			scrollIndex += changePageThreshold + 1;
+			updateVideoDisplay({ auto: true });
+		}
 		if (e.type === 'click') {
 			if (options && options.reverseClick) {
 				scrollIndex -= changePageThreshold + 1;
@@ -155,7 +159,7 @@ window.addEventListener("load", function () {
 			});
 		}
 
-		function updateVideoDisplay() {
+		function updateVideoDisplay(option) {
 			if (scrollIndex > changePageThreshold) {
 				if (curVideoIndex < clippedVideos.length && isAbleToChange) {
 					console.log('transition fired');
@@ -175,7 +179,11 @@ window.addEventListener("load", function () {
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
-					resetHomePageOrangeCircle(false);
+					if (option && option.auto) {
+						resetHomePageOrangeCircle(option.auto);
+					} else {
+						resetHomePageOrangeCircle(false);
+					}
 					scrollIndex = 0;
 				} else if (curVideoIndex == clippedVideos.length && isAbleToChange) {
 					videoIndicator.children[0].click();
@@ -239,10 +247,13 @@ window.addEventListener("load", function () {
 		document.querySelector(".js-btn-circle").classList.add("animate");
 		// 隔五秒開始第一次輪播 Interval
 		window.pagesHomeCounter = setInterval(function () {
-			document.querySelector("#arrow").dispatchEvent(new Event('click'))
+			// document.querySelector("#arrow").dispatchEvent(new Event('click'))
+			handleScroll({ type: 'auto' });
 			document.querySelector(".js-btn-circle").classList.remove("animate")
 			setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
 		}, 5000)
+		console.log('set:', window.pagesHomeCounter);
+
 	}, 5000)
 	var resetHomePageOrangeCircle = function (customTrigger) {
 		// 重置橘色圓圈
@@ -251,12 +262,16 @@ window.addEventListener("load", function () {
 
 		// 重置 interval
 		if (customTrigger != true) {
+			console.log('clear:', window.pagesHomeCounter);
 			clearInterval(window.pagesHomeCounter);
 			window.pagesHomeCounter = setInterval(function () {
-				document.querySelector("#arrow").dispatchEvent(new Event('click'))
+				// document.querySelector("#arrow").dispatchEvent(new Event('click'))
+				handleScroll({ type: 'auto' });
 				document.querySelector(".js-btn-circle").classList.remove("animate")
 				setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
 			}, 5000);
+			console.log('set:', window.pagesHomeCounter);
+
 		}
 	}
 	// === End of Auto Loop ===
