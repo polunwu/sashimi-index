@@ -28,24 +28,39 @@ window.addEventListener("load", function () {
 
     const contactMotion = {
       info: 'fadeIn',
+      personSpeed: 'faster',
       person: 'fadeInUp',
-      contents: 'bounceInUp'
+      contents: 'bounceInUp',
+      domains: 'bounceInUp'
     }
 
     infos.forEach(element => {
-      element.classList.add('animated', contactMotion.info);
+      animateCSS(element, contactMotion.info);
     });
-    person.classList.add('animated', 'faster', contactMotion.person);
+    animateCSS(person, contactMotion.personSpeed);
+    animateCSS(person, contactMotion.person);
     contents[1].style.animationDelay = '.25s';
     contents[3].style.animationDelay = '.5s';
     contents.forEach(element => {
-      element.classList.add('animated', contactMotion.contents);
+      animateCSS(element, contactMotion.contents);
     });
     domains.forEach(element => {
       element.style.animationDelay = '.25s';
-      element.classList.add('animated', contactMotion.contents);
+      animateCSS(element, contactMotion.domains);
     });
   }
 
+  function animateCSS(node, animationName, callback) {
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+      node.classList.remove('animated', animationName)
+      node.removeEventListener('animationend', handleAnimationEnd)
+
+      if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+  }
 
 });

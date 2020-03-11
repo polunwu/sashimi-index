@@ -21,10 +21,11 @@ window.addEventListener("load", function () {
   // members page 動態
   if (document.body.classList.contains('pages-members')) {
     document.querySelectorAll('.pages-members__group h3').forEach(element => {
-      element.classList.add('animated', 'faster', 'zoomIn');
+      animateCSS(element, 'faster');
+      animateCSS(element, 'zoomIn');
     });
     document.querySelectorAll('.pages-members__member').forEach(element => {
-      element.classList.add('animated', 'bounceInUp');
+      animateCSS(element, 'bounceInUp');
     });
     document.querySelectorAll('.pages-members__member__count').forEach(element => {
       countUp(element, Number(element.innerHTML), 80);
@@ -38,6 +39,18 @@ window.addEventListener("load", function () {
         if (num == endVal) { clearInterval(counter); }
       }, intervalTime);
     }
+  }
+  function animateCSS(node, animationName, callback) {
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+      node.classList.remove('animated', animationName)
+      node.removeEventListener('animationend', handleAnimationEnd)
+
+      if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
   }
 
 

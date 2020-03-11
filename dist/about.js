@@ -20,7 +20,9 @@ window.addEventListener("load", function () {
 
   // about page 動態
   if (document.body.classList.contains('pages-about')) {
-    document.querySelector('.aboutus-svg').classList.add('animated', 'slideInLeft', 'fast');
+    const aboutSvg = document.querySelector('.aboutus-svg');
+    animateCSS(aboutSvg, 'fast');
+    animateCSS(aboutSvg, 'slideInLeft');
 
     let textOptions = {
       delay: 100,
@@ -37,8 +39,18 @@ window.addEventListener("load", function () {
     document.querySelectorAll('.pages-about__text').forEach(element => {
       ScrollReveal().reveal(element, textOptions);
     });
+  }
+  function animateCSS(node, animationName, callback) {
+    node.classList.add('animated', animationName)
 
+    function handleAnimationEnd() {
+      node.classList.remove('animated', animationName)
+      node.removeEventListener('animationend', handleAnimationEnd)
 
+      if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
   }
 
 
