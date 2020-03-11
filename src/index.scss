@@ -11,7 +11,7 @@ $logo-zoomOut-iteration : 1;
 $logo-zoomOut-timingFunction : ease-in;
 $logo-zoomOut-fillmode  : forwards;
 
-$revealer-speed          : 5.5s;
+$revealer-speed          : 4.5s;
 $revealer-iteration      : 1;
 $revealer-C01-timingFunction : ease-in;
 $revealer-C2-timingFunction : ease-in-out;
@@ -63,6 +63,12 @@ button:focus {outline:0;}
 	justify-content: center;
 	align-items: center;
 	z-index: 999;
+}
+
+.loader__logo{
+	@media screen and (min-width: 1280px) {
+		transform: scale(1.2);
+	}
 }
 
 /* loader__bar start from here */
