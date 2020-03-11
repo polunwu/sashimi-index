@@ -247,7 +247,6 @@ window.addEventListener("load", function () {
 		document.querySelector(".js-btn-circle").classList.add("animate");
 		// 隔五秒開始第一次輪播 Interval
 		window.pagesHomeCounter = setInterval(function () {
-			// document.querySelector("#arrow").dispatchEvent(new Event('click'))
 			handleScroll({ type: 'auto' });
 			document.querySelector(".js-btn-circle").classList.remove("animate")
 			setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
@@ -265,7 +264,6 @@ window.addEventListener("load", function () {
 			console.log('clear:', window.pagesHomeCounter);
 			clearInterval(window.pagesHomeCounter);
 			window.pagesHomeCounter = setInterval(function () {
-				// document.querySelector("#arrow").dispatchEvent(new Event('click'))
 				handleScroll({ type: 'auto' });
 				document.querySelector(".js-btn-circle").classList.remove("animate")
 				setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
