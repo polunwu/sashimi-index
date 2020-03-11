@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
     }
 
     infos.forEach(element => {
-      element.classList.add('animated', contactMotion.info);
+      element.classList.add('animated', 'faster', contactMotion.info);
     });
     person.classList.add('animated', 'faster', contactMotion.person);
     contents[1].style.animationDelay = '.25s';
