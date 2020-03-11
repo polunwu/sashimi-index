@@ -36,13 +36,13 @@ window.addEventListener("load", function () {
       element.classList.add('animated', contactMotion.info);
     });
     person.classList.add('animated', 'faster', contactMotion.person);
-    contents[1].style.animationDelay = '.3s';
-    contents[3].style.animationDelay = '.6s';
+    contents[1].style.animationDelay = '.25s';
+    contents[3].style.animationDelay = '.5s';
     contents.forEach(element => {
       element.classList.add('animated', contactMotion.contents);
     });
     domains.forEach(element => {
-      element.style.animationDelay = '.3s';
+      element.style.animationDelay = '.25s';
       element.classList.add('animated', contactMotion.contents);
     });
   }
