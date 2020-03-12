@@ -16,6 +16,7 @@ window.addEventListener("load", function () {
 	const arrow = document.getElementById('arrow');
 	const directionIconUse = document.getElementById('directionIconUse');
 
+	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
 	loaderLogo.classList.add('animate-logo--zoomOut');
 	revealer.style.display = 'flex';
 	circles[0].addEventListener('animationstart', () => {
@@ -44,7 +45,7 @@ window.addEventListener("load", function () {
 			element.classList.add(`animate-revealer__circle--${element.dataset.key}`);
 		}
 	});
-
+	// 影片載完後，置入以上這段以接續logo消失、圈圈動畫、首頁元件浮現
 	// === End of loader & revealer control & nav showing ===
 
 	// === Scrolling on video & clip path control ===
@@ -241,7 +242,6 @@ window.addEventListener("load", function () {
 		}
 	});
 	// === End of navBar toggle to collapse control
-
 
 	// === Auto Loop ===
 	setTimeout(function () {
