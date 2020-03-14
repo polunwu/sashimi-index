@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
 	// ... onload
 	// === Loader & revealer control & nav showing === 
 
-	const circles = document.getElementsByName('animate-revealer__circle');
+	const circles = document.querySelectorAll('.animate-revealer__circle');
 	const loader = document.getElementById('loader');
 	const loaderLogo = document.getElementById('loaderLogo');
 	const revealer = document.getElementById('revealer');
@@ -19,6 +19,7 @@ window.addEventListener("load", function () {
 	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
 	loaderLogo.classList.add('animate-logo--zoomOut');
 	revealer.style.display = 'flex';
+	console.log(circles, circles[0]);
 	circles[0].addEventListener('animationstart', () => {
 		setTimeout(() => {
 			loader.style.display = 'none';
