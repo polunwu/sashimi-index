@@ -1,5 +1,8 @@
 window.addEventListener("load", function () {
 	if (document.querySelector("body.pages-home")) {
+		if (window.pagesHomeCounter == undefined) {
+			window.pagesHomeCounter = []
+		}
 		console.log("animating")
 	} else {
 		// 不在首頁，因此若有 Interval Id 就全部清掉
@@ -72,6 +75,16 @@ window.addEventListener("load", function () {
 	window.addEventListener('wheel', handleScroll, { passive: true });
 	document.body.addEventListener('touchstart', handleScroll, { passive: true });
 
+	function resetPlayBtnIndex() {
+		if (document.querySelector('.play-btn')) {
+			document.querySelector('.play-btn').style.visibility = 'hidden';
+			setTimeout(() => {
+				document.querySelector('.play-btn').style.zIndex = Number(curVideoIndex);
+				document.querySelector('.play-btn').style.visibility = 'visible';
+			}, 1000);
+		}
+	}
+
 	function handleJumpTo(e) {
 		const maxViewRaduis = getMaxViewRaduis(saftyOffset);
 		const targetIndex = Number(e.target.dataset.key);
@@ -110,6 +123,7 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					resetHomePageOrangeCircle(false);
+					resetPlayBtnIndex();
 					break;
 				case -2:
 				case -3:
@@ -135,6 +149,7 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					resetHomePageOrangeCircle(false);
+					resetPlayBtnIndex();
 					break;
 			}
 		}
@@ -195,6 +210,7 @@ window.addEventListener("load", function () {
 					} else {
 						resetHomePageOrangeCircle(false);
 					}
+					resetPlayBtnIndex();
 					scrollIndex = 0;
 				} else if (curVideoIndex == clippedVideos.length && isAbleToChange) {
 					videoIndicator.children[0].click();
@@ -222,6 +238,7 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					resetHomePageOrangeCircle(false);
+					resetPlayBtnIndex()
 					scrollIndex = 0;
 				} else if (curVideoIndex == 0) {
 					videoIndicator.children[4].click();
@@ -252,9 +269,6 @@ window.addEventListener("load", function () {
 	// === End of navBar toggle to collapse control
 
 	// === Auto Loop ===
-	if (window.pagesHomeCounter == undefined) {
-		window.pagesHomeCounter = []
-	}
 	setTimeout(function () {
 		// 第一次加入橘色圓圈動畫
 		document.querySelector(".js-btn-circle").classList.add("animate");
