@@ -1,7 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-	// DOM ready
-});
 window.addEventListener("load", function () {
+	if (document.querySelector("body.pages-home")) {
+		console.log("animating")
+	} else {
+		// 不在首頁，因此若有 Interval Id 就全部清掉
+		if (window.pagesHomeCounter != undefined) {
+			console.log("cancel animating", window.pagesHomeCounter)
+			window.pagesHomeCounter.forEach((id) => clearInterval(id))
+			window.pagesHomeCounter = []
+		}
+		return false
+	}
 	// ... onload
 	// === Loader & revealer control & nav showing === 
 
@@ -19,7 +27,6 @@ window.addEventListener("load", function () {
 	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
 	loaderLogo.classList.add('animate-logo--zoomOut');
 	revealer.style.display = 'flex';
-	console.log(circles, circles[0]);
 	circles[0].addEventListener('animationstart', () => {
 		setTimeout(() => {
 			loader.style.display = 'none';
@@ -245,32 +252,45 @@ window.addEventListener("load", function () {
 	// === End of navBar toggle to collapse control
 
 	// === Auto Loop ===
+	if (window.pagesHomeCounter == undefined) {
+		window.pagesHomeCounter = []
+	}
 	setTimeout(function () {
 		// 第一次加入橘色圓圈動畫
 		document.querySelector(".js-btn-circle").classList.add("animate");
 		// 隔五秒開始第一次輪播 Interval
-		window.pagesHomeCounter = setInterval(function () {
+		window.pagesHomeCounter.push(setInterval(function () {
 			handleScroll({ type: 'auto' });
 			document.querySelector(".js-btn-circle").classList.remove("animate")
 			setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
-		}, 5000)
+		}, 5000))
 		console.log('set:', window.pagesHomeCounter);
 
 	}, 5000)
 	var resetHomePageOrangeCircle = function (customTrigger) {
 		// 重置橘色圓圈
-		document.querySelector(".js-btn-circle").classList.remove("animate")
-		setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
+		if (document.querySelector(".js-btn-circle")) {
+			document.querySelector(".js-btn-circle").classList.remove("animate")
+		}
+		setTimeout(function () {
+			if (document.querySelector(".js-btn-circle")) {
+				document.querySelector(".js-btn-circle").classList.add("animate")
+			}
+		}, 1000)
 
 		// 重置 interval
 		if (customTrigger != true) {
 			console.log('clear:', window.pagesHomeCounter);
-			clearInterval(window.pagesHomeCounter);
-			window.pagesHomeCounter = setInterval(function () {
+			// Interval 全部清掉再重設一個
+			window.pagesHomeCounter.forEach((id) => clearInterval(id))
+			window.pagesHomeCounter = []
+			window.pagesHomeCounter.push(setInterval(function () {
 				handleScroll({ type: 'auto' });
-				document.querySelector(".js-btn-circle").classList.remove("animate")
+				if (document.querySelector(".js-btn-circle")) {
+					document.querySelector(".js-btn-circle").classList.remove("animate")
+				}
 				setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
-			}, 5000);
+			}, 5000));
 			console.log('set:', window.pagesHomeCounter);
 
 		}
