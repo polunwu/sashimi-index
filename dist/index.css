@@ -39,7 +39,8 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999; }
+  z-index: 999;
+  transform: translateZ(0); }
 
 @media screen and (min-width: 1280px) {
   .loader__logo {
