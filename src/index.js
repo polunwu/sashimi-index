@@ -117,6 +117,13 @@ window.addEventListener("load", function () {
 	window.addEventListener('wheel', handleScroll, { passive: true });
 	document.body.addEventListener('touchstart', handleScroll, { passive: true });
 
+	function setDirectionIconUse(num) {
+		directionIconUse.setAttributeNS(
+			'http://www.w3.org/1999/xlink',
+			'xlink:href',
+			`#a${num}`);
+	}
+
 	function screwDirectionIcon() {
 		directionIcon.classList.add('p-direction-icon--screw');
 		setTimeout(() => {
@@ -166,11 +173,8 @@ window.addEventListener("load", function () {
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
+					setDirectionIconUse(Number(curVideoIndex + 1));
 					screwDirectionIcon();
-					directionIconUse.setAttributeNS(
-						'http://www.w3.org/1999/xlink',
-						'xlink:href',
-						`#a${Number(curVideoIndex + 1)}`);
 					resetHomePageOrangeCircle(false);
 					hideAndShowPlayBtn();
 					break;
@@ -194,10 +198,7 @@ window.addEventListener("load", function () {
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
 					screwDirectionIcon();
-					directionIconUse.setAttributeNS(
-						'http://www.w3.org/1999/xlink',
-						'xlink:href',
-						`#a${Number(curVideoIndex + 1)}`);
+					setDirectionIconUse(Number(curVideoIndex + 1));
 					resetHomePageOrangeCircle(false);
 					hideAndShowPlayBtn();
 					break;
@@ -252,10 +253,7 @@ window.addEventListener("load", function () {
 					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(${maxViewRaduis}px at center)`;
 					curVideoIndex += 1;
 					screwDirectionIcon();
-					directionIconUse.setAttributeNS(
-						'http://www.w3.org/1999/xlink',
-						'xlink:href',
-						`#a${Number(curVideoIndex + 1)}`);
+					setDirectionIconUse(Number(curVideoIndex + 1));
 					if (option && option.auto) {
 						resetHomePageOrangeCircle(option.auto);
 					} else {
@@ -285,10 +283,7 @@ window.addEventListener("load", function () {
 					// -- Safari
 					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(0px at center)`;
 					screwDirectionIcon();
-					directionIconUse.setAttributeNS(
-						'http://www.w3.org/1999/xlink',
-						'xlink:href',
-						`#a${Number(curVideoIndex + 1)}`);
+					setDirectionIconUse(Number(curVideoIndex + 1));
 					resetHomePageOrangeCircle(false);
 					hideAndShowPlayBtn()
 					scrollIndex = 0;
