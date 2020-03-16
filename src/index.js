@@ -43,7 +43,6 @@ window.addEventListener("load", function () {
 
 	circles.forEach(element => {
 		void element.offsetWidth;
-
 		if (element.dataset.key == 2 && vw >= 3500) { // check device-width for revealer circles[2]
 			element.classList.add(`animate-revealer__circle--${element.dataset.key}-3500`);
 		} else if (element.dataset.key == 2 && vw >= 1280) {
@@ -374,17 +373,3 @@ function getViewHeight() {
 	return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }
 // End of global functions for getting device meta-data
-// global function for animate.css
-function animateCSS(node, animationName, callback) {
-	node.classList.add('animated', animationName)
-
-	function handleAnimationEnd() {
-		node.classList.remove('animated', animationName)
-		node.removeEventListener('animationend', handleAnimationEnd)
-
-		if (typeof callback === 'function') callback()
-	}
-
-	node.addEventListener('animationend', handleAnimationEnd)
-}
-// End of global function for animate.css
