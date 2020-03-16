@@ -79,7 +79,7 @@ window.addEventListener("load", function () {
 		if (document.querySelector('.play-btn')) {
 			document.querySelector('.play-btn').style.visibility = 'hidden';
 			setTimeout(() => {
-				document.querySelector('.play-btn').style.zIndex = Number(curVideoIndex);
+				// document.querySelector('.play-btn').style.zIndex = Number(curVideoIndex);
 				document.querySelector('.play-btn').style.visibility = 'visible';
 			}, 1000);
 		}
