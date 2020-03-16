@@ -427,7 +427,7 @@ button:focus {outline:0;}
 
 $nav-slide-speed: 0.3s;
 
-/* arrow & direction Icon */
+/* arrow & direction Icon & playBtn */
 .p-arrow--layout {
 	width: 34.15px;
 	height: 36.96px;
@@ -625,13 +625,16 @@ $nav-slide-speed: 0.3s;
 		align-items: center;
 		height: 127.6px;
 		width: 800px;
-		li:hover{ text-shadow: 0 0 .9px #fff, 0 0 .9px #fff; }
 		.p-nav__main--layout{
 			position: static;
 			flex-direction: row;
 			justify-content: flex-end;
 			margin: 0px 37px 0px 0px;
 			transform: translate(0%, 0%);
+			a:hover{
+				font-weight: 700;
+				letter-spacing: -0.4px;
+			}
 			li {
 				margin: 0px 0px 0px 46px;
 			}

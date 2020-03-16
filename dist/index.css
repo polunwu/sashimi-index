@@ -448,7 +448,7 @@ button:focus {
 
 /* end of keyframes */
 /* index page layout & animation*/
-/* arrow & direction Icon */
+/* arrow & direction Icon & playBtn */
 .p-arrow--layout {
   width: 34.15px;
   height: 36.96px;
@@ -616,14 +616,15 @@ button:focus {
       width: 800px; }
       .p-nav__links--layout a {
         font-weight: 300; }
-      .p-nav__links--layout li:hover {
-        text-shadow: 0 0 .9px #fff, 0 0 .9px #fff; }
       .p-nav__links--layout .p-nav__main--layout {
         position: static;
         flex-direction: row;
         justify-content: flex-end;
         margin: 0px 37px 0px 0px;
         transform: translate(0%, 0%); }
+        .p-nav__links--layout .p-nav__main--layout a:hover {
+          font-weight: 700;
+          letter-spacing: -0.4px; }
         .p-nav__links--layout .p-nav__main--layout li {
           margin: 0px 0px 0px 46px; }
         .p-nav__links--layout .p-nav__main--layout li svg {
