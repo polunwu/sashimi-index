@@ -638,6 +638,7 @@ button:focus {
         justify-content: flex-start;
         margin: 0px 24.25px 0px 0px; }
         .p-nav__links--layout .p-nav__social--layout li {
+          opacity: 1;
           margin-right: 27px;
           width: 21.2px;
           height: 20px;

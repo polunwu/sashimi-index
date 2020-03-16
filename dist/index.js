@@ -75,11 +75,10 @@ window.addEventListener("load", function () {
 	window.addEventListener('wheel', handleScroll, { passive: true });
 	document.body.addEventListener('touchstart', handleScroll, { passive: true });
 
-	function resetPlayBtnIndex() {
+	function hideAndShowPlayBtn() {
 		if (document.querySelector('.play-btn')) {
 			document.querySelector('.play-btn').style.visibility = 'hidden';
 			setTimeout(() => {
-				// document.querySelector('.play-btn').style.zIndex = Number(curVideoIndex);
 				document.querySelector('.play-btn').style.visibility = 'visible';
 			}, 1000);
 		}
@@ -123,7 +122,7 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					resetHomePageOrangeCircle(false);
-					resetPlayBtnIndex();
+					hideAndShowPlayBtn();
 					break;
 				case -2:
 				case -3:
@@ -149,7 +148,7 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					resetHomePageOrangeCircle(false);
-					resetPlayBtnIndex();
+					hideAndShowPlayBtn();
 					break;
 			}
 		}
@@ -210,7 +209,7 @@ window.addEventListener("load", function () {
 					} else {
 						resetHomePageOrangeCircle(false);
 					}
-					resetPlayBtnIndex();
+					hideAndShowPlayBtn();
 					scrollIndex = 0;
 				} else if (curVideoIndex == clippedVideos.length && isAbleToChange) {
 					videoIndicator.children[0].click();
@@ -238,7 +237,7 @@ window.addEventListener("load", function () {
 						'xlink:href',
 						`#a${Number(curVideoIndex + 1)}`);
 					resetHomePageOrangeCircle(false);
-					resetPlayBtnIndex()
+					hideAndShowPlayBtn()
 					scrollIndex = 0;
 				} else if (curVideoIndex == 0) {
 					videoIndicator.children[4].click();
