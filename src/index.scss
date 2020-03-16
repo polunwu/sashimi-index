@@ -631,18 +631,22 @@ $nav-slide-speed: 0.3s;
 			justify-content: flex-end;
 			margin: 0px 37px 0px 0px;
 			transform: translate(0%, 0%);
-			a:hover{
-				font-weight: 700;
-				letter-spacing: -0.4px;
-			}
 			li {
 				margin: 0px 0px 0px 46px;
+				transition: transform 0.5s;
 			}
 			li svg {
 				display: none;
 			}
 			li a {
 				display: inline;
+			}
+			li:hover {
+				transform: translateY(-2px);
+			}
+			a:hover{
+				font-weight: 700;
+				letter-spacing: -0.4px;
 			}
 		}
 		.p-nav__social-text--layout {
@@ -653,6 +657,9 @@ $nav-slide-speed: 0.3s;
 			flex-direction: row;
 			justify-content: flex-start;
 			margin: 0px 24.25px 0px 0px;
+			li:hover {
+				opacity: 0.6;
+			}
 			li {
 				opacity: 1;
 				margin-right: 27px;
