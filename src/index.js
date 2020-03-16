@@ -24,6 +24,7 @@ window.addEventListener("load", function () {
 	const videoIndicator = document.getElementById('videoIndicator');
 	const arrow = document.getElementById('arrow');
 	const directionIconUse = document.getElementById('directionIconUse');
+	const directionIcon = document.getElementById('directionIcon');
 
 	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
 	loaderLogo.classList.add('animate-logo--zoomOut');
@@ -74,12 +75,13 @@ window.addEventListener("load", function () {
 		delayUIShow(contact, 'p-nav--hide', 'p-nav--animated', 800);
 		delayUIShow(fb, 'p-nav--hide', 'p-nav--animated', 950);
 		delayUIShow(yt, 'p-nav--hide', 'p-nav--animated', 1100);
-		let videoIndicatorDelay = 2100;
+		let videoIndicatorDelay = 2000;
 		for (let element of videoIndicator.children) {
-			console.log(element);
 			delayUIShow(element, 'p-video-indicator--hide', 'p-video-indicator--animated', videoIndicatorDelay);
 			videoIndicatorDelay += 150;
 		}
+		delayUIShow(arrow, 'p-arrow--hide', 'p-arrow-animated', 3000);
+		delayUIShow(directionIcon, 'p-arrow--hide', 'p-arrow-animated', 3500);
 	}
 
 	function delayUIShow(element, className, animatedClassName, time) {
@@ -114,6 +116,13 @@ window.addEventListener("load", function () {
 	if (videoIndicator) { videoIndicator.addEventListener('click', handleJumpTo); }
 	window.addEventListener('wheel', handleScroll, { passive: true });
 	document.body.addEventListener('touchstart', handleScroll, { passive: true });
+
+	function screwDirectionIcon() {
+		directionIcon.classList.add('p-direction-icon--screw');
+		setTimeout(() => {
+			directionIcon.classList.remove('p-direction-icon--screw');
+		}, 500);
+	}
 
 	function hideAndShowPlayBtn() {
 		if (document.querySelector('.play-btn')) {
@@ -157,6 +166,7 @@ window.addEventListener("load", function () {
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
+					screwDirectionIcon();
 					directionIconUse.setAttributeNS(
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
@@ -183,6 +193,7 @@ window.addEventListener("load", function () {
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
+					screwDirectionIcon();
 					directionIconUse.setAttributeNS(
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
@@ -240,6 +251,7 @@ window.addEventListener("load", function () {
 					// -- Safari
 					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(${maxViewRaduis}px at center)`;
 					curVideoIndex += 1;
+					screwDirectionIcon();
 					directionIconUse.setAttributeNS(
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
@@ -272,6 +284,7 @@ window.addEventListener("load", function () {
 					clippedVideos[curVideoIndex].style.clipPath = `circle(0px at center)`;
 					// -- Safari
 					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(0px at center)`;
+					screwDirectionIcon();
 					directionIconUse.setAttributeNS(
 						'http://www.w3.org/1999/xlink',
 						'xlink:href',
