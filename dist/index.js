@@ -21,6 +21,9 @@ window.addEventListener("load", function () {
 	const loaderLogo = document.getElementById('loaderLogo');
 	const revealer = document.getElementById('revealer');
 	const vw = getViewWidth();
+	const videoIndicator = document.getElementById('videoIndicator');
+	const arrow = document.getElementById('arrow');
+	const directionIconUse = document.getElementById('directionIconUse');
 
 	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
 	loaderLogo.classList.add('animate-logo--zoomOut');
@@ -63,25 +66,28 @@ window.addEventListener("load", function () {
 			delayUIShowMobile(brand, 500);
 			delayUIShowMobile(burger, 500);
 		} else {
-			delayUIShow(brand, 'p-nav--hide', 0);
-			delayUIShow(burger, 'p-nav--hide', 0);
+			delayUIShow(brand, 'p-nav--hide', 'p-nav--animated', 0);
+			delayUIShow(burger, 'p-nav--hide', 'p-nav--animated', 0);
 		}
-		delayUIShow(members, 'p-nav--hide', 500);
-		delayUIShow(aboutus, 'p-nav--hide', 650);
-		delayUIShow(contact, 'p-nav--hide', 800);
-		delayUIShow(fb, 'p-nav--hide', 950);
-		delayUIShow(yt, 'p-nav--hide', 1100);
-		const videoIndicator = document.getElementById('videoIndicator');
-		const arrow = document.getElementById('arrow');
-		const directionIconUse = document.getElementById('directionIconUse');
+		delayUIShow(members, 'p-nav--hide', 'p-nav--animated', 500);
+		delayUIShow(aboutus, 'p-nav--hide', 'p-nav--animated', 650);
+		delayUIShow(contact, 'p-nav--hide', 'p-nav--animated', 800);
+		delayUIShow(fb, 'p-nav--hide', 'p-nav--animated', 950);
+		delayUIShow(yt, 'p-nav--hide', 'p-nav--animated', 1100);
+		let videoIndicatorDelay = 2100;
+		for (let element of videoIndicator.children) {
+			console.log(element);
+			delayUIShow(element, 'p-video-indicator--hide', 'p-video-indicator--animated', videoIndicatorDelay);
+			videoIndicatorDelay += 150;
+		}
 	}
 
-	function delayUIShow(element, className, time) {
+	function delayUIShow(element, className, animatedClassName, time) {
 		setTimeout(() => {
 			element.classList.remove(className);
 		}, time);
 		setTimeout(() => {
-			element.classList.remove('p-nav--animated');
+			element.classList.remove(animatedClassName);
 		}, Number(2500 + time));
 	}
 	function delayUIShowMobile(element, time) {
