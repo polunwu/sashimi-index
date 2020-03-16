@@ -129,8 +129,8 @@
 </div>
 
 
-<nav id="nav" class="p-nav--layout p-nav--hide">
-  <a id="brand" class="p-brand--layout" href="/">
+<nav id="nav" class="p-nav--layout">
+  <a id="brand" class="p-brand--layout p-nav--animated p-nav--hide" href="/">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248.54 54.33">
       <path fill="#fff"
         d="M51.26 5.25V.16H33.72v13.46h10.06l7.48-6.88H39.44l1.49-1.49h10.33zM147.86 5.25h9.6V.16H142.5v13.46h7.48l7.48-6.88h-11.09l1.49-1.49zM182.31 5.25h9.5V.16h-14.96v13.46h7.48l7.48-6.88h-10.99l1.49-1.49zM48.68 20.6v-5.09H33.72v13.46h7.48l7.48-6.88H36.85l1.5-1.49h10.33zM57.07 6.16h-4.06l-4.35 24.71h4.02l4.39-24.71z" />
@@ -146,7 +146,7 @@
     </svg>
 
   </a>
-  <button id="navToggleBtn" class="p-burger--layout p-collapsed" type="button">
+  <button id="navToggleBtn" class="p-burger--layout p-collapsed p-nav--animated p-nav--hide" type="button">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 78.71 78.71">
       <ellipse class="p-burger__part--0--animate" cx="19.35" cy="6.45" rx="19.35" ry="6.45" fill="#fff" />
       <ellipse cx="19.35" cy="19.35" rx="19.35" ry="6.45" fill="#fff" />
@@ -156,7 +156,7 @@
 
   <div id="navToCollapse" class="p-nav__links--layout">
     <ul class="p-nav__main--layout">
-      <li class="">
+      <li class="p-nav__members p-nav--animated p-nav--hide">
         <a class="" href="/">MEMBERS
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.9 21.44" width="65" height="21.5">
             <path fill="none" stroke="#fff" stroke-miterlimit="10" d="M0 20.94h64.9" />
@@ -164,7 +164,7 @@
           </svg>
         </a>
       </li>
-      <li class="">
+      <li class="p-nav__aboutus p-nav--animated p-nav--hide">
         <a class="" href="/">ABOUT US
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.9 21.44" width="65" height="21.5">
             <path fill="none" stroke="#fff" stroke-miterlimit="10" d="M0 20.94h64.9" />
@@ -172,7 +172,7 @@
           </svg>
         </a>
       </li>
-      <li class="">
+      <li class="p-nav__contact p-nav--animated p-nav--hide">
         <a class="" href="/">CONTACT
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.9 21.44" width="65" height="21.5">
             <path fill="none" stroke="#fff" stroke-miterlimit="10" d="M0 20.94h64.9" />
@@ -184,15 +184,15 @@
     <div class="p-nav__social-text--layout">
       <span>SOCIAL MEDIA</span>
     </div>
-    <ul class="p-nav__social--layout">
-      <li class="">
+    <ul id="navSocial" class="p-nav__social--layout">
+      <li id="navSocialFb" class="p-nav__socialIcon--layout p-nav--animated p-nav--hide">
         <a class="" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20px" height="20px">
             <path
               d="M17.3 0H0v20h9.9v-7.15H8.06a.43.43 0 01-.44-.43v-2.31A.44.44 0 018 9.67h1.9V7.45a3.63 3.63 0 013.88-4h1.9a.43.43 0 01.43.44v1.95a.43.43 0 01-.43.43h-1.17c-1.25 0-1.49.6-1.49 1.47v1.93h2.75a.44.44 0 01.44.49l-.28 2.31a.42.42 0 01-.43.38H13V20h7V0z"
               fill="#fff" />
           </svg></a>
       </li>
-      <li class="">
+      <li id="navSocialYt" class="p-nav__socialIcon--layout p-nav--animated p-nav--hide">
         <a class="" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.2 15" width="21.2px" height="15px">
             <path
               d="M16.8 0H0v15h21.2V0zm-3 7.8L8 10.57a.23.23 0 01-.33-.21V4.65a.23.23 0 01.33-.2l5.79 2.93a.23.23 0 01.03.42z"

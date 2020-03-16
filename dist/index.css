@@ -456,7 +456,6 @@ button:focus {
   top: 80%;
   left: calc(50% - 17.075px);
   z-index: 100;
-  transition: opacity .5s 1.7s ease-in;
   cursor: pointer; }
   @media screen and (max-width: 768px) {
     .p-arrow--layout {
@@ -472,18 +471,13 @@ button:focus {
   position: fixed;
   top: 88%;
   left: calc(50% - 20px);
-  z-index: 100;
-  transition: opacity .5s 1.7s ease-in; }
+  z-index: 100; }
   @media screen and (max-width: 768px) {
     .p-direction-icon--layout {
       display: none; } }
 
 /* End of arrow & direction Icon */
 /* nav */
-.p-nav--hide {
-  opacity: 0;
-  transform: translateY(25px); }
-
 .p-nav--layout {
   display: flex;
   flex-direction: row;
@@ -494,8 +488,7 @@ button:focus {
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 1000;
-  transition: opacity 2.5s ease-in, transform 1.1s ease-in; }
+  z-index: 1000; }
 
 .p-brand--layout {
   position: fixed;
@@ -556,22 +549,22 @@ button:focus {
     padding: 0;
     margin: 0px 0px 20px 20px;
     flex-direction: row; }
-    .p-nav__links--layout .p-nav__social--layout li:hover {
+    .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout:hover {
       opacity: 1; }
-    .p-nav__links--layout .p-nav__social--layout li {
+    .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout {
       opacity: 0.6;
       width: 100px;
       height: 100px;
       padding: 0;
       margin-right: 20px;
       border: 2px solid #fff; }
-      .p-nav__links--layout .p-nav__social--layout li a {
+      .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout a {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%; }
-        .p-nav__links--layout .p-nav__social--layout li a svg {
+        .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout a svg {
           transform: scale(2); }
   @media screen and (min-width: 370px) {
     .p-nav__links--layout {
@@ -623,14 +616,11 @@ button:focus {
         margin: 0px 37px 0px 0px;
         transform: translate(0%, 0%); }
         .p-nav__links--layout .p-nav__main--layout li {
-          margin: 0px 0px 0px 46px;
-          transition: transform 0.5s; }
+          margin: 0px 0px 0px 46px; }
         .p-nav__links--layout .p-nav__main--layout li svg {
           display: none; }
         .p-nav__links--layout .p-nav__main--layout li a {
           display: inline; }
-        .p-nav__links--layout .p-nav__main--layout li:hover {
-          transform: translateY(-2px); }
         .p-nav__links--layout .p-nav__main--layout a:hover {
           font-weight: 700;
           letter-spacing: -0.4px; }
@@ -641,15 +631,15 @@ button:focus {
         flex-direction: row;
         justify-content: flex-start;
         margin: 0px 24.25px 0px 0px; }
-        .p-nav__links--layout .p-nav__social--layout li:hover {
+        .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout:hover {
           opacity: 0.6; }
-        .p-nav__links--layout .p-nav__social--layout li {
+        .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout {
           opacity: 1;
           margin-right: 27px;
           width: 21.2px;
           height: 20px;
           border: none; }
-          .p-nav__links--layout .p-nav__social--layout li a svg {
+          .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout a svg {
             transform: scale(1); } }
 
 .p-nav__links--show {
@@ -687,19 +677,22 @@ button:focus {
 nav .p-collapsed {
   transform: rotate(0deg); }
 
+.p-nav--hide {
+  opacity: 0 !important;
+  transform: translateY(80px); }
+
+.p-nav--animated {
+  transition: opacity 2.5s ease-in, transform 1.1s ease-in; }
+
 /* end of nav */
 /* video indicator */
-.p-video-ui--hide {
-  opacity: 0; }
-
 .p-video-indicator {
   position: absolute;
   top: 50%;
   left: 37px;
   transform: translateY(-50%);
   width: 30px;
-  z-index: 100;
-  transition: opacity .5s 1.2s ease-in; }
+  z-index: 100; }
   .p-video-indicator span {
     display: flex;
     justify-content: center;

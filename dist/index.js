@@ -22,21 +22,13 @@ window.addEventListener("load", function () {
 	const revealer = document.getElementById('revealer');
 	const vw = getViewWidth();
 
-	const nav = document.getElementById('nav');
-	const videoIndicator = document.getElementById('videoIndicator');
-	const arrow = document.getElementById('arrow');
-	const directionIconUse = document.getElementById('directionIconUse');
-
 	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
 	loaderLogo.classList.add('animate-logo--zoomOut');
 	revealer.style.display = 'flex';
 	circles[0].addEventListener('animationstart', () => {
 		setTimeout(() => {
 			loader.style.display = 'none';
-			nav.classList.remove('p-nav--hide');
-			videoIndicator.classList.remove('p-video-ui--hide');
-			arrow.classList.remove('p-video-ui--hide');
-			directionIconUse.parentNode.classList.remove('p-video-ui--hide');
+			showUIAnimation();
 		}, 2250); // After ($revealer-speed * 0.5) ms -> hide loader -> show nav
 	});
 	circles[0].addEventListener('animationend', () => {
@@ -56,6 +48,48 @@ window.addEventListener("load", function () {
 			element.classList.add(`animate-revealer__circle--${element.dataset.key}`);
 		}
 	});
+
+	function showUIAnimation() {
+		console.log('showing ui');
+		const nav = document.getElementById('nav');
+		const brand = nav.querySelector('#brand');
+		const members = nav.querySelector('.p-nav__members');
+		const aboutus = nav.querySelector('.p-nav__aboutus');
+		const contact = nav.querySelector('.p-nav__contact');
+		const fb = nav.querySelector('#navSocialFb');
+		const yt = nav.querySelector('#navSocialYt');
+		const burger = nav.querySelector('#navToggleBtn');
+		if (vw < 1280) {
+			delayUIShowMobile(brand, 500);
+			delayUIShowMobile(burger, 500);
+		} else {
+			delayUIShow(brand, 'p-nav--hide', 0);
+			delayUIShow(burger, 'p-nav--hide', 0);
+		}
+		delayUIShow(members, 'p-nav--hide', 500);
+		delayUIShow(aboutus, 'p-nav--hide', 650);
+		delayUIShow(contact, 'p-nav--hide', 800);
+		delayUIShow(fb, 'p-nav--hide', 950);
+		delayUIShow(yt, 'p-nav--hide', 1100);
+		const videoIndicator = document.getElementById('videoIndicator');
+		const arrow = document.getElementById('arrow');
+		const directionIconUse = document.getElementById('directionIconUse');
+	}
+
+	function delayUIShow(element, className, time) {
+		setTimeout(() => {
+			element.classList.remove(className);
+		}, time);
+		setTimeout(() => {
+			element.classList.remove('p-nav--animated');
+		}, Number(2500 + time));
+	}
+	function delayUIShowMobile(element, time) {
+		setTimeout(() => {
+			element.classList.remove('p-nav--animated');
+			element.classList.remove('p-nav--hide');
+		}, time);
+	}
 	// 影片載完後，置入以上這段以接續logo消失、圈圈動畫、首頁元件浮現
 	// === End of loader & revealer control & nav showing ===
 
@@ -326,3 +360,17 @@ function getViewHeight() {
 	return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }
 // End of global functions for getting device meta-data
+// global function for animate.css
+function animateCSS(node, animationName, callback) {
+	node.classList.add('animated', animationName)
+
+	function handleAnimationEnd() {
+		node.classList.remove('animated', animationName)
+		node.removeEventListener('animationend', handleAnimationEnd)
+
+		if (typeof callback === 'function') callback()
+	}
+
+	node.addEventListener('animationend', handleAnimationEnd)
+}
+// End of global function for animate.css
