@@ -1,9 +1,3 @@
-window.addEventListener("DOMContentLoaded", () => {
-	const loaderVideo = document.getElementById('loaderVideo');
-	loaderVideo.addEventListener('canplaythrough', () => {
-		loaderVideo.play();
-	});
-});
 window.addEventListener("load", function () {
 	if (document.querySelector("body.pages-home")) {
 		if (window.pagesHomeCounter == undefined) {
@@ -28,7 +22,7 @@ window.addEventListener("load", function () {
 	const directionIconUse = document.getElementById('directionIconUse');
 	const directionIcon = document.getElementById('directionIcon');
 
-	document.getElementById('loaderVideo').addEventListener('ended', e => {
+	document.getElementById('loaderVideo').addEventListener('ended', () => {
 		// logo影片播完後，以下這段以接續圈圈動畫、首頁元件浮現
 		document.getElementById('revealer').style.display = 'flex';
 		circles[0].addEventListener('animationstart', () => {
