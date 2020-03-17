@@ -15,30 +15,26 @@ window.addEventListener("load", function () {
 	}
 	// ... onload
 	// === Loader & revealer control & nav showing === 
-
-	const circles = document.querySelectorAll('.animate-revealer__circle');
-	const loader = document.getElementById('loader');
-	const loaderLogo = document.getElementById('loaderLogo');
-	const revealer = document.getElementById('revealer');
 	const vw = getViewWidth();
+	const circles = document.querySelectorAll('.animate-revealer__circle');
 	const videoIndicator = document.getElementById('videoIndicator');
 	const arrow = document.getElementById('arrow');
 	const directionIconUse = document.getElementById('directionIconUse');
 	const directionIcon = document.getElementById('directionIcon');
 
 	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
-	loaderLogo.classList.add('animate-logo--zoomOut');
-	revealer.style.display = 'flex';
+	document.getElementById('loaderLogo').classList.add('animate-logo--zoomOut');
+	document.getElementById('revealer').style.display = 'flex';
 	circles[0].addEventListener('animationstart', () => {
 		setTimeout(() => {
-			loader.style.display = 'none';
+			document.getElementById('loader').style.display = 'none';
 			showUIAnimation();
 		}, 2250); // After ($revealer-speed * 0.5) ms -> hide loader -> show nav
 	});
 	circles[0].addEventListener('animationend', () => {
 		// hide revealer after circle ends
 		console.log('revealer animation ended');
-		revealer.style.display = 'none';
+		document.getElementById('revealer').style.display = 'none';
 	});
 
 	circles.forEach(element => {
@@ -356,11 +352,9 @@ function getMaxViewRaduis(saftyOffset = 50) {
 	const vh = getViewHeight();
 	return saftyOffset + Math.ceil(Math.sqrt((vw / 2) * (vw / 2) + (vh / 2) * (vh / 2)));
 }
-
 function getViewWidth() {
 	return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
-
 function getViewHeight() {
 	return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }

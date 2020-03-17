@@ -24,9 +24,15 @@ window.addEventListener("load", function () {
       animateCSS(element, 'faster');
       animateCSS(element, 'zoomIn');
     });
-    document.querySelectorAll('.pages-members__member').forEach(element => {
-      animateCSS(element, 'bounceInUp');
-    });
+    let groupDelay = 0;
+    for (let group of document.querySelectorAll('.pages-members__group')) {
+      for (let member of group.querySelectorAll('.pages-members__member')) {
+        member.style.animationDelay = `${groupDelay}s`;
+        member.style.animationDuration = '2s';
+        animateCSS(member, 'p-bounceInUp'); // <- self-define bounce
+        groupDelay += 0.15;
+      }
+    }
     document.querySelectorAll('.pages-members__member__count').forEach(element => {
       countUp(element, Number(element.innerHTML), 80);
     });

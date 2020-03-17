@@ -352,11 +352,9 @@ function getMaxViewRaduis(saftyOffset = 50) {
 	const vh = getViewHeight();
 	return saftyOffset + Math.ceil(Math.sqrt((vw / 2) * (vw / 2) + (vh / 2) * (vh / 2)));
 }
-
 function getViewWidth() {
 	return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
-
 function getViewHeight() {
 	return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }
