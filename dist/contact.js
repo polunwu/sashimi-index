@@ -28,24 +28,24 @@ window.addEventListener("load", function () {
 
     const contactMotion = {
       info: 'fadeIn',
-      personSpeed: 'faster',
       person: 'fadeInUp',
-      contents: 'bounceInUp',
-      domains: 'bounceInUp'
+      contents: 'p-bounceInUp',
+      domains: 'p-bounceInUp'
     }
 
     infos.forEach(element => {
       animateCSS(element, contactMotion.info);
     });
-    animateCSS(person, contactMotion.personSpeed);
     animateCSS(person, contactMotion.person);
-    contents[1].style.animationDelay = '.25s';
-    contents[3].style.animationDelay = '.5s';
+    contents[1].style.animationDelay = '.35s';
+    contents[3].style.animationDelay = '.7s';
     contents.forEach(element => {
+      element.style.animationDuration = '2s';
       animateCSS(element, contactMotion.contents);
     });
     domains.forEach(element => {
-      element.style.animationDelay = '.25s';
+      element.style.animationDuration = '2s';
+      element.style.animationDelay = '.35s';
       animateCSS(element, contactMotion.domains);
     });
   }
