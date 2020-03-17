@@ -24,13 +24,13 @@ window.addEventListener("load", function () {
       animateCSS(element, 'faster');
       animateCSS(element, 'zoomIn');
     });
-    let groupDelay = 0;
+    let groupDelay = 0.2;
     for (let group of document.querySelectorAll('.pages-members__group')) {
       for (let member of group.querySelectorAll('.pages-members__member')) {
         member.style.animationDelay = `${groupDelay}s`;
         member.style.animationDuration = '2s';
         animateCSS(member, 'p-bounceInUp'); // <- self-define bounce
-        groupDelay += 0.15;
+        groupDelay += 0.2;
       }
     }
     document.querySelectorAll('.pages-members__member__count').forEach(element => {
