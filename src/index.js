@@ -1,3 +1,9 @@
+window.addEventListener("DOMContentLoaded", () => {
+	const loaderVideo = document.getElementById('loaderVideo');
+	loaderVideo.addEventListener('canplaythrough', () => {
+		loaderVideo.play();
+	});
+});
 window.addEventListener("load", function () {
 	if (document.querySelector("body.pages-home")) {
 		if (window.pagesHomeCounter == undefined) {
@@ -22,29 +28,31 @@ window.addEventListener("load", function () {
 	const directionIconUse = document.getElementById('directionIconUse');
 	const directionIcon = document.getElementById('directionIcon');
 
-	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
-	document.getElementById('revealer').style.display = 'flex';
-	circles[0].addEventListener('animationstart', () => {
-		setTimeout(() => {
-			document.getElementById('loader').style.display = 'none';
-			showUIAnimation();
-		}, 2250); // After ($revealer-speed * 0.5) ms -> hide loader -> show nav
-	});
-	circles[0].addEventListener('animationend', () => {
-		// hide revealer after circle ends
-		console.log('revealer animation ended');
-		document.getElementById('revealer').style.display = 'none';
-	});
+	document.getElementById('loaderVideo').addEventListener('ended', e => {
+		// logo影片播完後，以下這段以接續圈圈動畫、首頁元件浮現
+		document.getElementById('revealer').style.display = 'flex';
+		circles[0].addEventListener('animationstart', () => {
+			setTimeout(() => {
+				document.getElementById('loader').style.display = 'none';
+				showUIAnimation();
+			}, 2250); // After ($revealer-speed * 0.5) ms -> hide loader -> show nav
+		});
+		circles[0].addEventListener('animationend', () => {
+			// hide revealer after circle ends
+			console.log('revealer animation ended');
+			document.getElementById('revealer').style.display = 'none';
+		});
 
-	circles.forEach(element => {
-		void element.offsetWidth;
-		if (element.dataset.key == 2 && vw >= 3500) { // check device-width for revealer circles[2]
-			element.classList.add(`animate-revealer__circle--${element.dataset.key}-3500`);
-		} else if (element.dataset.key == 2 && vw >= 1280) {
-			element.classList.add(`animate-revealer__circle--${element.dataset.key}-1280`);
-		} else {
-			element.classList.add(`animate-revealer__circle--${element.dataset.key}`);
-		}
+		circles.forEach(element => {
+			void element.offsetWidth;
+			if (element.dataset.key == 2 && vw >= 3500) { // check device-width for revealer circles[2]
+				element.classList.add(`animate-revealer__circle--${element.dataset.key}-3500`);
+			} else if (element.dataset.key == 2 && vw >= 1280) {
+				element.classList.add(`animate-revealer__circle--${element.dataset.key}-1280`);
+			} else {
+				element.classList.add(`animate-revealer__circle--${element.dataset.key}`);
+			}
+		});
 	});
 
 	function showUIAnimation() {
@@ -84,7 +92,7 @@ window.addEventListener("load", function () {
 			element.classList.remove('p-nav--hide');
 		}, time);
 	}
-	// 影片載完後，置入以上這段以接續logo消失、圈圈動畫、首頁元件浮現
+	// logo影片播完後，以上這段以接續圈圈動畫、首頁元件浮現
 	// === End of loader & revealer control & nav showing ===
 
 	// === Scrolling on video & clip path control ===
