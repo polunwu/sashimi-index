@@ -53,6 +53,10 @@ button:focus {outline:0;}
 
 	transform: translateZ(0);
 }
+
+.loader__video {
+	transform: scale(0.5);
+}
 /* animate-revealer__circle--#num start from here */
 
 .animate-revealer__circle--0{
