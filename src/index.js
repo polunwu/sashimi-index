@@ -52,8 +52,8 @@ window.addEventListener("load", function () {
 	function showUIAnimation() {
 		console.log('showing ui');
 		if (vw < 1280) {
-			delayUIShowMobile(brand, 500);
-			delayUIShowMobile(burger, 500);
+			delayUIShowMobile(document.getElementById('brand'), 500);
+			delayUIShowMobile(document.getElementById('navToggleBtn'), 500);
 		} else {
 			delayUIShow(document.getElementById('brand'), 'p-nav--hide', 'p-nav--animated', 0);
 			delayUIShow(document.getElementById('navToggleBtn'), 'p-nav--hide', 'p-nav--animated', 0);
