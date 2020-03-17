@@ -23,7 +23,6 @@ window.addEventListener("load", function () {
 	const directionIcon = document.getElementById('directionIcon');
 
 	// 影片載完後，置入以下這段以接續logo消失、圈圈動畫、首頁元件浮現
-	document.getElementById('loaderLogo').classList.add('animate-logo--zoomOut');
 	document.getElementById('revealer').style.display = 'flex';
 	circles[0].addEventListener('animationstart', () => {
 		setTimeout(() => {
