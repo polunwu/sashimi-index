@@ -25,13 +25,14 @@ window.addEventListener("load", function () {
     animateCSS(aboutSvg, 'slideInLeft');
 
     let textOptions = {
-      delay: 100,
+      delay: 400,
       duration: 800,
-      distance: '50px',
+      distance: '70px'
     }
     let photoOptions = {
-      delay: 100,
+      delay: 700,
       duration: 800,
+      distance: '70px'
     }
     document.querySelectorAll('.pages-about__photo').forEach(element => {
       ScrollReveal().reveal(element, photoOptions);
