@@ -29,7 +29,7 @@ window.addEventListener("load", function () {
       for (let member of group.querySelectorAll('.pages-members__member')) {
         member.style.animationDelay = `${groupDelay}s`;
         member.style.animationDuration = '2s';
-        animateCSS(member, 'p-bounceInUp'); // <- self-define bounce
+        animateCSS(member, 'p-fadeInUp'); // <- self-define bounce
         groupDelay += 0.2;
       }
     }
