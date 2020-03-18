@@ -21,17 +21,17 @@ window.addEventListener("load", function () {
   // about page 動態
   if (document.body.classList.contains('pages-about')) {
     const aboutSvg = document.querySelector('.aboutus-svg');
-    animateCSS(aboutSvg, 'fast');
-    animateCSS(aboutSvg, 'slideInLeft');
+    // animateCSS(aboutSvg, 'fast');
+    animateCSS(aboutSvg, 'p-fadeInLeft');
 
     let textOptions = {
       delay: 400,
-      duration: 800,
+      duration: 1200,
       distance: '70px'
     }
     let photoOptions = {
       delay: 700,
-      duration: 800,
+      duration: 1200,
       distance: '70px'
     }
     document.querySelectorAll('.pages-about__photo').forEach(element => {
