@@ -23,8 +23,9 @@ window.addEventListener("load", function () {
     document.querySelectorAll('.pages-members__group h3').forEach(element => {
       animateCSS(element, 'faster');
       animateCSS(element, 'zoomIn');
+      element.classList.add('p-showBorder');
     });
-    let groupDelay = 0.2;
+    let groupDelay = 1;
     for (let group of document.querySelectorAll('.pages-members__group')) {
       for (let member of group.querySelectorAll('.pages-members__member')) {
         member.style.animationDelay = `${groupDelay}s`;
