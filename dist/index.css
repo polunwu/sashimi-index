@@ -458,6 +458,15 @@ nav .p-collapsed {
   transition: opacity 0.6s ease-in, transform 0.6s ease-in; }
 
 /* End of video indicator */
+/* play Button */
+.p-playBtn--animated {
+  transition: opacity 1.2s ease-in, transform 0.75s ease-in; }
+
+.p-playBtn--hide {
+  transform: translateX(-50%) translateY(-80%) scale(0) !important;
+  opacity: 0 !important; }
+
+/* End of play Button */
 /* members page */
 @-webkit-keyframes p-bounceInUp {
   from,

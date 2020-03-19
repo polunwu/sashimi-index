@@ -60,17 +60,18 @@ window.addEventListener("load", function () {
 			delayUIShow(document.getElementById('navToggleBtn'), 'p-nav--hide', 'p-nav--animated', 0);
 		}
 		delayUIShow(document.getElementById('navMembers'), 'p-nav--hide', 'p-nav--animated', 500);
-		delayUIShow(document.getElementById('navAboutUs'), 'p-nav--hide', 'p-nav--animated', 650);
-		delayUIShow(document.getElementById('navContact'), 'p-nav--hide', 'p-nav--animated', 800);
-		delayUIShow(document.getElementById('navSocialFb'), 'p-nav--hide', 'p-nav--animated', 950);
-		delayUIShow(document.getElementById('navSocialYt'), 'p-nav--hide', 'p-nav--animated', 1100);
-		let videoIndicatorDelay = 2000;
+		delayUIShow(document.getElementById('navAboutUs'), 'p-nav--hide', 'p-nav--animated', 610);
+		delayUIShow(document.getElementById('navContact'), 'p-nav--hide', 'p-nav--animated', 720);
+		delayUIShow(document.getElementById('navSocialFb'), 'p-nav--hide', 'p-nav--animated', 830);
+		delayUIShow(document.getElementById('navSocialYt'), 'p-nav--hide', 'p-nav--animated', 940);
+		let videoIndicatorDelay = 700;
 		for (let element of videoIndicator.children) {
 			delayUIShow(element, 'p-video-indicator--hide', 'p-video-indicator--animated', videoIndicatorDelay);
-			videoIndicatorDelay += 150;
+			videoIndicatorDelay += 110;
 		}
-		delayUIShow(arrow, 'p-arrow--hide', 'p-arrow-animated', 3000);
-		delayUIShow(directionIcon, 'p-arrow--hide', 'p-arrow-animated', 3500);
+		delayUIShow(document.getElementById('playBtn'), 'p-playBtn--hide', 'p-playBtn--animated', 1600);
+		delayUIShow(arrow, 'p-arrow--hide', 'p-arrow--animated', 1800);
+		delayUIShow(directionIcon, 'p-arrow--hide', 'p-arrow--animated', 1800);
 	}
 
 	function delayUIShow(element, className, animatedClassName, time) {
@@ -316,7 +317,7 @@ window.addEventListener("load", function () {
 		}, 5000))
 		console.log('set:', window.pagesHomeCounter);
 
-	}, 5000)
+	}, 8500)
 	var resetHomePageOrangeCircle = function (customTrigger) {
 		// 重置橘色圓圈
 		if (document.querySelector(".js-btn-circle")) {
