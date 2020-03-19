@@ -23,6 +23,7 @@ window.addEventListener("load", function () {
 	const directionIcon = document.getElementById('directionIcon');
 
 	document.getElementById('loaderVideo').addEventListener('ended', () => {
+		console.log('logo ended');
 		// logo影片播完後，以下這段以接續圈圈動畫、首頁元件浮現
 		document.getElementById('revealer').style.display = 'flex';
 		circles[0].addEventListener('animationstart', () => {
