@@ -177,11 +177,12 @@ button:focus {
 /* index page layout & animation*/
 /* arrow & direction Icon & playBtn */
 .p-arrow--layout {
-  width: 34.15px;
-  height: 36.96px;
+  width: 30px;
+  height: 32.6px;
+  opacity: 0.4;
   position: fixed;
-  top: 80%;
-  left: calc(50% - 17.075px);
+  top: 82%;
+  left: calc(50% - 15px);
   z-index: 100;
   cursor: pointer; }
   @media screen and (max-width: 768px) {
@@ -429,19 +430,20 @@ nav .p-collapsed {
   top: 50%;
   left: 37px;
   transform: translateY(-50%);
-  width: 30px;
+  width: 22px;
   z-index: 100; }
   .p-video-indicator span {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 40px;
+    width: 22px;
     font-size: 0px;
     line-height: 1;
     opacity: 0.4;
     cursor: pointer; }
   .p-video-indicator span:nth-of-type(3) {
-    height: 75px; }
+    height: 50px; }
   .p-video-indicator span.p-video-indicator__index--active {
     opacity: 1; }
   @media screen and (max-width: 768px) {

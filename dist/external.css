@@ -93,6 +93,18 @@ body, h1, h2, h3, h4, h5, p {
   left: 50%;
   transform: translateX(-50%) translateY(-50%) rotate(-90deg); }
 
+.play-btn .btn-circle--gray {
+  stroke: #cbcbcb;
+  stroke-width: 5px;
+  fill: transparent;
+  stroke-dashoffset: 350;
+  stroke-dasharray: 350;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg); }
+
 .play-btn .btn-circle.animate {
   -webkit-animation: circle-draw 5s ease forwards;
   animation: circle-draw 5s ease forwards; }
@@ -113,8 +125,8 @@ body, h1, h2, h3, h4, h5, p {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  height: 100px;
-  width: 100px;
+  height: 84px;
+  width: 84px;
   z-index: 998; }
 
 .pages-about .pages-about-wrapper {
