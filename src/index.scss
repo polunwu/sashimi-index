@@ -55,7 +55,8 @@ button:focus {outline:0;}
 }
 
 .loader__video {
-	transform: scale(0.5);
+	background: #fff;
+	transform: scale(0.25);
 }
 /* animate-revealer__circle--#num start from here */
 
@@ -382,6 +383,8 @@ $nav-slide-speed: 0.6s;
 		align-items: center;
 		height: 127.6px;
 		width: 800px;
+		opacity: 1;
+		visibility: visible;
 		.p-nav__main--layout{
 			position: static;
 			flex-direction: row;

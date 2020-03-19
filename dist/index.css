@@ -42,7 +42,8 @@ button:focus {
   transform: translateZ(0); }
 
 .loader__video {
-  transform: scale(0.5); }
+  background: #fff;
+  transform: scale(0.25); }
 
 /* animate-revealer__circle--#num start from here */
 .animate-revealer__circle--0 {
@@ -344,7 +345,9 @@ button:focus {
       justify-content: flex-end;
       align-items: center;
       height: 127.6px;
-      width: 800px; }
+      width: 800px;
+      opacity: 1;
+      visibility: visible; }
       .p-nav__links--layout a {
         font-weight: 300; }
       .p-nav__links--layout .p-nav__main--layout {
