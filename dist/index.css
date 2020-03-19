@@ -337,7 +337,7 @@ button:focus {
         margin: 0px 0px 37px 37px; } }
   @media screen and (min-width: 1280px) {
     .p-nav__links--layout {
-      font-weight: 300;
+      font-weight: 700;
       font-size: 14px;
       transform: translateX(0px);
       background: transparent;
@@ -348,8 +348,6 @@ button:focus {
       width: 800px;
       opacity: 1;
       visibility: visible; }
-      .p-nav__links--layout a {
-        font-weight: 300; }
       .p-nav__links--layout .p-nav__main--layout {
         position: static;
         flex-direction: row;
@@ -362,10 +360,11 @@ button:focus {
         .p-nav__links--layout .p-nav__main--layout li svg {
           display: none; }
         .p-nav__links--layout .p-nav__main--layout li a {
-          display: inline; }
-        .p-nav__links--layout .p-nav__main--layout a:hover {
-          font-weight: 700;
-          letter-spacing: -0.4px; }
+          display: inline;
+          letter-spacing: -0.4px;
+          transition: opacity 0.1s ease-in; }
+        .p-nav__links--layout .p-nav__main--layout li a:hover {
+          opacity: 0.6; }
       .p-nav__links--layout .p-nav__social-text--layout {
         display: none;
         font-size: 0; }
@@ -373,7 +372,8 @@ button:focus {
         flex-direction: row;
         justify-content: flex-start;
         margin: 0px 24.25px 0px 0px;
-        padding-bottom: 5px; }
+        padding-bottom: 5px;
+        transition: opacity 0.1s ease-in; }
         .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout:hover {
           opacity: 0.6; }
         .p-nav__links--layout .p-nav__social--layout .p-nav__socialIcon--layout {
