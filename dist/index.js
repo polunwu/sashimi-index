@@ -1,3 +1,9 @@
+let logoHasEnded = false;
+window.addEventListener("DOMContentLoaded", function () {
+	document.getElementById('loaderVideo').addEventListener('ended', () => {
+		logoHasEnded = true;
+	});
+});
 window.addEventListener("load", function () {
 	if (document.querySelector("body.pages-home")) {
 		if (window.pagesHomeCounter == undefined) {
@@ -22,9 +28,18 @@ window.addEventListener("load", function () {
 	const directionIconUse = document.getElementById('directionIconUse');
 	const directionIcon = document.getElementById('directionIcon');
 
-	document.getElementById('loaderVideo').addEventListener('ended', () => {
-		console.log('logo ended');
-		// logo影片播完後，以下這段以接續圈圈動畫、首頁元件浮現
+	console.log('logoHasEnded bofore loaded', logoHasEnded);
+	if (logoHasEnded) {
+		// logo影片早就播完了，直接進圈圈
+		playHomeRevealAnimation();
+	} else {
+		document.getElementById('loaderVideo').addEventListener('ended', () => {
+			// 等logo影片播完後，接續圈圈動畫、首頁元件浮現
+			playHomeRevealAnimation();
+		});
+	}
+
+	function playHomeRevealAnimation() {
 		document.getElementById('revealer').style.display = 'flex';
 		circles[0].addEventListener('animationstart', () => {
 			setTimeout(() => {
@@ -48,7 +63,7 @@ window.addEventListener("load", function () {
 				element.classList.add(`animate-revealer__circle--${element.dataset.key}`);
 			}
 		});
-	});
+	}
 
 	function showUIAnimation() {
 		console.log('showing ui');
