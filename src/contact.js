@@ -43,23 +43,25 @@ window.addEventListener("load", function () {
     const contactMotion = {
       info: 'fadeIn',
       person: 'fadeInUp',
-      contents: 'p-bounceInUp',
-      domains: 'p-bounceInUp'
+      contents: 'p-fadeInUp',
+      domains: 'p-fadeInUp'
     }
 
     infos.forEach(element => {
       animateCSS(element, contactMotion.info);
     });
     animateCSS(person, contactMotion.person);
-    contents[1].style.animationDelay = '.35s';
-    contents[3].style.animationDelay = '.7s';
+    console.log(contents);
+    contents[0].style.animationDelay = '.4s';
+    contents[1].style.animationDelay = '.7s';
+    contents[3].style.animationDelay = '1s';
     contents.forEach(element => {
       element.style.animationDuration = '2s';
       animateCSS(element, contactMotion.contents);
     });
     domains.forEach(element => {
       element.style.animationDuration = '2s';
-      element.style.animationDelay = '.35s';
+      element.style.animationDelay = '.7s';
       animateCSS(element, contactMotion.domains);
     });
   }
