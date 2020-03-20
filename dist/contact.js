@@ -18,6 +18,20 @@ window.addEventListener("load", function () {
   });
   // === End of navBar toggle to collapse control
 
+  // 非home的頁面、滑動以隱藏 logo
+  // === mobile pages scroll to hide logo ===
+  if (!document.body.classList.contains('pages-home')) {
+    const brand = document.getElementById('brand');
+    document.addEventListener('scroll', e => {
+      if (document.documentElement.scrollTop > 60) {
+        brand.style.opacity = 0;
+      } else {
+        brand.style.opacity = 1;
+      }
+    });
+  }
+  // === mobile pages scroll to hide logo ===
+
   // contact page 動態
   if (document.body.classList.contains('pages-contact')) {
 

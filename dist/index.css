@@ -234,7 +234,8 @@ button:focus {
   left: 19px;
   z-index: 10000;
   width: 176.92px;
-  height: 38.32px; }
+  height: 38.32px;
+  transition: opacity 0.6s; }
   @media screen and (min-width: 768px) {
     .p-brand--layout {
       width: 250px;
