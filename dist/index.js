@@ -329,7 +329,7 @@ window.addEventListener("load", function () {
 			handleScroll({ type: 'auto' });
 			document.querySelector(".js-btn-circle").classList.remove("animate")
 			setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
-		}, 5000))
+		}, 9000))
 		console.log('set:', window.pagesHomeCounter);
 
 	}, 8500)
@@ -356,7 +356,7 @@ window.addEventListener("load", function () {
 					document.querySelector(".js-btn-circle").classList.remove("animate")
 				}
 				setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
-			}, 5000));
+			}, 9000));
 			console.log('set:', window.pagesHomeCounter);
 
 		}

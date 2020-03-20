@@ -106,8 +106,8 @@ body, h1, h2, h3, h4, h5, p {
   transform: translateX(-50%) translateY(-50%) rotate(-90deg); }
 
 .play-btn .btn-circle.animate {
-  -webkit-animation: circle-draw 5s ease forwards;
-  animation: circle-draw 5s ease forwards; }
+  -webkit-animation: circle-draw 10s ease forwards;
+  animation: circle-draw 10s ease forwards; }
 
 @-webkit-keyframes circle-draw {
   to {
