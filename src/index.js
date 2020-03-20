@@ -138,9 +138,9 @@ window.addEventListener("load", function () {
 
 	function hideAndShowPlayBtn() {
 		if (document.querySelector('.play-btn')) {
-			document.querySelector('.play-btn').style.visibility = 'hidden';
+			document.querySelector('.play-btn').style.opacity = '0';
 			setTimeout(() => {
-				document.querySelector('.play-btn').style.visibility = 'visible';
+				document.querySelector('.play-btn').style.opacity = '1';
 			}, 1000);
 		}
 	}

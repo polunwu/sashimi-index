@@ -459,6 +459,9 @@ nav .p-collapsed {
 
 /* End of video indicator */
 /* play Button */
+.play-btn {
+  transition: opacity 0.3s ease-in; }
+
 .p-playBtn--animated {
   transition: opacity 1.2s ease-in, transform 0.75s ease-in; }
 
