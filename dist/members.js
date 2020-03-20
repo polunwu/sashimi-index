@@ -43,7 +43,7 @@ window.addEventListener("load", function () {
     for (let group of document.querySelectorAll('.pages-members__group')) {
       for (let member of group.querySelectorAll('.pages-members__member')) {
         member.style.animationDelay = `${groupDelay}s`;
-        member.style.animationDuration = '2s';
+        member.style.animationDuration = '1.8s';
         animateCSS(member, 'p-fadeInUp'); // <- self-define bounce
         groupDelay += 0.2;
       }
