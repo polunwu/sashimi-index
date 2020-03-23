@@ -623,3 +623,16 @@ nav .p-collapsed {
   animation-name: p-fadeInLeft; }
 
 /* End of about us page */
+/* contact page */
+.pages-contact h2.info__content {
+  z-index: 10; }
+
+.pages-contact .pages-contact__mapLink {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  background: url(./media/images/map.png) center center no-repeat;
+  background-size: cover;
+  cursor: pointer; }
+
+/* End of contact page */
