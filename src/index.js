@@ -8,8 +8,13 @@ window.addEventListener("load", function () {
 	if (document.querySelector("body.pages-home")) {
 		if (window.pagesHomeCounter == undefined) {
 			window.pagesHomeCounter = []
+			console.log("animating")
+		} else {
+			console.log("cancel animating", window.pagesHomeCounter)
+			window.pagesHomeCounter.forEach((id) => clearInterval(id))
+			window.pagesHomeCounter = []
+			console.log("restart animating")
 		}
-		console.log("animating")
 	} else {
 		// 不在首頁，因此若有 Interval Id 就全部清掉
 		if (window.pagesHomeCounter != undefined) {
