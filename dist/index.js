@@ -29,9 +29,6 @@ window.addEventListener("load", function () {
 	const vw = getViewWidth();
 	const circles = document.querySelectorAll('.animate-revealer__circle');
 	const videoIndicator = document.getElementById('videoIndicator');
-	const arrow = document.getElementById('arrow');
-	const directionIconUse = document.getElementById('directionIconUse');
-	const directionIcon = document.getElementById('directionIcon');
 
 	console.log('logoHasEnded bofore loaded', logoHasEnded);
 	if (logoHasEnded) {
@@ -90,8 +87,6 @@ window.addEventListener("load", function () {
 			videoIndicatorDelay += 110;
 		}
 		delayUIShow(document.getElementById('playBtn'), 'p-playBtn--hide', 'p-playBtn--animated', 1600);
-		delayUIShow(arrow, 'p-arrow--hide', 'p-arrow--animated', 1800);
-		delayUIShow(directionIcon, 'p-arrow--hide', 'p-arrow--animated', 1800);
 	}
 
 	function delayUIShow(element, className, animatedClassName, time) {
@@ -118,28 +113,13 @@ window.addEventListener("load", function () {
 	let isAbleToChange = true;
 	const mouseScrollSpeed = 1;
 	const touchScrollSpeed = 1;
-	const saftyOffset = 50; // must greater than scrollSpeed
+	const saftyOffset = 100; // must greater than scrollSpeed
 	const changePageThreshold = 300;
 	const clippedVideos = document.querySelectorAll('.clipped');
 
-	if (arrow) { arrow.addEventListener('click', handleScroll); }
 	if (videoIndicator) { videoIndicator.addEventListener('click', handleJumpTo); }
 	window.addEventListener('wheel', handleScroll, { passive: true });
 	document.body.addEventListener('touchstart', handleScroll, { passive: true });
-
-	function setDirectionIconUse(num) {
-		directionIconUse.setAttributeNS(
-			'http://www.w3.org/1999/xlink',
-			'xlink:href',
-			`#a${num}`);
-	}
-
-	function screwDirectionIcon() {
-		directionIcon.classList.add('p-direction-icon--screw');
-		setTimeout(() => {
-			directionIcon.classList.remove('p-direction-icon--screw');
-		}, 500);
-	}
 
 	function hideAndShowPlayBtn() {
 		if (document.querySelector('.play-btn')) {
@@ -177,14 +157,12 @@ window.addEventListener("load", function () {
 								isAbleToChange = true;
 							}, 1000, hideTracker);
 						}
-						clippedVideos[i - 1].style.clipPath = `circle(${maxViewRaduis}px at center)`;
-						clippedVideos[i - 1].style.webkitClipPath = `circle(${maxViewRaduis}px at center)`;
+						clippedVideos[i - 1].style.clipPath = `circle(${maxViewRaduis}px at 50% 110%)`;
+						clippedVideos[i - 1].style.webkitClipPath = `circle(${maxViewRaduis}px at 50% 110%)`;
 					}
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
-					setDirectionIconUse(Number(curVideoIndex + 1));
-					screwDirectionIcon();
 					resetHomePageOrangeCircle(false);
 					hideAndShowPlayBtn();
 					break;
@@ -201,14 +179,12 @@ window.addEventListener("load", function () {
 								isAbleToChange = true;
 							}, 1000, hideTracker);
 						}
-						clippedVideos[i].style.clipPath = `circle(0px at center)`;
-						clippedVideos[i].style.webkitClipPath = `circle(0px at center)`;
+						clippedVideos[i].style.clipPath = `circle(0px at 50% 110%)`;
+						clippedVideos[i].style.webkitClipPath = `circle(0px at 50% 110%)`;
 					}
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[targetIndex].classList.add('p-video-indicator__index--active');
 					curVideoIndex = Number(targetIndex);
-					screwDirectionIcon();
-					setDirectionIconUse(Number(curVideoIndex + 1));
 					resetHomePageOrangeCircle(false);
 					hideAndShowPlayBtn();
 					break;
@@ -258,12 +234,10 @@ window.addEventListener("load", function () {
 					});
 					videoIndicator.children[curVideoIndex].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[Number(curVideoIndex + 1)].classList.add('p-video-indicator__index--active');
-					clippedVideos[curVideoIndex].style.clipPath = `circle(${maxViewRaduis}px at center)`;
+					clippedVideos[curVideoIndex].style.clipPath = `circle(${maxViewRaduis}px at 50% 110%)`;
 					// -- Safari
-					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(${maxViewRaduis}px at center)`;
+					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(${maxViewRaduis}px at 50% 110%)`;
 					curVideoIndex += 1;
-					screwDirectionIcon();
-					setDirectionIconUse(Number(curVideoIndex + 1));
 					if (option && option.auto) {
 						resetHomePageOrangeCircle(option.auto);
 					} else {
@@ -289,11 +263,9 @@ window.addEventListener("load", function () {
 					});
 					videoIndicator.children[Number(curVideoIndex + 1)].classList.remove('p-video-indicator__index--active');
 					videoIndicator.children[curVideoIndex].classList.add('p-video-indicator__index--active');
-					clippedVideos[curVideoIndex].style.clipPath = `circle(0px at center)`;
+					clippedVideos[curVideoIndex].style.clipPath = `circle(0px at 50% 110%)`;
 					// -- Safari
-					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(0px at center)`;
-					screwDirectionIcon();
-					setDirectionIconUse(Number(curVideoIndex + 1));
+					clippedVideos[curVideoIndex].style.webkitClipPath = `circle(0px at 50% 110%)`;
 					resetHomePageOrangeCircle(false);
 					hideAndShowPlayBtn()
 					scrollIndex = 0;
@@ -373,7 +345,7 @@ window.addEventListener("load", function () {
 function getMaxViewRaduis(saftyOffset = 50) {
 	const vw = getViewWidth();
 	const vh = getViewHeight();
-	return saftyOffset + Math.ceil(Math.sqrt((vw / 2) * (vw / 2) + (vh / 2) * (vh / 2)));
+	return saftyOffset + Math.ceil(Math.sqrt((vw / 2) * (vw / 2) + vh * vh));
 }
 function getViewWidth() {
 	return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);

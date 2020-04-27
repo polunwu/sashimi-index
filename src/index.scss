@@ -19,8 +19,8 @@ button:focus {outline:0;}
 }
 
 .clipped {
-	clip-path: circle(0px at center);
-	-webkit-clip-path: circle(0px at center);
+	clip-path: circle(0px at 50% 110%);
+	-webkit-clip-path: circle(0px at 50% 110%);
 	transition: clip-path 1s ease-in-out;
 	transition: -webkit-clip-path 1s ease-in-out;
 }
@@ -513,7 +513,21 @@ nav .p-collapsed {
 	}
 
 	@media screen and (max-width: 768px) {
-		display: none;
+		left: 19px;
+		span > svg {
+			display: none;
+		}
+		span {
+			height: 11px;
+			width: 11px;
+			border-radius: 100%;
+			background-color: #fff;
+			margin: 11px 0px;
+		}
+		span:nth-of-type(3) {
+			height: 11px;
+	}
+
 	}
 }
 .p-video-indicator--hide {

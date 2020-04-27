@@ -106,13 +106,13 @@ body, h1, h2, h3, h4, h5, p {
 
 .pages-home .play-btn {
   position: absolute;
-  top: 50%;
+  top: 85%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  height: 84px;
-  width: 84px;
+  height: 65px;
+  width: 65px;
   z-index: 998; }
 
 .pages-about .pages-about-wrapper {
