@@ -300,26 +300,26 @@ window.addEventListener("load", function () {
 	// === Auto Loop ===
 	setTimeout(function () {
 		// 第一次加入橘色圓圈動畫
-		document.querySelector(".js-btn-circle").classList.add("animate");
+		// document.querySelector(".js-btn-circle").classList.add("animate");
 		// 隔五秒開始第一次輪播 Interval
 		window.pagesHomeCounter.push(setInterval(function () {
 			handleScroll({ type: 'auto' });
-			document.querySelector(".js-btn-circle").classList.remove("animate")
-			setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
+			// 	document.querySelector(".js-btn-circle").classList.remove("animate")
+			// setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
 		}, 9000))
 		console.log('set:', window.pagesHomeCounter);
 
 	}, 8500)
 	var resetHomePageOrangeCircle = function (customTrigger) {
 		// 重置橘色圓圈
-		if (document.querySelector(".js-btn-circle")) {
-			document.querySelector(".js-btn-circle").classList.remove("animate")
-		}
-		setTimeout(function () {
-			if (document.querySelector(".js-btn-circle")) {
-				document.querySelector(".js-btn-circle").classList.add("animate")
-			}
-		}, 1000)
+		// if (document.querySelector(".js-btn-circle")) {
+		// 	document.querySelector(".js-btn-circle").classList.remove("animate")
+		// }
+		// setTimeout(function () {
+		// 	if (document.querySelector(".js-btn-circle")) {
+		// 		document.querySelector(".js-btn-circle").classList.add("animate")
+		// 	}
+		// }, 1000)
 
 		// 重置 interval
 		if (customTrigger != true) {
@@ -329,10 +329,10 @@ window.addEventListener("load", function () {
 			window.pagesHomeCounter = []
 			window.pagesHomeCounter.push(setInterval(function () {
 				handleScroll({ type: 'auto' });
-				if (document.querySelector(".js-btn-circle")) {
-					document.querySelector(".js-btn-circle").classList.remove("animate")
-				}
-				setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
+				// if (document.querySelector(".js-btn-circle")) {
+				// 	document.querySelector(".js-btn-circle").classList.remove("animate")
+				// }
+				// setTimeout(function () { document.querySelector(".js-btn-circle").classList.add("animate") }, 1000)
 			}, 9000));
 			console.log('set:', window.pagesHomeCounter);
 
