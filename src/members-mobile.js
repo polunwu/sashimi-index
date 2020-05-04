@@ -48,7 +48,7 @@ window.addEventListener("load", function () {
         gap: -230
       },
       900: {
-        perView: 3.5,
+        perView: 3.2,
         gap: -230
       },
       767: {
