@@ -966,21 +966,14 @@ nav .p-collapsed {
 
 /* End of contact page */
 /* members-mobile page */
+html, body {
+  height: 100%; }
+
 .pages-members.pages-members--mobile {
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   background-color: #f96000; }
   .pages-members.pages-members--mobile .members-wrapper {
     overflow: hidden;
-    min-height: 100vh;
     height: 100%;
     width: 100%;
     display: -webkit-box;

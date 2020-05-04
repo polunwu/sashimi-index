@@ -780,15 +780,14 @@ nav .p-collapsed {
 /* End of contact page */
 
 /* members-mobile page */
+html, body { 
+  height: 100%; // fix height:100% but creating scrollbar
+}
 .pages-members.pages-members--mobile {
 	overflow: hidden;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	background-color: #f96000;
 	.members-wrapper {
 		overflow: hidden;
-		min-height: 100vh;
 		height: 100%;
 		width: 100%;
 		display: flex;
