@@ -968,6 +968,15 @@ nav .p-collapsed {
 /* members-mobile page */
 .pages-members.pages-members--mobile {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: #f96000; }
   .pages-members.pages-members--mobile .members-wrapper {
     overflow: hidden;
@@ -976,13 +985,16 @@ nav .p-collapsed {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
   .pages-members.pages-members--mobile .page-members__bottom {
     background-color: #ec5806;
     min-height: 133px;
     height: 133px;
     width: 100%;
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     padding: 0 5px 0 40px;
@@ -1158,5 +1170,39 @@ nav .p-collapsed {
     @media screen and (max-width: 767px) {
       .pages-members.pages-members--mobile .controls__arrow--rigth {
         border-width: 4.45px 0 4.45px 8.8px; } }
+  .pages-members.pages-members--mobile .page-members__slider {
+    position: fixed; }
+    @media screen and (max-width: 900px) {
+      .pages-members.pages-members--mobile .page-members__slider {
+        bottom: 75px; } }
+    @media screen and (max-width: 414px) {
+      .pages-members.pages-members--mobile .page-members__slider {
+        bottom: 90px; } }
+  .pages-members.pages-members--mobile .glide__slide img {
+    width: 100%; }
+  .pages-members.pages-members--mobile .glide__slides {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end; }
+  .pages-members.pages-members--mobile .glide__slide {
+    overflow: visible;
+    -webkit-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: perspective(200px);
+    transform: perspective(200px); }
+  .pages-members.pages-members--mobile .glide__container {
+    border: 1px solid #fff;
+    -webkit-transition: all 800ms ease;
+    -o-transition: all 800ms ease;
+    transition: all 800ms ease;
+    will-change: transform;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+    -webkit-transform: perspective(200px);
+    transform: perspective(200px); }
 
 /* End of members-mobile page */

@@ -782,6 +782,9 @@ nav .p-collapsed {
 /* members-mobile page */
 .pages-members.pages-members--mobile {
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: #f96000;
 	.members-wrapper {
 		overflow: hidden;
@@ -789,13 +792,14 @@ nav .p-collapsed {
 		height: 100%;
 		width: 100%;
 		display: flex;
+		align-items: center;
 	}
 	.page-members__bottom {
 		background-color: #ec5806;
 		min-height: 133px;
 		height: 133px;
 		width: 100%;
-		position: absolute;
+		position: fixed;
 		left: 0;
 		bottom: 0;
 		padding: 0 5px 0 40px;
@@ -973,5 +977,36 @@ nav .p-collapsed {
 			border-width: 4.45px 0 4.45px 8.8px;
 		}
 	}
+	// members-mobile - glide
+	.page-members__slider {
+		position: fixed;
+		@media screen and (max-width: 900px){
+			bottom: 75px;
+		}
+		@media screen and (max-width: 414px){
+			bottom: 90px;
+		}
+	}
+	.glide__slide img {
+		width: 100%;
+	}
+	.glide__slides {
+		transform-style: preserve-3d;
+		align-items: flex-end;
+	}
+	.glide__slide {
+		overflow: visible;
+		transform-origin: 50% 100%;
+		transform: perspective(200px);
+	}
+	.glide__container {
+		border: 1px solid #fff;
+		transition: all 800ms ease;
+		will-change: transform;
+		transform-style: preserve-3d;
+		position: relative;
+		transform: perspective(200px);
+	}
+	// end of members-mobile - glide
 }
 /* End of members-mobile page */

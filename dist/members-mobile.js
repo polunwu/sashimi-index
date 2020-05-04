@@ -35,10 +35,104 @@ window.addEventListener("load", function () {
     }
   });
   // === End of navBar toggle to collapse control
-
   // members-mobile page 動態
-  if (document.body.classList.contains('pages-members')) {
+  const options = {
+    type: 'carousel',
+    startAt: 0,
+    perView: 4.5,
+    focusAt: 'center',
+    gap: -230,
+    breakpoints: {
+      1280: {
+        perView: 5.5,
+        gap: -230
+      },
+      900: {
+        perView: 3.5,
+        gap: -230
+      },
+      767: {
+        perView: 3,
+        gap: -150
+      },
+      414: {
+        perView: 2.1,
+        gap: -120
+      },
+      370: {
+        perView: 1.75,
+        gap: -120
+      }
+    }
+  }
+  if (document.body.classList.contains('pages-members--mobile')) {
+    const glider = new Glide('.glide', options);
+    const tiltableElement = '.glide__container';
+    // glider.mount();
+    glider.mount({
+      CustomFlow: (Glide, Components, Events) => {
+        const Plugin = {
+          tilt(element) {
+            element.querySelector(tiltableElement).style.transform = "perspective(200px) translateZ(0px)";
+            this.tiltPrevElements();  // active 狀態的人物置頂
+            this.tiltNextElements();  // active 以左的人物依序置後、縮小
+            this.popActiveElements(); // active 以右的人物依序置後、縮小
+          },
+          popActiveElements() {
+            const activeSlide = Components.Html.slides[Glide.index];
+            activeSlide.style.zIndex = '100';
+          },
+          tiltPrevElements() {
+            const activeSlide = Components.Html.slides[Glide.index];
 
+            const previousElements = [];
+            const getPrevious = (element) => {
+              const e = element.previousElementSibling;
+              if (e) {
+                previousElements.push(e.querySelector(tiltableElement));
+                getPrevious(e);
+              }
+            };
+            getPrevious(activeSlide);
+
+            previousElements.forEach((item, index) => {
+              // 變形原點為中軸偏下 x:50% y:90%
+              // perspective 調整縮放的透視景深程度，為第一個縮放人物的大小依據
+              // translateZ 值為基數（25px）乘以 (index + 1 ) 的平方，使第二個以後的縮放人物指數縮小
+              item.style.transformOrigin = "50% 90%";
+              item.style.transform = `perspective(180px) translateZ(-${25 * (index + 1) * (index + 1)}px)`;
+              item.parentElement.style.zIndex = `${-1 * (index + 1)}`;
+            })
+
+          },
+          tiltNextElements() {
+            const activeSlide = Components.Html.slides[Glide.index];
+
+            const nextElements = [];
+            const getNext = (element) => {
+              const e = element.nextElementSibling;
+              if (e) {
+                nextElements.push(e.querySelector(tiltableElement));
+                getNext(e);
+              }
+            };
+            getNext(activeSlide);
+
+            nextElements.forEach((item, index) => {
+              item.style.transformOrigin = "50% 90%";
+              item.style.transform = `perspective(180px) translateZ(-${25 * (index + 1) * (index + 1)}px)`;
+              item.parentElement.style.zIndex = `${-1 * (index + 1)}`;
+            })
+          }
+        }
+
+        Events.on(['mount.after', 'run'], () => {
+          Plugin.tilt(Components.Html.slides[Glide.index]);
+        });
+
+        return Plugin;
+      }
+    });
   }
   function animateCSS(node, animationName, callback) {
     node.classList.add('animated', animationName)
