@@ -846,7 +846,7 @@ nav .p-collapsed {
 		padding: 0;
 		padding-right: 16px;
 		line-height:90px;
-		transform: translateY(-990px);
+		transform: translateY(-990px); // init state
 	}
 	.counter__number {
 		font-weight: 900;
@@ -867,7 +867,18 @@ nav .p-collapsed {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
+		transform: translateY(-450px); // init state
 	}
+	// flip effect
+	.counter__list,
+	.members__list {
+		will-change: transform;
+		transition: all 1600ms cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	.members__list {
+		transition: all 1200ms cubic-bezier(0.65, 0, 0.35, 1) 400ms;
+	}
+	// end of flip effect
 	.members__list-wrapper{
 		height: 90px;
 		overflow: hidden;
@@ -979,6 +990,8 @@ nav .p-collapsed {
 	}
 	// members-mobile - glide
 	.page-members__slider {
+		opacity: 0;
+		transition: opacity 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
 		position: fixed;
 		@media screen and (max-width: 900px){
 			bottom: 75px;
@@ -987,6 +1000,64 @@ nav .p-collapsed {
 			bottom: 90px;
 		}
 	}
+	@keyframes opacity-easeInElastic {
+	0% {
+		opacity: 1;
+	}
+
+	4% {
+		opacity: 1;
+	}
+
+	8% {
+		opacity: 1;
+	}
+
+	14% {
+		opacity: 1;
+	}
+
+	18% {
+		opacity: 1;
+	}
+
+	26% {
+		opacity: 1.01;
+	}
+
+	28% {
+		opacity: 1.01;
+	}
+
+	40% {
+		opacity: 0.98;
+	}
+
+	42% {
+		opacity: 0.98;
+	}
+
+	56% {
+		opacity: 1.05;
+	}
+
+	58% {
+		opacity: 1.04;
+	}
+
+	72% {
+		opacity: 0.87;
+	}
+
+	86% {
+		opacity: 1.37;
+	}
+
+	100% {
+		opacity: 0;
+	}
+
+}
 	.glide__slide img {
 		width: 100%;
 	}
@@ -1001,7 +1072,7 @@ nav .p-collapsed {
 	}
 	.glide__container {
 		border: 1px solid #fff;
-		transition: all 800ms ease;
+		transition: transform 800ms ease;
 		will-change: transform;
 		transform-style: preserve-3d;
 		position: relative;

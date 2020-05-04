@@ -68,15 +68,17 @@ window.addEventListener("load", function () {
   if (document.body.classList.contains('pages-members--mobile')) {
     const glider = new Glide('.glide', options);
     const tiltableElement = '.glide__container';
-    // glider.mount();
+    const flipableElement = ['.counter__list', '.members__list'];
+
+    glider.on('mount.after', showSlider);
     glider.mount({
       CustomFlow: (Glide, Components, Events) => {
         const Plugin = {
           tilt(element) {
             element.querySelector(tiltableElement).style.transform = "perspective(200px) translateZ(0px)";
-            this.tiltPrevElements();  // active 狀態的人物置頂
-            this.tiltNextElements();  // active 以左的人物依序置後、縮小
-            this.popActiveElements(); // active 以右的人物依序置後、縮小
+            this.tiltPrevElements();  // active 以左的人物依序置後、縮小
+            this.tiltNextElements();  // active 以右的人物依序置後、縮小
+            this.popActiveElements(); // active 狀態的人物置頂
           },
           popActiveElements() {
             const activeSlide = Components.Html.slides[Glide.index];
@@ -123,10 +125,17 @@ window.addEventListener("load", function () {
               item.style.transform = `perspective(180px) translateZ(-${25 * (index + 1) * (index + 1)}px)`;
               item.parentElement.style.zIndex = `${-1 * (index + 1)}`;
             })
+          },
+          flipText(activeIndex) {
+            flipableElement.forEach(item => {
+              const element = document.querySelector(item);
+              const size = element.children[0].clientHeight;
+              element.style.transform = `translateY(-${size * activeIndex}px)`;
+            });
           }
         }
-
         Events.on(['mount.after', 'run'], () => {
+          Plugin.flipText(Glide.index);
           Plugin.tilt(Components.Html.slides[Glide.index]);
         });
 
@@ -134,6 +143,12 @@ window.addEventListener("load", function () {
       }
     });
   }
+  function showSlider() {
+    document.querySelectorAll('.page-members__slider').forEach(item => {
+      item.style.opacity = 1;
+    })
+  }
+
   function animateCSS(node, animationName, callback) {
     node.classList.add('animated', animationName)
 
