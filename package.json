@@ -85,5 +85,8 @@
   },
   "browserslist": [
     "last 5 version"
-  ]
+  ],
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
