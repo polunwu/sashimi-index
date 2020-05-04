@@ -1000,64 +1000,6 @@ nav .p-collapsed {
 			bottom: 90px;
 		}
 	}
-	@keyframes opacity-easeInElastic {
-	0% {
-		opacity: 1;
-	}
-
-	4% {
-		opacity: 1;
-	}
-
-	8% {
-		opacity: 1;
-	}
-
-	14% {
-		opacity: 1;
-	}
-
-	18% {
-		opacity: 1;
-	}
-
-	26% {
-		opacity: 1.01;
-	}
-
-	28% {
-		opacity: 1.01;
-	}
-
-	40% {
-		opacity: 0.98;
-	}
-
-	42% {
-		opacity: 0.98;
-	}
-
-	56% {
-		opacity: 1.05;
-	}
-
-	58% {
-		opacity: 1.04;
-	}
-
-	72% {
-		opacity: 0.87;
-	}
-
-	86% {
-		opacity: 1.37;
-	}
-
-	100% {
-		opacity: 0;
-	}
-
-}
 	.glide__slide img {
 		width: 100%;
 	}
@@ -1071,7 +1013,7 @@ nav .p-collapsed {
 		transform: perspective(200px);
 	}
 	.glide__container {
-		border: 1px solid #fff;
+		// border: 1px solid #fff;
 		transition: transform 800ms ease;
 		will-change: transform;
 		transform-style: preserve-3d;

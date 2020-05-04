@@ -1195,66 +1195,6 @@ nav .p-collapsed {
     @media screen and (max-width: 414px) {
       .pages-members.pages-members--mobile .page-members__slider {
         bottom: 90px; } }
-
-@-webkit-keyframes opacity-easeInElastic {
-  0% {
-    opacity: 1; }
-  4% {
-    opacity: 1; }
-  8% {
-    opacity: 1; }
-  14% {
-    opacity: 1; }
-  18% {
-    opacity: 1; }
-  26% {
-    opacity: 1.01; }
-  28% {
-    opacity: 1.01; }
-  40% {
-    opacity: 0.98; }
-  42% {
-    opacity: 0.98; }
-  56% {
-    opacity: 1.05; }
-  58% {
-    opacity: 1.04; }
-  72% {
-    opacity: 0.87; }
-  86% {
-    opacity: 1.37; }
-  100% {
-    opacity: 0; } }
-
-@keyframes opacity-easeInElastic {
-  0% {
-    opacity: 1; }
-  4% {
-    opacity: 1; }
-  8% {
-    opacity: 1; }
-  14% {
-    opacity: 1; }
-  18% {
-    opacity: 1; }
-  26% {
-    opacity: 1.01; }
-  28% {
-    opacity: 1.01; }
-  40% {
-    opacity: 0.98; }
-  42% {
-    opacity: 0.98; }
-  56% {
-    opacity: 1.05; }
-  58% {
-    opacity: 1.04; }
-  72% {
-    opacity: 0.87; }
-  86% {
-    opacity: 1.37; }
-  100% {
-    opacity: 0; } }
   .pages-members.pages-members--mobile .glide__slide img {
     width: 100%; }
   .pages-members.pages-members--mobile .glide__slides {
@@ -1271,7 +1211,6 @@ nav .p-collapsed {
     -webkit-transform: perspective(200px);
     transform: perspective(200px); }
   .pages-members.pages-members--mobile .glide__container {
-    border: 1px solid #fff;
     -webkit-transition: -webkit-transform 800ms ease;
     transition: -webkit-transform 800ms ease;
     -o-transition: transform 800ms ease;
