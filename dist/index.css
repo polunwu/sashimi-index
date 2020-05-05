@@ -1193,7 +1193,7 @@ html, body {
         bottom: calc(-130px + 30%); } }
     @media screen and (max-width: 375px) and (max-height: 667px) {
       .pages-members.pages-members--mobile .page-members__slider {
-        bottom: 0px; } }
+        bottom: 10px; } }
     @media screen and (max-width: 320px) {
       .pages-members.pages-members--mobile .page-members__slider {
         bottom: -10px; } }
