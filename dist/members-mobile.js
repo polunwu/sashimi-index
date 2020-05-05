@@ -142,8 +142,9 @@ window.addEventListener("load", function () {
           },
           updateBgImg() {
             movableImages.forEach(img => {
+              let randomRotate = Math.floor(Math.random() * 90);
               img.style.transition = '800ms ease';
-              img.style.transform = `translateX(${bgPosition}px)`;
+              img.style.transform = `translateX(${bgPosition}px) rotate(${randomRotate}deg)`;
             });
           },
           moveBgImg() {
