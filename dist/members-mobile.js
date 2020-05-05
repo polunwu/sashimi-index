@@ -73,6 +73,9 @@ window.addEventListener("load", function () {
     const glider = new Glide('.glide', options);
     const tiltableElement = '.glide__container';
     const flipableElement = ['.counter__list', '.members__list'];
+    let bgPosition = 0;
+    const MOVE_INDEX = 10;
+    const movableImages = document.querySelectorAll('.page-members__bg--movable img');
 
     glider.on('mount.after', showSlider);
     glider.mount({
@@ -136,23 +139,44 @@ window.addEventListener("load", function () {
               const size = element.children[0].clientHeight;
               element.style.transform = `translateY(-${size * activeIndex}px)`;
             });
+          },
+          updateBgImg() {
+            movableImages.forEach(img => {
+              img.style.transition = '800ms ease';
+              img.style.transform = `translateX(${bgPosition}px)`;
+            });
+          },
+          moveBgImg() {
+            let dir = Components.Run.move.direction;
+            if (dir && dir == '>') bgPosition += MOVE_INDEX;
+            if (dir && dir == '<') bgPosition -= MOVE_INDEX;
+            this.updateBgImg();
+          },
+          resetBgImg() {
+            bgPosition = 0;
+            this.updateBgImg();
           }
         }
         Events.on(['mount.after', 'run'], () => {
           Plugin.flipText(Glide.index);
           Plugin.tilt(Components.Html.slides[Glide.index]);
         });
-
+        Events.on('run.before', () => {
+          Plugin.moveBgImg();
+        })
+        Events.on('translate.jump', () => {
+          Plugin.resetBgImg();
+        });
         return Plugin;
       }
     });
   }
+
   function showSlider() {
     document.querySelectorAll('.page-members__slider').forEach(item => {
       item.style.opacity = 1;
     })
   }
-
   function animateCSS(node, animationName, callback) {
     node.classList.add('animated', animationName)
 
