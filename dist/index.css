@@ -1191,6 +1191,9 @@ html, body {
     @media screen and (max-width: 375px) {
       .pages-members.pages-members--mobile .page-members__slider {
         bottom: calc(-130px + 30%); } }
+    @media screen and (max-width: 375px) and (max-height: 667px) {
+      .pages-members.pages-members--mobile .page-members__slider {
+        bottom: 0px; } }
     @media screen and (max-width: 320px) {
       .pages-members.pages-members--mobile .page-members__slider {
         bottom: -10px; } }
