@@ -998,8 +998,13 @@ html, body {
 		@media screen and (max-width: 414px){
 			bottom: 80px;
 		}
-		@media screen and (max-width: 375px){
+		@media screen and (max-width: 375px){ // iPhone X
 			bottom: calc(-130px + 30%);
+		}
+		@media only screen // iPhone 6/7/8
+    and (device-width : 375px) 
+    and (device-height : 667px) { 
+			bottom: 70px;
 		}
 		@media screen and (max-width: 320px){
 			bottom: -10px;
