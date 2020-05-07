@@ -42,21 +42,15 @@ window.addEventListener("load", function () {
     const aboutSvg = document.querySelector('.aboutus-svg');
     animateCSS(aboutSvg, 'p-fadeInLeft');
 
-    let textOptions = {
-      delay: 400,
-      duration: 1200,
-      distance: '70px'
-    }
-    let photoOptions = {
-      delay: 700,
-      duration: 1200,
-      distance: '70px'
-    }
-    document.querySelectorAll('.pages-about__photo').forEach(element => {
-      ScrollReveal().reveal(element, photoOptions);
-    })
-    document.querySelectorAll('.pages-about__text').forEach(element => {
-      ScrollReveal().reveal(element, textOptions);
+    ScrollOut({
+      onShown: function (el) {
+        el.style.animationDelay = el.classList.contains('pages-about__photo') ? '700ms' : '400ms';
+        el.classList.add('animated', 'p-revealInUp');
+      },
+      onHidden: function (el) {
+        // hide the element initially
+        el.style.opacity = 0;
+      }
     });
   }
   function animateCSS(node, animationName, callback) {
