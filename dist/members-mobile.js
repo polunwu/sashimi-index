@@ -162,9 +162,9 @@ window.addEventListener("load", function () {
             let dir = Components.Run.move.direction;
             if (dir && dir == '>') bgPosition += MOVE_INDEX;
             if (dir && dir == '<') bgPosition -= MOVE_INDEX;
-            catX -= 10;
+            catX -= 5;
             catY -= 1;
-            catScale += 0.08;
+            catScale += 0.1;
             this.updateBgImg();
           },
           resetBgImg() {
