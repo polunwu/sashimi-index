@@ -40,24 +40,14 @@ window.addEventListener("load", function () {
   // about page 動態
   if (document.body.classList.contains('pages-about')) {
     const aboutSvg = document.querySelector('.aboutus-svg');
-    // animateCSS(aboutSvg, 'fast');
     animateCSS(aboutSvg, 'p-fadeInLeft');
 
-    let textOptions = {
-      delay: 400,
-      duration: 1200,
-      distance: '70px'
-    }
-    let photoOptions = {
-      delay: 700,
-      duration: 1200,
-      distance: '70px'
-    }
-    document.querySelectorAll('.pages-about__photo').forEach(element => {
-      ScrollReveal().reveal(element, photoOptions);
-    })
-    document.querySelectorAll('.pages-about__text').forEach(element => {
-      ScrollReveal().reveal(element, textOptions);
+    ScrollOut({
+      onShown(el) {
+        el.style.animationDelay = el.classList.contains('pages-about__photo') ? '700ms' : '400ms';
+        el.style.animationDuration = '1200ms';
+        el.classList.add('animated', 'p-revealInUp');
+      }
     });
   }
   function animateCSS(node, animationName, callback) {

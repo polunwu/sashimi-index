@@ -552,7 +552,7 @@ nav .p-collapsed {
 }
 /* End of play Button */
 
-/* members page */
+/* Self keyframes */
 @-webkit-keyframes p-bounceInUp {
   from,
   60%,
@@ -712,21 +712,31 @@ nav .p-collapsed {
   -webkit-animation-name: p-fadeInUp;
   animation-name: p-fadeInUp;
 }
-.pages-members__group h3:after {
-	display:block;
-	content: '';
-
-	padding-bottom: 10px;
-	border-bottom: solid 1px #fff;  
+@keyframes p-revealInUp {
+  from,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
+    animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
+	}
 	
-  transform: scaleX(0);  
-	transition: transform 800ms 500ms ease-in-out;
-	transform-origin:  0% 50%;
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(70px);
+    transform: translateY(70px);
+  }
+  to {
+		opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
 }
-.pages-members__group h3.p-showBorder:after {
-	transform: scaleX(1);
+
+.p-revealInUp {
+  -webkit-animation-name: p-revealInUp;
+  animation-name: p-revealInUp;
 }
-/* End of members page */
+/* End of self keyframes */
+
 /* about us page */
 .pages-about .pages-about__photos {
 	overflow-y: hidden;
