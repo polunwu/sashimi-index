@@ -60,8 +60,8 @@ window.addEventListener("load", function () {
         gap: -120
       },
       375: {
-        perView: 1.75,
-        gap: -150
+        perView: 1.4,
+        gap: -170
       },
       320: {
         perView: 1.75,
@@ -111,7 +111,7 @@ window.addEventListener("load", function () {
               // perspective 調整縮放的透視景深程度，為第一個縮放人物的大小依據
               // translateZ 值為基數（25px）乘以 (index + 1 ) 的平方，使第二個以後的縮放人物指數縮小
               item.style.transformOrigin = "50% 90%";
-              item.style.transform = `perspective(180px) translateZ(-${25 * (index + 1) * (index + 1)}px)`;
+              item.style.transform = `perspective(180px) translateZ(-${60 * (index + 1) * (index + 1)}px)`;
               item.parentElement.style.zIndex = `${-1 * (index + 1)}`;
             })
 
@@ -131,7 +131,7 @@ window.addEventListener("load", function () {
 
             nextElements.forEach((item, index) => {
               item.style.transformOrigin = "50% 90%";
-              item.style.transform = `perspective(180px) translateZ(-${25 * (index + 1) * (index + 1)}px)`;
+              item.style.transform = `perspective(180px) translateZ(-${60 * (index + 1) * (index + 1)}px)`;
               item.parentElement.style.zIndex = `${-1 * (index + 1)}`;
             })
           },
