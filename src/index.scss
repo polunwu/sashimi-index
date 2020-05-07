@@ -728,6 +728,9 @@ nav .p-collapsed {
 }
 /* End of members page */
 /* about us page */
+.pages-about .pages-about__photos {
+	overflow-y: hidden;
+}
 @-webkit-keyframes p-fadeInLeft {
   from {
     opacity: 0;
