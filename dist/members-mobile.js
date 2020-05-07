@@ -70,6 +70,8 @@ window.addEventListener("load", function () {
     }
   }
   if (document.body.classList.contains('pages-members--mobile')) {
+    document.querySelector('html').style.height = '100%'; // fix body{height:100%} but no background & creating scrollbar
+
     const glider = new Glide('.glide', options);
     const tiltableElement = '.glide__container';
     const flipableElement = ['.counter__list', '.members__list'];
@@ -77,7 +79,7 @@ window.addEventListener("load", function () {
     const MOVE_INDEX = 10;
     const movableImages = document.querySelectorAll('.page-members__bg--movable img');
 
-    glider.on('mount.after', showSlider);
+    glider.on('mount.after', showSliderAndBg);
     glider.mount({
       CustomFlow: (Glide, Components, Events) => {
         const Plugin = {
@@ -173,10 +175,9 @@ window.addEventListener("load", function () {
     });
   }
 
-  function showSlider() {
-    document.querySelectorAll('.page-members__slider').forEach(item => {
-      item.style.opacity = 1;
-    })
+  function showSliderAndBg() {
+    document.querySelector('.page-members__slider').style.opacity = 1;
+    document.querySelector('.page-members__bg-wrapper').style.transform = 'translateY(0px) scale(1)';
   }
   function animateCSS(node, animationName, callback) {
     node.classList.add('animated', animationName)
