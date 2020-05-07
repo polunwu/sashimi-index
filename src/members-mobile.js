@@ -56,8 +56,8 @@ window.addEventListener("load", function () {
         gap: -150
       },
       414: {
-        perView: 2.1,
-        gap: -120
+        perView: 1.7,
+        gap: -170
       },
       375: {
         perView: 1.4,
@@ -76,6 +76,9 @@ window.addEventListener("load", function () {
     const tiltableElement = '.glide__container';
     const flipableElement = ['.counter__list', '.members__list'];
     let bgPosition = 0;
+    let catX = 0;
+    let catY = 0;
+    let catScale = 0;
     const MOVE_INDEX = 10;
     const movableImages = document.querySelectorAll('.page-members__bg--movable img');
 
@@ -111,7 +114,7 @@ window.addEventListener("load", function () {
               // perspective 調整縮放的透視景深程度，為第一個縮放人物的大小依據
               // translateZ 值為基數（25px）乘以 (index + 1 ) 的平方，使第二個以後的縮放人物指數縮小
               item.style.transformOrigin = "50% 90%";
-              item.style.transform = `perspective(180px) translateZ(-${60 * (index + 1) * (index + 1)}px)`;
+              item.style.transform = `perspective(180px) translateZ(-${60 * (index + 1)}px)`;
               item.parentElement.style.zIndex = `${-1 * (index + 1)}`;
             })
 
@@ -131,7 +134,7 @@ window.addEventListener("load", function () {
 
             nextElements.forEach((item, index) => {
               item.style.transformOrigin = "50% 90%";
-              item.style.transform = `perspective(180px) translateZ(-${60 * (index + 1) * (index + 1)}px)`;
+              item.style.transform = `perspective(180px) translateZ(-${60 * (index + 1)}px)`;
               item.parentElement.style.zIndex = `${-1 * (index + 1)}`;
             })
           },
@@ -144,19 +147,31 @@ window.addEventListener("load", function () {
           },
           updateBgImg() {
             movableImages.forEach(img => {
-              let randomRotate = Math.floor(Math.random() * 90);
               img.style.transition = '800ms ease';
-              img.style.transform = `translateX(${bgPosition}px) rotate(${randomRotate}deg)`;
+              if (img.classList.contains('bg__cat')) {
+                let randomRotate = Math.floor(Math.random() * 15);
+                img.style.transform = `translate(${catX}px, ${catY}px) rotate(${randomRotate}deg) scale(${catScale})`;
+              } else {
+                let randomRotate = Math.floor(Math.random() * 90);
+                img.style.transform = `translateX(${bgPosition}px) rotate(${randomRotate}deg)`;
+              }
+
             });
           },
           moveBgImg() {
             let dir = Components.Run.move.direction;
             if (dir && dir == '>') bgPosition += MOVE_INDEX;
             if (dir && dir == '<') bgPosition -= MOVE_INDEX;
+            catX -= 10;
+            catY -= 1;
+            catScale += 0.08;
             this.updateBgImg();
           },
           resetBgImg() {
             bgPosition = 0;
+            catX = 0;
+            catY = 0;
+            catScale = 0;
             this.updateBgImg();
           }
         }
