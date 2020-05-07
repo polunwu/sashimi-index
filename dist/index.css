@@ -903,38 +903,6 @@ nav .p-collapsed {
   -webkit-animation-name: p-fadeInUp;
   animation-name: p-fadeInUp; }
 
-@-webkit-keyframes p-revealInUp {
-  from,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
-    animation-timing-function: cubic-bezier(0.5, 0, 0, 1); }
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(70px);
-    transform: translateY(70px); }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px); } }
-
-@keyframes p-revealInUp {
-  from,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
-    animation-timing-function: cubic-bezier(0.5, 0, 0, 1); }
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(70px);
-    transform: translateY(70px); }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px); } }
-
-.p-revealInUp {
-  -webkit-animation-name: p-revealInUp;
-  animation-name: p-revealInUp; }
-
 /* End of self keyframes */
 /* about us page */
 .pages-about .pages-about__photos {

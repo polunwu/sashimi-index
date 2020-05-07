@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
   if (!document.body.classList.contains('pages-home')) {
     const brand = document.getElementById('brand');
     document.addEventListener('scroll', e => {
-      if (document.documentElement.scrollTop > 60) {
+      if (document.documentElement.scrollTop > 60 || document.body.scrollTop > 60) { // document.body.scrollTop for Safari mobile
         brand.style.opacity = 0;
         showBrand = false;
       } else {
@@ -42,12 +42,21 @@ window.addEventListener("load", function () {
     const aboutSvg = document.querySelector('.aboutus-svg');
     animateCSS(aboutSvg, 'p-fadeInLeft');
 
-    ScrollOut({
-      onShown(el) {
-        el.style.animationDelay = el.classList.contains('pages-about__photo') ? '700ms' : '400ms';
-        el.style.animationDuration = '1200ms';
-        el.classList.add('animated', 'p-revealInUp');
-      }
+    let textOptions = {
+      delay: 400,
+      duration: 1200,
+      distance: '70px'
+    }
+    let photoOptions = {
+      delay: 700,
+      duration: 1200,
+      distance: '70px'
+    }
+    document.querySelectorAll('.pages-about__photo').forEach(element => {
+      ScrollReveal().reveal(element, photoOptions);
+    })
+    document.querySelectorAll('.pages-about__text').forEach(element => {
+      ScrollReveal().reveal(element, textOptions);
     });
   }
   function animateCSS(node, animationName, callback) {

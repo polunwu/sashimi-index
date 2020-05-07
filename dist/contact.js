@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
   if (!document.body.classList.contains('pages-home')) {
     const brand = document.getElementById('brand');
     document.addEventListener('scroll', e => {
-      if (document.documentElement.scrollTop > 60) {
+      if (document.documentElement.scrollTop > 60 || document.body.scrollTop > 60) { // document.body.scrollTop for Safari mobile
         brand.style.opacity = 0;
         showBrand = false;
       } else {
