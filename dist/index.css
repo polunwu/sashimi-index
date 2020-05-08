@@ -1051,9 +1051,9 @@ nav .p-collapsed {
     padding: 0;
     padding-right: 16px;
     line-height: 90px;
-    -webkit-transform: translateY(-990px);
-    -ms-transform: translateY(-990px);
-    transform: translateY(-990px); }
+    -webkit-transform: translateY(-630px);
+    -ms-transform: translateY(-630px);
+    transform: translateY(-630px); }
   .pages-members.pages-members--mobile .counter__number {
     font-weight: 900;
     font-size: 112px;
@@ -1073,38 +1073,54 @@ nav .p-collapsed {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%; } }
-  .pages-members.pages-members--mobile .members__list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    -webkit-transform: translateY(-450px);
-    -ms-transform: translateY(-450px);
-    transform: translateY(-450px); }
   .pages-members.pages-members--mobile .counter__list,
-  .pages-members.pages-members--mobile .members__list {
-    will-change: transform;
+  .pages-members.pages-members--mobile .members__title-list,
+  .pages-members.pages-members--mobile .members__details-list {
+    will-change: transform; }
+  .pages-members.pages-members--mobile .counter__list {
     -webkit-transition: all 1600ms cubic-bezier(0.65, 0, 0.35, 1);
     -o-transition: all 1600ms cubic-bezier(0.65, 0, 0.35, 1);
     transition: all 1600ms cubic-bezier(0.65, 0, 0.35, 1); }
-  .pages-members.pages-members--mobile .members__list {
+  .pages-members.pages-members--mobile .members__title-list {
+    -webkit-transform: translateY(-196px);
+    -ms-transform: translateY(-196px);
+    transform: translateY(-196px);
     -webkit-transition: all 1200ms cubic-bezier(0.65, 0, 0.35, 1) 400ms;
     -o-transition: all 1200ms cubic-bezier(0.65, 0, 0.35, 1) 400ms;
     transition: all 1200ms cubic-bezier(0.65, 0, 0.35, 1) 400ms; }
-  .pages-members.pages-members--mobile .members__list-wrapper {
+  .pages-members.pages-members--mobile .members__details-list {
+    -webkit-transform: translateY(-238px);
+    -ms-transform: translateY(-238px);
+    transform: translateY(-238px);
+    -webkit-transition: all 1000ms cubic-bezier(0.65, 0, 0.35, 1) 600ms;
+    -o-transition: all 1000ms cubic-bezier(0.65, 0, 0.35, 1) 600ms;
+    transition: all 1000ms cubic-bezier(0.65, 0, 0.35, 1) 600ms; }
+  .pages-members.pages-members--mobile .members__info-container {
     height: 90px;
+    min-width: 300px;
     overflow: hidden; }
-  .pages-members.pages-members--mobile .members__item {
-    height: 90px;
-    min-width: 300px; }
-  .pages-members.pages-members--mobile .member__title {
+  .pages-members.pages-members--mobile .members__title-wrapper {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 16px; }
+    margin-bottom: 16px;
+    height: 29px;
+    padding-bottom: 11px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; }
+  .pages-members.pages-members--mobile .members__title-list,
+  .pages-members.pages-members--mobile .members__details-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+  .pages-members.pages-members--mobile .member__title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 28px; }
   .pages-members.pages-members--mobile .member__title h3 {
     color: #fff;
     font-size: 15px;
     font-family: nimbus-sans,sans-serif;
     font-weight: 300;
-    margin-bottom: 11px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1113,7 +1129,17 @@ nav .p-collapsed {
     align-items: baseline; }
   .pages-members.pages-members--mobile .member__title h3 span {
     margin-left: auto; }
-  .pages-members.pages-members--mobile .member__info {
+  .pages-members.pages-members--mobile .members__details-wrapper {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    letter-spacing: -1.5px;
+    font-family: nimbus-sans,sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    height: 34px;
+    overflow: hidden; }
+  .pages-members.pages-members--mobile .member__details {
     color: #fff;
     display: -webkit-box;
     display: -ms-flexbox;

@@ -70,11 +70,12 @@ window.addEventListener("load", function () {
     }
   }
   if (document.body.classList.contains('pages-members--mobile')) {
-    document.querySelector('html').style.height = '100%'; // fix body{height:100%} but no background & creating scrollbar
+    initHtml();
+    // initFlipPosition();
 
     const glider = new Glide('.glide', options);
     const tiltableElement = '.glide__container';
-    const flipableElement = ['.counter__list', '.members__list'];
+    const flipableElement = ['.counter__list', '.members__title-list', '.members__details-list'];
     let bgPosition = 0;
     let catX = 0;
     let catY = 0;
@@ -189,7 +190,18 @@ window.addEventListener("load", function () {
       }
     });
   }
-
+  function initFlipPosition() {
+    const flipableElement = ['.counter__list', '.members__title-list', '.members__details-list'];
+    flipableElement.forEach(item => {
+      const element = document.querySelector(item);
+      const size = element.children[0].clientHeight;
+      const length = element.children.length;
+      element.style.transform = `translateY(${size * (length - 1)}px)`;
+    });
+  }
+  function initHtml() {
+    document.querySelector('html').style.height = '100%'; // fix body{height:100%} but no background & creating scrollbar
+  }
   function showSliderAndBg() {
     document.querySelector('.page-members__slider').style.opacity = 1;
     document.querySelector('.page-members__bg-wrapper').style.transform = 'translateY(0px) scale(1)';
