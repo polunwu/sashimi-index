@@ -190,15 +190,6 @@ window.addEventListener("load", function () {
       }
     });
   }
-  function initFlipPosition() {
-    const flipableElement = ['.counter__list', '.members__title-list', '.members__details-list'];
-    flipableElement.forEach(item => {
-      const element = document.querySelector(item);
-      const size = element.children[0].clientHeight;
-      const length = element.children.length;
-      element.style.transform = `translateY(${size * (length - 1)}px)`;
-    });
-  }
   function initHtml() {
     document.querySelector('html').style.height = '100%'; // fix body{height:100%} but no background & creating scrollbar
   }
