@@ -974,10 +974,117 @@ nav .p-collapsed {
 .pages-contact .pages-contact__mapLink {
   display: block;
   height: 100%;
-  overflow: hidden;
   background: url(./media/images/map.png) center center no-repeat;
   background-size: cover;
-  cursor: pointer; }
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.pages-contact .map__pin {
+  width: 350px;
+  display: block;
+  margin: 0 auto;
+  -webkit-transform: translateY(-45px);
+  -ms-transform: translateY(-45px);
+  transform: translateY(-45px);
+  padding: 50px;
+  overflow: visible; }
+  @media screen and (max-width: 414px) {
+    .pages-contact .map__pin {
+      width: 300px; } }
+
+.pages-contact .map__target--bounce {
+  -webkit-transform-origin: 136.19px 138.59px;
+  -ms-transform-origin: 136.19px 138.59px;
+  transform-origin: 136.19px 138.59px;
+  -webkit-animation: target-bounce 1s infinite;
+  animation: target-bounce 1s infinite; }
+
+.pages-contact .map__label--bounce {
+  -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  -webkit-animation: label-bounce 1s infinite;
+  animation: label-bounce 1s infinite; }
+
+.pages-contact .map__circle1--bounce {
+  -webkit-transform-origin: 136.19px 140.94px;
+  -ms-transform-origin: 136.19px 140.94px;
+  transform-origin: 136.19px 140.94px;
+  -webkit-animation: circle-bounce 2s infinite 500ms;
+  animation: circle-bounce 2s infinite 500ms; }
+
+.pages-contact .map__circle2--bounce {
+  -webkit-transform-origin: 136.19px 140.94px;
+  -ms-transform-origin: 136.19px 140.94px;
+  transform-origin: 136.19px 140.94px;
+  -webkit-animation: circle-bounce 2s infinite 900ms;
+  animation: circle-bounce 2s infinite 900ms; }
+
+@-webkit-keyframes target-bounce {
+  0% {
+    -webkit-transform: translateY(0px) scale(0.95);
+    transform: translateY(0px) scale(0.95); }
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px); }
+  100% {
+    -webkit-transform: translateY(0px) scale(0.95);
+    transform: translateY(0px) scale(0.95); } }
+
+@keyframes target-bounce {
+  0% {
+    -webkit-transform: translateY(0px) scale(0.95);
+    transform: translateY(0px) scale(0.95); }
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px); }
+  100% {
+    -webkit-transform: translateY(0px) scale(0.95);
+    transform: translateY(0px) scale(0.95); } }
+
+@-webkit-keyframes label-bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
+  50% {
+    -webkit-transform: translateY(-25px);
+    transform: translateY(-25px); }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); } }
+
+@keyframes label-bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
+  50% {
+    -webkit-transform: translateY(-25px);
+    transform: translateY(-25px); }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); } }
+
+@-webkit-keyframes circle-bounce {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  to {
+    -webkit-transform: scale(6);
+    transform: scale(6);
+    opacity: 0; } }
+
+@keyframes circle-bounce {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  to {
+    -webkit-transform: scale(6);
+    transform: scale(6);
+    opacity: 0; } }
 
 /* End of contact page */
 /* members-mobile page */

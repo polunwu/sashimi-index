@@ -767,10 +767,69 @@ nav .p-collapsed {
 	.pages-contact__mapLink {
 		display: block;
 		height: 100%;
-		overflow: hidden;
 		background: url(./media/images/map.png) center center no-repeat;
 		background-size: cover;
 		cursor: pointer;
+		display: flex;
+		justify-content: center;
+	}
+	.map__pin{
+		width: 350px;
+		display: block;
+		margin: 0 auto;
+		transform: translateY(-45px);
+		padding: 50px;
+		overflow: visible;
+		@media screen and (max-width: 414px) {
+			width: 300px;
+		}
+	}
+	.map__target--bounce {
+		transform-origin: 136.19px 138.59px;
+		animation: target-bounce 1s infinite;
+	}
+	.map__label--bounce{
+		animation-timing-function: cubic-bezier(1,0,0,1);
+		animation: label-bounce 1s infinite;
+	}
+	.map__circle1--bounce {
+		transform-origin: 136.19px 140.94px;
+		animation: circle-bounce 2s infinite 500ms;
+	}
+	.map__circle2--bounce {
+		transform-origin: 136.19px 140.94px;
+		animation: circle-bounce 2s infinite 900ms;
+	}
+	@keyframes target-bounce {
+		0% {
+			transform: translateY(0px) scale(0.95);
+		}
+		50% {
+			transform: translateY(-2px);
+		}
+		100% {
+			transform: translateY(0px) scale(0.95);
+		}
+	}
+	@keyframes label-bounce {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-25px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+	@keyframes circle-bounce {
+		from {
+			transform: scale(0);
+		}
+		to {
+			transform: scale(6);
+			opacity: 0;	
+		}
 	}
 }
 /* End of contact page */
