@@ -997,6 +997,7 @@ nav .p-collapsed {
 	.member__works-number{
 		font-weight: 300;
 		margin-left: auto;
+		margin-right: 1.5px;
 	}
 	.page-members__controls{
 		margin: 0;
@@ -1077,7 +1078,7 @@ nav .p-collapsed {
 		}
 		@media screen // iPhone 6/7/8 Plus
     and (max-width: 414px) 
-    and (max-height : 735px) { 
+    and (max-height : 650px) { // ** screen height not device height **
 			bottom: -20px;
 		}
 		@media screen and (max-width: 375px){ // iPhone X
@@ -1085,7 +1086,7 @@ nav .p-collapsed {
 		}
 		@media screen // iPhone 6/7/8
     and (max-width: 375px) 
-    and (max-height : 667px) { 
+    and (max-height : 667px) { // ** screen height not device height **
 			bottom: -85px;
 		}
 		@media screen and (max-width: 320px){
@@ -1128,7 +1129,7 @@ nav .p-collapsed {
 		bottom: 80%;
 		left: 50%;
 		width: 58px;
-		animation: click-bounce 2s infinite, click-color 2s infinite;
+		animation: click-bounce 2s infinite;
 		transform: translateX(-50%);
 		@media screen and (max-width: 768px){
 			bottom: 799px;
@@ -1157,17 +1158,6 @@ nav .p-collapsed {
 		}
 		60% {
 			transform: translateX(-50%) translateY(-8px) scale(1.08);
-		}
-	}
-	@keyframes click-color {
-		0%, 20%, 50%, 80%, 100% {
-			fill: #000;
-		}
-		40% {
-			fill: #fff;
-		}
-		60% {
-			fill: #fff;
 		}
 	}
 	.bg__raw {
