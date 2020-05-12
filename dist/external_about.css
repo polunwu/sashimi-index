@@ -1,0 +1,264 @@
+.pages-about {
+  background-color: #000; }
+  .pages-about .pages-about-wrapper {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%; }
+  .pages-about__hero {
+    height: 485px;
+    width: 100%;
+    background-position: center;
+    background-position-y: bottom, -130px;
+    background-repeat: no-repeat; }
+    @media screen and (max-width: 768px) {
+      .pages-about__hero {
+        height: 455px;
+        background-position-y: bottom, -20px; } }
+    @media screen and (max-width: 414px) {
+      .pages-about__hero {
+        height: 574px;
+        background-position-y: bottom, bottom;
+        background-position-x: center, 47%; } }
+  .pages-about__contents {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #000;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 75px; }
+    @media screen and (max-width: 768px) {
+      .pages-about__contents {
+        padding-top: 0px; } }
+  .pages-about__text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    color: white;
+    font-size: 16px;
+    font-family: nimbus-sans, sans-serif;
+    font-weight: 300; }
+    @media screen and (max-width: 768px) {
+      .pages-about__text {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%; } }
+    .pages-about__text--text1 {
+      padding: 30px 72px 45px 88px; }
+      @media screen and (max-width: 768px) {
+        .pages-about__text--text1 {
+          text-align: center;
+          margin: 0px auto;
+          max-width: 350px;
+          padding: 30px 0px 45px 0px; } }
+      @media screen and (max-width: 414px) {
+        .pages-about__text--text1 {
+          padding: 37px 20px 40px 20px; } }
+    .pages-about__text--text2 {
+      padding: 110px 37px 0px 81px;
+      text-align: justify; }
+      @media screen and (max-width: 768px) {
+        .pages-about__text--text2 {
+          padding: 45px 140px 35px 120px; } }
+      @media screen and (max-width: 414px) {
+        .pages-about__text--text2 {
+          padding: 37px 18px; } }
+  .pages-about .aboutus-svg {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 410px; }
+    @media screen and (max-width: 768px) {
+      .pages-about .aboutus-svg {
+        width: 304px;
+        margin-bottom: 30px; } }
+    @media screen and (max-width: 414px) {
+      .pages-about .aboutus-svg {
+        width: 220px;
+        margin-bottom: 30px; } }
+  .pages-about__photo {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    padding-top: calc(56.75% / 2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    @media screen and (max-width: 768px) {
+      .pages-about__photo {
+        padding-top: calc(56.75%);
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%; } }
+    @media screen and (max-width: 768px) {
+      .pages-about__photo--photo-film {
+        margin-left: 120px; } }
+    @media screen and (max-width: 414px) {
+      .pages-about__photo--photo-film {
+        margin-left: 0px; } }
+    .pages-about__photo--photo-members {
+      margin-top: -107px;
+      padding-top: calc(70.5% / 2); }
+      @media screen and (max-width: 768px) {
+        .pages-about__photo--photo-members {
+          padding-top: calc(70.5%);
+          margin-right: 128px;
+          margin-top: 0px;
+          -webkit-box-ordinal-group: 5;
+          -ms-flex-order: 4;
+          order: 4; } }
+      @media screen and (max-width: 414px) {
+        .pages-about__photo--photo-members {
+          margin-right: 0px;
+          padding-top: calc(80%);
+          background-size: 113%;
+          background-position-x: 66%;
+          background-position-y: bottom; } }
+  .pages-about__team {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .pages-about__copyright {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    font-size: 15px;
+    font-family: nimbus-sans, sans-serif;
+    font-weight: 300;
+    color: white;
+    margin-left: 21px;
+    margin-bottom: 28px; }
+    @media screen and (max-width: 768px) {
+      .pages-about__copyright {
+        margin-left: 24px;
+        margin-bottom: 28px; } }
+    @media screen and (max-width: 414px) {
+      .pages-about__copyright {
+        margin-left: 19px;
+        margin-bottom: 16px; } }
+  .pages-about .team-svg {
+    width: 258px;
+    margin: 108px auto 75px auto; }
+    @media screen and (max-width: 768px) {
+      .pages-about .team-svg {
+        width: 186px;
+        margin: 60px auto 50px auto; } }
+    @media screen and (max-width: 414px) {
+      .pages-about .team-svg {
+        width: 135px;
+        margin: 60px auto 52px auto; } }
+  .pages-about .team-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 11px;
+    margin: 0px auto 124px auto;
+    min-width: 1120px; }
+    @media screen and (max-width: 768px) {
+      .pages-about .team-wrapper {
+        min-width: auto;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-left: 21px; } }
+    @media screen and (max-width: 414px) {
+      .pages-about .team-wrapper {
+        padding-left: 0px;
+        margin: 0px 21px 124px 21px; } }
+  .pages-about .team__see-more-members__wrapper {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%; }
+  .pages-about .team__see-more-members {
+    padding: 16px 25px;
+    font-size: 18px;
+    font-family: nimbus-sans, sans-serif;
+    font-weight: 900;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    display: table;
+    cursor: pointer;
+    white-space: nowrap;
+    margin: 30px auto 40px auto; }
+    @media screen and (max-width: 768px) {
+      .pages-about .team__see-more-members {
+        margin-top: 20px; } }
+    @media screen and (max-width: 414px) {
+      .pages-about .team__see-more-members {
+        margin: 0px 0px 40px 0px;
+        width: 100%;
+        text-align: center; } }
+  .pages-about .team__groups {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 882px;
+    flex: 1 0 882px; }
+    @media screen and (max-width: 768px) {
+      .pages-about .team__groups {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+        flex: 1 0 100%; } }
+    @media screen and (max-width: 414px) {
+      .pages-about .team__groups {
+        margin: 0px 40px 0px 0px; } }
+  .pages-about .team__group {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.33%;
+    flex: 0 0 33.33%;
+    margin-bottom: 40px;
+    padding-right: 80px; }
+    @media screen and (max-width: 768px) {
+      .pages-about .team__group {
+        padding-right: 10px; } }
+    @media screen and (max-width: 414px) {
+      .pages-about .team__group {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        padding-right: 0px;
+        max-width: 213px; } }
+    .pages-about .team__group h3 {
+      color: white;
+      font-size: 15px;
+      font-family: nimbus-sans, sans-serif;
+      font-weight: 300;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex; }
+  .pages-about .team__member {
+    font-size: 18px;
+    opacity: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline; }
+    @media screen and (max-width: 768px) {
+      .pages-about .team__member {
+        opacity: 1; } }
+    .pages-about .team__member:hover {
+      opacity: 0.4; }
+    .pages-about .team__member a {
+      color: white;
+      text-decoration: none;
+      letter-spacing: -1.5px;
+      font-family: nimbus-sans, sans-serif;
+      font-weight: 900;
+      text-transform: uppercase; }
+    .pages-about .team__member__count {
+      margin-left: auto;
+      font-size: 15px;
+      font-weight: 300;
+      color: white;
+      opacity: 0.7; }
+      @media screen and (max-width: 768px) {
+        .pages-about .team__member__count {
+          opacity: 1; } }

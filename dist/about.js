@@ -39,19 +39,24 @@ window.addEventListener("load", function () {
 
   // about page 動態
   if (document.body.classList.contains('pages-about')) {
-    const aboutSvg = document.querySelector('.aboutus-svg');
-    animateCSS(aboutSvg, 'p-fadeInLeft');
+    if (document.querySelector('.aboutus-svg')) animateCSS(document.querySelector('.aboutus-svg'), 'p-fadeInLeft');
+    if (document.querySelector('.pages-about__hero > i')) document.querySelector('.pages-about__hero > i').style.transform = 'skewX(0deg) translateX(100%)';
 
+    // init rellax
+    const rellax = new Rellax('.js-rellax');
+    // init scroll-out
     ScrollOut({
-      onShown: function (el) {
-        el.style.animationDelay = el.classList.contains('pages-about__photo') ? '700ms' : '400ms';
-        el.classList.add('animated', 'p-revealInUp');
-      },
-      onHidden: function (el) {
-        // hide the element initially
-        el.style.opacity = 0;
-      }
+      onShown: handleOnShown,
+      onHidden: handleOnHidden
     });
+
+    function handleOnShown(el) {
+      el.style.animationDelay = '700ms';
+      el.classList.add('animated', 'p-revealInUp');
+    }
+    function handleOnHidden(el) {
+      el.style.opacity = 0;
+    }
   }
   function animateCSS(node, animationName, callback) {
     node.classList.add('animated', animationName)

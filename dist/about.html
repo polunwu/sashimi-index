@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./external.css">
+  <link rel="stylesheet" href="./external_about.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 </head>
 
 <body class="pages-about">
@@ -101,39 +103,67 @@
       </ul>
     </div>
   </nav>
-  <div class="pages-about-wrapper"
-  style="background-image: linear-gradient(to right, rgba(253,96,0,0.9) 0, rgba(253,96,0,0.9) 100%), url(/packs/media/images/wayfinding-wall-mockup-4d62cd162de389203a122fc9d88bb71c.jpg);">
-  <img class="aboutus-svg"
-    src="https://sashimi-studio.herokuapp.com/packs/media/images/aboutus-693fa79af0812f8dcd0c3bc4007960a7.svg" />
-  <div class="pages-about__texts">
-    <div class="pages-about__text pages-about__text--text1" data-scroll>RQW N FRESH is a visionary collective of
-      dedicated
-      filmmakers whose passion for storytelling is the beating heart of our imaginative work. With collaboration as the
-      foundation of our process we create one-of-a-kind films that celebrate curiosity, nurture the human spirit, and
-      offer new perspectives.</div>
-    <div class="pages-about__photo" data-scroll
-      style="background-image: url(https://sashimi-studio.herokuapp.com/packs/media/images/about2-4af04d28b4519e08c651e8580499572f.jpg);">
-    </div>
-    <div class="pages-about__text pages-about__text--text2" data-scroll>Since 2019 we've been on a mission to redefine
-      global
-      collaboration and build a team as diverse as our clients. Today our extraordinary production and post production
-      teams continue to grow as talented and driven creators join our ranks. Our success comes from the incredible
-      stories, the diverse backgrounds, and unique experiences of our crew that allows us to effectively navigate
-      today's interconnected media landscape, provide innovative creative services, and create original content that
-      resonates with audiences around the world.</div>
+  <div class="pages-about-wrapper">
+  <div class="pages-about__hero js-rellax" style="background-image: url(https://rawnfresh.com.tw/packs/media/images/about-hero-shadow-99a7cf8f846bf3a95950611d075bca7b.png), url(https://rawnfresh.com.tw/packs/media/images/about-hero-7d00cb97a02480672d4edccb259cb088.png);
+  background-size: contain, cover;" data-rellax-speed="-2">
+    <i
+      style="display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #000; transform-origin: 0% 100%; transform: skewX(30deg) scaleX(2); transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1) 500ms"></i>
   </div>
-  <div class="pages-about__photos">
-    <div class="pages-about__photo" data-scroll
-      style="background-image: url(https://sashimi-studio.herokuapp.com/packs/media/images/about1-3b97c258809ffa4f1f245d991bf7cd97.jpg);">
+  <div class="pages-about__contents">
+    <div class="pages-about__text pages-about__text--text1 js-rellax" data-rellax-speed="0">
+      <img class="aboutus-svg"
+        src="https://rawnfresh.com.tw/packs/media/images/aboutus-693fa79af0812f8dcd0c3bc4007960a7.svg" />
+      <p data-scroll>Raw n Fresh Studio is led by EthanYijan, the Golden Melody
+        Awards (GMA) music video director
+        winner, is
+        composed of new-generation video content creators. “Fresh” is the spirit of our visual design as well as the
+        principle of management.</p>
     </div>
-    <div class="pages-about__photo pages-about__photo--about2" data-scroll
-      style="background-image: url(https://sashimi-studio.herokuapp.com/packs/media/images/about2-4af04d28b4519e08c651e8580499572f.jpg);">
+    <div class="pages-about__photo pages-about__photo--photo-film" data-scroll
+      style="background-color: #ff6000; background-image: url(https://rawnfresh.com.tw/packs/media/images/about-film-100de22efc99227095841b74ad496c2b.png);">
+    </div>
+    <div class="pages-about__photo pages-about__photo--photo-members" data-scroll
+      style="background-color: #ff6000; background-image: url(https://rawnfresh.com.tw/packs/media/images/about-members-dcc902ed34e9c3149be0f8c1fb17968b.png);">
+    </div>
+    <div class="pages-about__text pages-about__text--text2">
+      <p data-scroll>With an average age of 25, we are revolutionizing the digital content market. In Taiwan, the
+        audiovisual
+        culture is monopolized by big companies and need our rejuvenation and innovation. With this goal in mind, we
+        directed the GMA music videos and many more pop music videos. Also, we are producing travel videos which deliver
+        the story behind them. All of our works make the audience feel the heart and experience the culture via the
+        camera.</p>
     </div>
   </div>
-  <div class="pages-about__copyrights">
-    <div class="pages-about__copyright pages-about__copyright--primary">©RAW N FRESH STUDIO</div>
-    <div class="pages-about__copyright pages-about__copyright--white">©RAW N FRESH STUDIO</div>
+  <div class="pages-about__team">
+    <div style="flex: 1 1 100%; text-align: center;" data-scroll>
+      <img class="team-svg"
+        src="https://rawnfresh.com.tw/packs/media/images/team-48eb6356266e3728024b242ba4316f9b.svg" />
+    </div>
+    <div class="team-wrapper">
+      <div class="team__groups">
+        <div class="team__group" data-scroll>
+          <h3>default</h3>
+          <hr style="margin: 11px 0px 15px -1px; opacity: 0.3; border: 1px solid white;">
+        </div>
+        <div class="team__group" data-scroll>
+          <h3>default</h3>
+          <hr style="margin: 11px 0px 15px -1px; opacity: 0.3; border: 1px solid white;">
+        </div>
+        <div class="team__group" data-scroll>
+          <h3>default</h3>
+          <hr style="margin: 11px 0px 15px -1px; opacity: 0.3; border: 1px solid white;">
+        </div>
+        <div class="team__group" data-scroll>
+          <h3>default</h3>
+          <hr style="margin: 11px 0px 15px -1px; opacity: 0.3; border: 1px solid white;">
+        </div>
+      </div>
+      <div class="team__see-more-members__wrapper" data-scroll>
+        <a class="team__see-more-members" href="/members">SEE MORE MEMBERS</a>
+      </div>
+    </div>
   </div>
+  <div class="pages-about__copyright">©RAW N FRESH STUDIO</div>
 </div>
   <script src="./about.js"></script>
 
