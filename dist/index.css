@@ -1148,7 +1148,8 @@ nav .p-collapsed {
   .pages-members.pages-members--mobile .counter__list {
     display: inline-block; }
   .pages-members.pages-members--mobile .counter__total {
-    vertical-align: super; }
+    vertical-align: super;
+    margin-left: -5px; }
   .pages-members.pages-members--mobile .counter__list-wrapper {
     height: 90px;
     overflow: hidden; }
@@ -1164,7 +1165,14 @@ nav .p-collapsed {
   .pages-members.pages-members--mobile .counter__number {
     font-weight: 900;
     font-size: 112px;
-    letter-spacing: -9px; }
+    letter-spacing: -14px; }
+  .pages-members.pages-members--mobile .counter__total-slash,
+  .pages-members.pages-members--mobile .counter__total-number {
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: -3.8px; }
+  .pages-members.pages-members--mobile .counter__total-slash {
+    letter-spacing: 0px; }
   .pages-members.pages-members--mobile .page-members__members {
     margin: 20px 0;
     padding: 0 30px;

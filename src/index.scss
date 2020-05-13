@@ -887,6 +887,7 @@ nav .p-collapsed {
 	}
 	.counter__total{
 		vertical-align: super;
+		margin-left: -5px;
 	}
 	.counter__list-wrapper{
 		height: 90px;
@@ -903,7 +904,16 @@ nav .p-collapsed {
 	.counter__number {
 		font-weight: 900;
 		font-size: 112px;
-		letter-spacing: -9px;
+		letter-spacing: -14px;
+	}
+	.counter__total-slash,
+	.counter__total-number{
+		font-weight: 900;
+		font-size: 30px;
+    letter-spacing: -3.8px;
+	}
+	.counter__total-slash {
+		letter-spacing: 0px;
 	}
 	.page-members__members{
 		margin: 20px 0;
