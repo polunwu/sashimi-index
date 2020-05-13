@@ -71,7 +71,6 @@ window.addEventListener("load", function () {
   }
   if (document.body.classList.contains('pages-members--mobile')) {
     initHtml();
-    // initFlipPosition();
 
     const glider = new Glide('.glide', options);
     const tiltableElement = '.glide__container';
@@ -79,10 +78,12 @@ window.addEventListener("load", function () {
     let bgPosition = 0;
     let catX = 0;
     let catY = 0;
-    let catScale = 0;
+    let catScale = 1;
     const MOVE_INDEX = 10;
     const movableImages = document.querySelector('.page-members__bg--movable');
     const cat = document.querySelector('.page-members__cat');
+
+    cat.addEventListener('click', handleCatClicked);
 
     glider.on('mount.after', showSliderAndBg);
     glider.mount({
@@ -171,7 +172,6 @@ window.addEventListener("load", function () {
             if (dir && dir == '<') bgPosition -= MOVE_INDEX;
             catX -= 45;
             catY -= 1;
-            catScale += 0.1;
             this.updateBgImg();
           },
           resetBgImg() {
@@ -195,6 +195,11 @@ window.addEventListener("load", function () {
         return Plugin;
       }
     });
+
+    function handleCatClicked() {
+      catScale *= 1.5;
+      cat.style.transform = `translateX(${catX}px) scale(${catScale})`;
+    }
   }
   function initHtml() {
     document.querySelector('html').style.height = '100%'; // fix body{height:100%} but no background & creating scrollbar

@@ -430,6 +430,46 @@ $nav-slide-speed: 0.6s;
 	}
 	
 }
+// menu reveal effect
+@media screen and (max-width: 768px) {
+	.p-nav__links--layout {
+		.p-nav__main--layout	{
+			li {
+				opacity: 0.1;
+				transform: translateY(100px);
+			}
+		}
+		.p-nav__social-text--layout,
+		.p-nav__social--layout{
+			opacity: 0;
+		}
+	}
+	
+	.p-nav__links--layout.p-nav__links--show {
+		.p-nav__main--layout	{
+			li {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+			li:nth-child(1) {
+				transition: all 800ms cubic-bezier(0, 0.55, 0.45, 1) 400ms;
+			}
+			li:nth-child(2) {
+				transition: all 800ms cubic-bezier(0, 0.55, 0.45, 1) 600ms;
+			}
+			li:nth-child(3) {
+				transition: all 800ms cubic-bezier(0, 0.55, 0.45, 1) 800ms;
+			}
+		}
+		.p-nav__social-text--layout,
+		.p-nav__social--layout{
+			transition: opacity 1400ms ease 800ms;
+			opacity: 1;
+		}
+	}
+		
+}
+// end of menu reveal effect
 .p-nav__links--show{
 	// transform: translateX(0px);
 	opacity: 1;
