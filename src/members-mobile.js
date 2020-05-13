@@ -81,7 +81,8 @@ window.addEventListener("load", function () {
     let catY = 0;
     let catScale = 0;
     const MOVE_INDEX = 10;
-    const movableImages = document.querySelectorAll('.page-members__bg--movable img');
+    const movableImages = document.querySelector('.page-members__bg--movable');
+    const cat = document.querySelector('.page-members__cat');
 
     glider.on('mount.after', showSliderAndBg);
     glider.mount({
@@ -147,23 +148,28 @@ window.addEventListener("load", function () {
             });
           },
           updateBgImg() {
-            movableImages.forEach(img => {
-              img.style.transition = '800ms ease';
-              if (img.classList.contains('bg__cat')) {
-                let randomRotate = Math.floor(Math.random() * 15);
-                img.style.transform = `translate(${catX}px, ${catY}px) rotate(${randomRotate}deg) scale(${catScale})`;
-              } else {
-                let randomRotate = Math.floor(Math.random() * 90);
-                img.style.transform = `translateX(${bgPosition}px) rotate(${randomRotate}deg)`;
-              }
+            movableImages.classList.toggle('page-members__bg--trigger');
+            let randomRotate = Math.floor(Math.random() * -20);
+            cat.style.transform = `translateX(${catX}px) rotate(${randomRotate}deg)`;
+            // movableImages.forEach(img => {
+            //   img.style.transition = '800ms ease';
+            //   if (img.classList.contains('bg__cat')) {
+            //     let randomRotate = Math.floor(Math.random() * 5);
+            //     img.style.transform = `translate(${catX}px, ${catY}px) rotate(${randomRotate}deg) scale(${catScale})`;
+            //   } else if (!img.classList.contains('bg__raw')) {
+            //     let randomRotate = Math.floor(Math.random() * 10);
+            //     img.style.transform = `translateX(${bgPosition}px) rotate(${randomRotate}deg)`;
+            //   } else {
+            //     img.style.transform = `translateX(${bgPosition}px) rotate(65deg)`;
+            //   }
 
-            });
+            // });
           },
           moveBgImg() {
             let dir = Components.Run.move.direction;
             if (dir && dir == '>') bgPosition += MOVE_INDEX;
             if (dir && dir == '<') bgPosition -= MOVE_INDEX;
-            catX -= 5;
+            catX -= 45;
             catY -= 1;
             catScale += 0.1;
             this.updateBgImg();
