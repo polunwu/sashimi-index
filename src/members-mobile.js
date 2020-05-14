@@ -82,6 +82,7 @@ window.addEventListener("load", function () {
     const MOVE_INDEX = 10;
     const movableImages = document.querySelector('.page-members__bg--movable');
     const cat = document.querySelector('.page-members__cat');
+    const click = document.querySelector('.js-click');
 
     cat.addEventListener('click', handleCatClicked);
 
@@ -94,6 +95,23 @@ window.addEventListener("load", function () {
             this.tiltPrevElements();  // active 以左的人物依序置後、縮小
             this.tiltNextElements();  // active 以右的人物依序置後、縮小
             this.popActiveElements(); // active 狀態的人物置頂
+          },
+          hideClick() {
+            if (!click) return;
+            click.style.transition = `opacity 250ms cubic-bezier(0.5, 0, 0.75, 0)`;
+            click.style.opacity = 0;
+          },
+          setClickPosition() {
+            if (!click) return;
+            const activeSlide = Components.Html.slides[Glide.index];
+            const activeImage = activeSlide.querySelector('img');
+            setTimeout(() => {
+              const top = activeImage.getBoundingClientRect().top;
+              if (!top) return;
+              click.style.transition = `opacity 250ms cubic-bezier(0.5, 0, 0.75, 0)`;
+              click.style.top = `${top - 40}px`;
+              click.style.opacity = 1;
+            }, 500);
           },
           popActiveElements() {
             const activeSlide = Components.Html.slides[Glide.index];
@@ -152,19 +170,6 @@ window.addEventListener("load", function () {
             movableImages.classList.toggle('page-members__bg--trigger');
             let randomRotate = Math.floor(Math.random() * -20);
             cat.style.transform = `translateX(${catX}px) rotate(${randomRotate}deg)`;
-            // movableImages.forEach(img => {
-            //   img.style.transition = '800ms ease';
-            //   if (img.classList.contains('bg__cat')) {
-            //     let randomRotate = Math.floor(Math.random() * 5);
-            //     img.style.transform = `translate(${catX}px, ${catY}px) rotate(${randomRotate}deg) scale(${catScale})`;
-            //   } else if (!img.classList.contains('bg__raw')) {
-            //     let randomRotate = Math.floor(Math.random() * 10);
-            //     img.style.transform = `translateX(${bgPosition}px) rotate(${randomRotate}deg)`;
-            //   } else {
-            //     img.style.transform = `translateX(${bgPosition}px) rotate(65deg)`;
-            //   }
-
-            // });
           },
           moveBgImg() {
             let dir = Components.Run.move.direction;
@@ -188,9 +193,13 @@ window.addEventListener("load", function () {
         });
         Events.on('run.before', () => {
           Plugin.moveBgImg();
+          Plugin.hideClick();
         })
         Events.on('translate.jump', () => {
           Plugin.resetBgImg();
+        });
+        Events.on('move.after', () => {
+          Plugin.setClickPosition();
         });
         return Plugin;
       }
