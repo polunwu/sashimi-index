@@ -782,13 +782,13 @@ nav .p-collapsed {
       .p-video-indicator span > svg {
         display: none; }
       .p-video-indicator span {
-        height: 11px;
-        width: 11px;
+        height: 8px;
+        width: 8px;
         border-radius: 100%;
         background-color: #fff;
         margin: 11px 0px; }
       .p-video-indicator span:nth-of-type(3) {
-        height: 11px; } }
+        height: 8px; } }
 
 .p-video-indicator--hide {
   opacity: 0 !important;
