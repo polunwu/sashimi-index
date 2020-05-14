@@ -77,14 +77,14 @@ window.addEventListener("load", function () {
 			delayUIShow(document.getElementById('navToggleBtn'), 'p-nav--hide', 'p-nav--animated', 0);
 		}
 		delayUIShow(document.getElementById('navMembers'), 'p-nav--hide', 'p-nav--animated', 500);
-		delayUIShow(document.getElementById('navAboutUs'), 'p-nav--hide', 'p-nav--animated', 610);
-		delayUIShow(document.getElementById('navContact'), 'p-nav--hide', 'p-nav--animated', 720);
-		delayUIShow(document.getElementById('navSocialFb'), 'p-nav--hide', 'p-nav--animated', 830);
-		delayUIShow(document.getElementById('navSocialYt'), 'p-nav--hide', 'p-nav--animated', 940);
-		let videoIndicatorDelay = 700;
+		delayUIShow(document.getElementById('navAboutUs'), 'p-nav--hide', 'p-nav--animated', 650);
+		delayUIShow(document.getElementById('navContact'), 'p-nav--hide', 'p-nav--animated', 800);
+		delayUIShow(document.getElementById('navSocialFb'), 'p-nav--hide', 'p-nav--animated', 950);
+		delayUIShow(document.getElementById('navSocialYt'), 'p-nav--hide', 'p-nav--animated', 1100);
+		let videoIndicatorDelay = 1200;
 		for (let element of videoIndicator.children) {
 			delayUIShow(element, 'p-video-indicator--hide', 'p-video-indicator--animated', videoIndicatorDelay);
-			videoIndicatorDelay += 110;
+			videoIndicatorDelay += 0;
 		}
 		delayUIShow(document.getElementById('playBtn'), 'p-playBtn--hide', 'p-playBtn--animated', 1600);
 	}
