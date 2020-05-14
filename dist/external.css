@@ -99,7 +99,10 @@ body, h1, h2, h3, h4, h5, p {
     stroke-dashoffset: 0; } }
 
 .pages-home {
-  overflow: hidden; }
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100vw; }
 
 .pages-home .play-btn {
   position: absolute;

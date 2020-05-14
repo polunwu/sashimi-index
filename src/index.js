@@ -114,7 +114,7 @@ window.addEventListener("load", function () {
 	const mouseScrollSpeed = 1;
 	const touchScrollSpeed = 1;
 	const saftyOffset = 100; // must greater than scrollSpeed
-	const changePageThreshold = 300;
+	const changePageThreshold = 700;
 	const clippedVideos = document.querySelectorAll('.clipped');
 
 	if (videoIndicator) { videoIndicator.addEventListener('click', handleJumpTo); }
@@ -215,8 +215,16 @@ window.addEventListener("load", function () {
 		}
 		if (e.type === 'touchstart') {
 			let startingY = e.touches[0].clientY;
-			document.body.addEventListener('touchmove', function (e) {
-				let currentY = e.touches[0].clientY;
+			// document.body.addEventListener('touchmove', function (e) {
+			// 	let currentY = e.touches[0].clientY;
+			// 	let touchDeltaY = startingY - currentY;
+			// 	scrollIndex += touchDeltaY * touchScrollSpeed;
+			// 	console.log(scrollIndex, isAbleToChange);
+			// 	updateVideoDisplay();
+			// });
+			document.body.addEventListener('touchend', function (e) {
+				console.log(e);
+				let currentY = e.changedTouches[0].clientY;
 				let touchDeltaY = startingY - currentY;
 				scrollIndex += touchDeltaY * touchScrollSpeed;
 				// console.log(scrollIndex, isAbleToChange);
@@ -251,6 +259,7 @@ window.addEventListener("load", function () {
 				} else if (curVideoIndex == clippedVideos.length && isAbleToChange) {
 					videoIndicator.children[0].click();
 				} else {
+					console.log('scrollIndex set to 0');
 					scrollIndex = 0;
 				}
 			}
