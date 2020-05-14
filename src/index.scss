@@ -1054,20 +1054,19 @@ nav .p-collapsed {
 	}
 	.page-members__controls{
 		margin: 0;
-		padding: 0 0 0 10px;
+		padding: 0;
 		font-size: 0;
-		
+
 		@media screen and (max-width: 767px) {
+			padding: 0 0 0 10px;
 			margin-left: auto;
 			margin-right: 20%;
 			height: 24px;
 		}
-
 		@media screen and (max-width: 414px) {
 			margin-left: auto;
 			margin-right: 10px;
 		}
-
 	}
 	.controls__btn{
 		cursor: pointer;
@@ -1220,6 +1219,9 @@ nav .p-collapsed {
 		.bg__raw {
 			transform: rotate(65deg);
 		}
+		.bg__l1 {
+			transform: rotate(-50deg);
+		}
 		.bg__l2 {
 			transform: rotate(10deg);
 		}
@@ -1233,71 +1235,88 @@ nav .p-collapsed {
 		width: 133px;
 		transform: rotate(30deg);
 		@media screen and (max-width: 768px){
-			bottom: 644px;
+			bottom: 574px;
 		}
-		@media screen and (max-width: 414px){
+		@media screen and (max-width: 414px){ // iPhone XS Max
 			width: 82px;
 			bottom: 475px;
 		}
 		@media screen // iPhone 6/7/8 Plus
     and (max-width: 414px) 
-    and (max-height : 735px) { 
-			bottom: 425px;
+    and (max-height : 700px) { 
+			bottom: 360px;
 		}
-		@media screen and (max-width: 375px){
-			bottom: calc(10% + 400px);
+		@media screen and (max-width: 375px){ // iPhone X
+			bottom: 410px;
+		}
+		@media screen // iPhone 6/7/8 
+    and (max-width: 375px) 
+    and (max-height : 600px) { 
+			bottom: 300px;
 		}
 		@media screen and (max-width: 320px){
-			bottom: 320px;
+			bottom: 240px;
 		}
 	}
 	.bg__block {
-		bottom: 62%;
-		right: 9%;
+		bottom: 85%;
+		right: 14%;
 		transform: rotate(-20deg);
 		width: 80px;
 		@media screen and (max-width: 768px){
-			bottom: 655px;
+			bottom: 830px;
 		}
-		@media screen and (max-width: 414px){
+		@media screen and (max-width: 414px){ // iPhone XS Max
 			bottom: 625px;
 			right: 14%;
 			width: 49px;
 		}
 		@media screen // iPhone 6/7/8 Plus
     and (max-width: 414px) 
-    and (max-height : 735px) { 
-			bottom: 515px;
+    and (max-height : 700px) { 
+			bottom: 520px;
 		}
-		@media screen and (max-width: 375px){
-			bottom: calc(50% + 200px);
+		@media screen and (max-width: 375px){ // iPhone X
+			bottom: 560px;
+		}
+		@media screen // iPhone 6/7/8 
+    and (max-width: 375px) 
+    and (max-height : 600px) { 
+			bottom: 460px;
 		}
 		@media screen and (max-width: 320px){
-			bottom: 400px;
+			bottom: 380px;
 		}
 	}
 	.bg__expl {
-		bottom: 45%;
-		left: -230px;
+		bottom: 58%;
+		left: -90px;
 		transform: rotate(-32deg);
 		@media screen and (max-width: 768px){
+			left: -125px;
 			bottom: 510px;
 		}
-		@media screen and (max-width: 414px){
+		@media screen and (max-width: 414px){ // iPhone XS Max
 			bottom: 450px;
 			left: -20%;
 		}
 		@media screen // iPhone 6/7/8 Plus
     and (max-width: 414px) 
-    and (max-height : 650px) { 
-			bottom: 415px;
+    and (max-height : 700px) { 
+			bottom: 335px;
 		}
-		@media screen and (max-width: 375px){
-			bottom: calc(300px + 18%);
-			left: -10%;
+		@media screen and (max-width: 375px){ // iPhone X
+			bottom: 385px;
+			left: -22%;
+		}
+		@media screen // iPhone 6/7/8 
+    and (max-width: 375px) 
+    and (max-height : 600px) { 
+			bottom: 280px;
+			left: -26%;
 		}
 		@media screen and (max-width: 320px){
-			bottom: 60%;
+			bottom: 230px;
 			left: -20%;
 		}
 	}
@@ -1307,48 +1326,58 @@ nav .p-collapsed {
 		@media screen and (max-width: 414px){
 			width: 188px;
 		}
+		@media screen and (max-width: 320px){
+			width: 145px;
+		}
 	}
 	.bg__expl--w{
 		width: 333px;
 		@media screen and (max-width: 414px){
 			width: 182px;
 		}
+		@media screen and (max-width: 320px){
+			width: 145px;
+		}
 	}
 	.bg__l1{
-		left: 14.5%;
-		bottom: 70%;
-		width: 156px;
+		left: 47%;
+		bottom: 85%;
+		width: 200px;
+		@media screen and (max-width: 768px){
+			width: 156px;
+		}
 		@media screen and (max-width: 414px){
 			width: 0px;
 		}
 	}
 	.bg__l2{
-		left: 57%;
-		bottom: 57%;
-		width: 160px;
+		left: 69%;
+		bottom: 75%;
+		width: 220px;
 		z-index: -1;
 		transform: rotate(-42deg);
+		@media screen and (max-width: 768px){
+			bottom: 70%;
+			width: 180px;
+		}
 		@media screen and (max-width: 414px){
-			left: 69%;
 			bottom: 73%;
 			width: 116px;
 		}
 		@media screen and (max-width: 375px){
-			left: 69%;
-			bottom: calc(60% + 70px);
+			bottom: 70%;
 			width: 116px;
+		}
+		@media screen and (max-width: 320px){
+			left: 65%;
+			bottom: 320px;
+			width: 100px;
 		}
 	}
 	.bg__l2--2 {
 		transform: rotate(-160deg) scaleY(-1);
 		left: 20%;
 		bottom: 78%;
-	}
-	.bg__cat {
-		left: 70%;
-		bottom: 55%;
-		width: 120px;
-		z-index: 100;
 	}
 	.page-members__cat {
 		position: absolute;
