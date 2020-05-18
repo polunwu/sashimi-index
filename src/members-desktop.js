@@ -1,4 +1,4 @@
-document.addEventListener("load", function () {
+window.addEventListener("load", function () {
   if (document.body.classList.contains("pages-members")) {
     var initialLeft = 70
     // document.querySelector(".members__wrapper").scrollTo(initialLeft + 45, 0)

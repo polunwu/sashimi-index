@@ -119,6 +119,10 @@
 				padding: 94px 25px 0px 25px
 				display: flex
 				flex-direction: column
+				transform: translateX(-100%) // 側邊欄初始位置
+			&__sidebar > * // 側邊欄 > 元件初始位置
+				opacity: 0
+				transform: translateY(70px)
 			&__controls
 				font-size: 0px
 				text-align: center
@@ -161,6 +165,8 @@
 				position: relative
 				overflow-y: hidden
 				overflow-x: scroll
+				width: 150%								 // 人物初始寬度
+				transform: translateX(100%) // 人物初始位置
 			&__front
 				z-index: 2
 				bottom: -133px
@@ -206,3 +212,9 @@
 		.item-img
 			position: absolute
 			transition: transform 0.5s
+		.items
+			&__wrapper
+				position: absolute
+				height: 100%
+				width: 100%
+				transform: translateY(90%) scale(0) // 背景初始位置
