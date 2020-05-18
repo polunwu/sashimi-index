@@ -40,7 +40,6 @@ window.addEventListener("load", function () {
   // contact page 動態
   if (document.body.classList.contains('pages-contact')) {
 
-    const infos = document.querySelectorAll('.info');
     const person = document.querySelector('.pages-contact__person');
     const contents = document.querySelectorAll('.info__content');
     const domains = document.querySelectorAll('.info__domain');
@@ -52,9 +51,6 @@ window.addEventListener("load", function () {
       domains: 'p-fadeInUp'
     }
 
-    infos.forEach(element => {
-      animateCSS(element, contactMotion.info);
-    });
     animateCSS(person, contactMotion.person);
     console.log(contents);
     contents[0].style.animationDelay = '.4s';
@@ -69,6 +65,8 @@ window.addEventListener("load", function () {
       element.style.animationDelay = '.7s';
       animateCSS(element, contactMotion.domains);
     });
+
+    document.querySelector('.js-layer').style.transform = 'translateX(100%) skewX(0deg)';
   }
 
   function animateCSS(node, animationName, callback) {

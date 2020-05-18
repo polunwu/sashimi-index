@@ -1001,15 +1001,24 @@ nav .p-collapsed {
 
 /* End of about us page */
 /* contact page */
-.pages-contact h2.info__content {
+.pages-contact h2.info__content,
+.pages-contact .pages-contact__person,
+.pages-contact .map__pin {
+  position: relative;
   z-index: 10; }
 
+.pages-contact .pages-contact__map {
+  position: relative; }
+
 .pages-contact .pages-contact__mapLink {
-  display: block;
-  height: 100%;
   background: url(./media/images/map.png) center center no-repeat;
   background-size: cover;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
