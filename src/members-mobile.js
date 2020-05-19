@@ -35,7 +35,7 @@ window.addEventListener("load", function () {
     }
   });
   // === End of navBar toggle to collapse control
-  // members-mobile page 動態
+  // 新增以下的全部 members-mobile 動態
   const options = {
     type: 'carousel',
     startAt: 0,
@@ -217,18 +217,4 @@ window.addEventListener("load", function () {
     document.querySelector('.page-members__slider').style.opacity = 1;
     document.querySelector('.page-members__bg-wrapper').style.transform = 'translateY(0px) scale(1)';
   }
-  function animateCSS(node, animationName, callback) {
-    node.classList.add('animated', animationName)
-
-    function handleAnimationEnd() {
-      node.classList.remove('animated', animationName)
-      node.removeEventListener('animationend', handleAnimationEnd)
-
-      if (typeof callback === 'function') callback()
-    }
-
-    node.addEventListener('animationend', handleAnimationEnd)
-  }
-
-
 });
