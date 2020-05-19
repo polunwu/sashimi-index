@@ -1341,12 +1341,14 @@ nav .p-collapsed {
     border-radius: 0;
     padding: 0;
     border: none;
-    background-color: #eee; }
+    background-color: #eee;
+    font-size: 0; }
     @media screen and (max-width: 767px) {
       .pages-members.pages-members--mobile .controls__btn {
         width: 45px;
         height: 21px;
-        border-width: 2.5px; } }
+        border-width: 2.5px;
+        font-size: 0; } }
   .pages-members.pages-members--mobile .controls__btn.controls__btn--right {
     background-color: #fff; }
   .pages-members.pages-members--mobile .controls__arrow {

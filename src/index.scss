@@ -1087,11 +1087,13 @@ nav .p-collapsed {
 		padding: 0;
 		border: none;
 		background-color: #eee;
+		font-size: 0;
 
 		@media screen and (max-width: 767px){
 			width: 45px;
 			height: 21px;
 			border-width: 2.5px;
+			font-size: 0;
 		}
 	}
 	.controls__btn.controls__btn--right{
