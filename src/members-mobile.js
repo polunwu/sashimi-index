@@ -183,7 +183,7 @@ window.addEventListener("load", function () {
             bgPosition = 0;
             catX = 0;
             catY = 0;
-            catScale = 0;
+            catScale = 1;
             this.updateBgImg();
           }
         }
