@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./external.css">
   <link rel="stylesheet" href="./external_about.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <!-- CDN 使用 scroll-out.min.js, rellax.min.js, 移除 scrollreveal -->
   <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 </head>
@@ -103,9 +104,16 @@
       </ul>
     </div>
   </nav>
-  <div class="pages-about-wrapper">
+  <!-- 
+  1. 注意許多元素內有增加以下 class 跟 attribute：
+  .js-rellax
+  data-scroll
+  data-rellax-speed
+ -->
+<div class="pages-about-wrapper">
   <div class="pages-about__hero js-rellax" style="background-image: url(https://rawnfresh.com.tw/packs/media/images/about-hero-shadow-99a7cf8f846bf3a95950611d075bca7b.png), url(https://rawnfresh.com.tw/packs/media/images/about-hero-7d00cb97a02480672d4edccb259cb088.png);
   background-size: contain, cover; overflow: hidden;" data-rellax-speed="-2">
+    <!-- 2. 新增 <i> 當作開場遮罩，父元素 .pages-about__hero 增加 style="overflow: hidden;" -->
     <i
       style="display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #000; transform-origin: 0% 100%; transform: skewX(30deg) scaleX(2); transition: all 1.4s cubic-bezier(0.25, 1, 0.5, 1) 600ms"></i>
   </div>

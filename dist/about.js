@@ -6,7 +6,8 @@ window.addEventListener("load", function () {
   if (!document.body.classList.contains('pages-home')) {
     const brand = document.getElementById('brand');
     document.addEventListener('scroll', e => {
-      if (document.documentElement.scrollTop > 60 || document.body.scrollTop > 60) { // document.body.scrollTop for Safari mobile
+      // 修正 safari 問題，新增 document.body.scrollTop > 60 判斷
+      if (document.documentElement.scrollTop > 60 || document.body.scrollTop > 60) {
         brand.style.opacity = 0;
         showBrand = false;
       } else {
@@ -37,7 +38,7 @@ window.addEventListener("load", function () {
   });
   // === End of navBar toggle to collapse control
 
-  // about page 動態
+  // 以下為全部 about 動態
   if (document.body.classList.contains('pages-about')) {
     if (document.querySelector('.aboutus-svg')) animateCSS(document.querySelector('.aboutus-svg'), 'p-fadeInLeft');
     if (document.querySelector('.pages-about__hero > i')) document.querySelector('.pages-about__hero > i').style.transform = 'skewX(0deg) translateX(100%)';
