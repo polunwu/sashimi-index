@@ -353,11 +353,16 @@ window.addEventListener("load", function () {
 	// === Set play-btn info
 	function setPlayBtnInfo(num = 0) {
 		const infoList = document.querySelector('.play-btn__info-list');
-		if (!infoList) return;
-		const curIndex = num;
+		const workData = document.querySelectorAll('.js-work-data');
+		const playBtn = document.querySelector('#playBtn');
+		if (!infoList || !workData || !playBtn) return;
+		const curIndex = Number(num);
 		const size = infoList.children[0].clientHeight;
+		// 更新影片資訊
 		infoList.style.transition = `transform 100ms linear 800ms`;
 		infoList.style.transform = `translateY(-${size * curIndex}px)`;
+		// 更新播放鍵連結
+		playBtn.setAttribute("href", workData[curIndex].dataset.videoUrl);
 	}
 	// === End of set play-btn info
 });
