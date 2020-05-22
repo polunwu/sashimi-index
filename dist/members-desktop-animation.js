@@ -7,6 +7,9 @@ window.addEventListener("load", function () {
       // 背景
       document.querySelector('.items__wrapper').style.transition = 'transform 1000ms cubic-bezier(0.68,-0.55,0.27,1.55)';
       document.querySelector('.items__wrapper').style.transform = 'translateY(0px) scale(1)';
+      // 貓
+      document.querySelector('.cat__wrapper').style.transition = 'transform 1000ms cubic-bezier(0.68,-0.55,0.27,1.55)';
+      document.querySelector('.cat__wrapper').style.transform = 'translateY(0px) scale(1)';
       // 人物
       document.querySelector('.members__wrapper').style.transition = 'transform 2000ms cubic-bezier(0.68,-0.55,0.27,1.55) 100ms';
       document.querySelector('.members__wrapper').style.transform = 'translateX(0px)';

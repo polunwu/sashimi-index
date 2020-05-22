@@ -260,3 +260,9 @@
     -webkit-transform: translateY(90%) scale(0);
     -ms-transform: translateY(90%) scale(0);
     transform: translateY(90%) scale(0); }
+  .pages-members .pages-members--desktop .cat__wrapper {
+    position: relative;
+    z-index: 3;
+    -webkit-transform: translateY(90%) scale(0);
+    -ms-transform: translateY(90%) scale(0);
+    transform: translateY(90%) scale(0); }
