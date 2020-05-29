@@ -8,6 +8,8 @@ window.addEventListener("load", function () {
     window.degs = [5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 65]
     window.moves = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2]
     window.scales = [0.1, 0.2, 0.4, 0.6, 0.8, 1, 1.1, 1.2, 1.3, 1.4, 1.5]
+    // 側邊資訊欄位，可切換元素
+    window.filpElement = ['.member__title-list', '.member__name-list']
     // 讓滾輪上下可以觸發左右
     document.querySelector(".members__wrapper").addEventListener('wheel', function (e) {
       // 點到第四個人物之後，往左滑會滑不回去，因此自動拿掉 active 時產生的 transform
@@ -40,6 +42,8 @@ window.addEventListener("load", function () {
             el.classList.remove('active')
           })
           this.classList.add('active')
+          // 切換側邊欄文字
+          flipText(this.getAttribute("data-active-member"));
           // document.querySelector(".members__wrapper").scrollTo({ left: initialLeft, behavior: "smooth" })
           // 把 active member 移到靠近爆炸圖案附近
           document.querySelector(".js-members__front").style.transform = `translateX(${this.getAttribute("data-transform-value")}vw)`
@@ -54,9 +58,9 @@ window.addEventListener("load", function () {
           document.querySelector(".js-item-img__raw2").style.transform = `translateY(${window.moves[Math.ceil(Math.random() * 10)]}vh) translateX(${window.moves[Math.ceil(Math.random() * 10)]}vw) rotateZ(${window.degs[Math.ceil(Math.random() * 10)]}deg)`
           // document.querySelector(".js-item-img__block").style.transform = `translateY(${window.moves[Math.ceil(Math.random()*10)]}vh) translateX(${window.moves[Math.ceil(Math.random()*10)]}vw) rotateZ(${window.degs[Math.ceil(Math.random()*10)]}deg)`
           document.querySelector(".js-item-img__line2").style.transform = `translateY(${window.moves[Math.ceil(Math.random() * 10)]}vh) translateX(${window.moves[Math.ceil(Math.random() * 10)]}vw) rotateZ(${window.degs[Math.ceil(Math.random() * 10)] - 190}deg) scaleY(-1)`
-          document.querySelector(".js-member__title").innerText = this.getAttribute("data-title")
-          document.querySelector(".js-member__name").innerHTML = `<a href='${this.getAttribute("data-member-works-url")}'>${this.getAttribute("data-name")}</a>`
-          document.querySelector(".js-member__count").innerText = this.getAttribute("data-count")
+          // document.querySelector(".js-member__title").innerText = this.getAttribute("data-title")
+          // document.querySelector(".js-member__name").innerHTML = `<a href='${this.getAttribute("data-member-works-url")}'>${this.getAttribute("data-name")}</a>`
+          // document.querySelector(".js-member__count").innerText = this.getAttribute("data-count")
           document.querySelector(".js-see-more-works-link").setAttribute("data-url", this.getAttribute("data-member-works-url"))
           // 取得 active member 的相關 info 並更新到側邊欄
           var works = JSON.parse(this.getAttribute("data-works"))
@@ -92,6 +96,8 @@ window.addEventListener("load", function () {
         document.querySelector('.js-members__controls').setAttribute('data-active-member', this.getAttribute('data-active-member'))
       })
     })
+    // 初始點擊第一個人
+    document.querySelector('[data-active-member="1"]').click()
     // 往右按鈕切換 active member，與往右不同；到最後一個會自動跳到第一個
     document.querySelector(".js-controls__btn--right").addEventListener("click", function (e) {
       var maxMemberIndex = document.querySelectorAll(".js-members__img").length
@@ -116,6 +122,15 @@ window.addEventListener("load", function () {
         document.querySelector(`[data-active-member='${nextMemberIndex}']`).click()
       }
     })
+    // 側邊欄切換文字
+    function flipText(activeIndex = 1) {
+      let flipIndex = parseInt(activeIndex) - 1
+      window.filpElement.forEach(item => {
+        const element = document.querySelector(item);
+        const size = element.children[0].clientHeight;
+        element.style.transform = `translateY(-${size * flipIndex}px)`;
+      });
+    }
     // 側邊欄內的作品滑鼠或手指滑過會觸發影片預覽播放
     document.querySelectorAll(".js-work").forEach(function (el) {
       el.addEventListener("mouseenter", function (e) {

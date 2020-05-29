@@ -5,6 +5,31 @@
 		.member
 			&__info
 				width: 100%
+			&__title-wrapper
+				margin-bottom: 0px
+				height: 29px
+				padding-bottom: 11px
+				box-sizing: border-box
+				overflow: hidden
+			&__name-wrapper
+				height: 34px
+				overflow: hidden
+			&__title-list,
+			&__name-list
+				list-style-type: none
+				margin: 0
+				padding: 0
+				will-change: transform
+			&__title-list
+				transform: translateY(-196px) // init state = 28px * 11 = -196
+				transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1) 200ms
+			&__name-list
+				transform: translateY(-374px) // init state = 34px * 11 = -374
+				transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1) 200ms
+			&__title-item
+				height: 28px
+			&__name-item
+				height: 34px
 			&__title
 				color: white
 				font-size: 15px
@@ -31,7 +56,7 @@
 				font-family: nimbus-sans, sans-serif
 				font-weight: 300
 				float: right
-				line-height: 34px
+				line-height: 30px // 對齊底部
 				margin-right: 10px
 			&__works
 				overflow-x: hidden
