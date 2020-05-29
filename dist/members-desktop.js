@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  if (document.body.classList.contains("pages-members")) {
+  if (document.body.classList.contains("pages-members") && !document.body.classList.contains("pages-members--mobile")) {
     var initialLeft = 70
     // document.querySelector(".members__wrapper").scrollTo(initialLeft + 45, 0)
 
@@ -54,6 +54,10 @@ window.addEventListener("load", function () {
           document.querySelector(".js-item-img__raw2").style.transform = `translateY(${window.moves[Math.ceil(Math.random() * 10)]}vh) translateX(${window.moves[Math.ceil(Math.random() * 10)]}vw) rotateZ(${window.degs[Math.ceil(Math.random() * 10)]}deg)`
           // document.querySelector(".js-item-img__block").style.transform = `translateY(${window.moves[Math.ceil(Math.random()*10)]}vh) translateX(${window.moves[Math.ceil(Math.random()*10)]}vw) rotateZ(${window.degs[Math.ceil(Math.random()*10)]}deg)`
           document.querySelector(".js-item-img__line2").style.transform = `translateY(${window.moves[Math.ceil(Math.random() * 10)]}vh) translateX(${window.moves[Math.ceil(Math.random() * 10)]}vw) rotateZ(${window.degs[Math.ceil(Math.random() * 10)] - 190}deg) scaleY(-1)`
+          document.querySelector(".js-member__title").innerText = this.getAttribute("data-title")
+          document.querySelector(".js-member__name").innerHTML = `<a href='${this.getAttribute("data-member-works-url")}'>${this.getAttribute("data-name")}</a>`
+          document.querySelector(".js-member__count").innerText = this.getAttribute("data-count")
+          document.querySelector(".js-see-more-works-link").setAttribute("data-url", this.getAttribute("data-member-works-url"))
           // 取得 active member 的相關 info 並更新到側邊欄
           var works = JSON.parse(this.getAttribute("data-works"))
           document.querySelectorAll(".js-work").forEach(function (el, index) {
@@ -64,6 +68,7 @@ window.addEventListener("load", function () {
             } else {
               el.style.display = "initial"
             }
+            el.setAttribute("href", works[index].link)
             el.querySelector(".member__work__client-name").classList.add("animated", "fadeIn")
             el.querySelector(".member__work__title").classList.add("animated", "fadeIn")
             el.querySelector("video").pause()

@@ -17,12 +17,14 @@
 				margin-right: 10px
 			&__name
 				display: inline-block
-				color: white
 				font-size: 30px
 				font-family: nimbus-sans, sans-serif
 				font-weight: 900
 				padding: 0px 0px 0px 0px
 				line-height: 22px
+				a
+					color: white
+					text-decoration: none
 			&__count
 				color: white
 				font-size: 15px
@@ -150,6 +152,8 @@
 						font-weight: 900
 						color: #FF6000
 						width: 100%
+						appearance: button
+						line-height: 2.6
 					.controls__arrow
 						width: 0
 						height: 0
@@ -170,14 +174,18 @@
 			&__front
 				z-index: 2
 				bottom: -133px
-				left: calc(31vw + var(--initial-left))
+				left: calc(23vw + var(--initial-left))
+				padding-left: 8vw
 				padding-right: var(--initial-left)
 				@media screen and (min-width: 1440px)
-					left: calc(25vw + var(--initial-left))
+					left: calc(17.4vw + var(--initial-left))
+					padding-left: 7.6vw
 				@media screen and (min-width: 1600px)
-					left: calc(22vw + var(--initial-left))
+					left: calc(14.8vw + var(--initial-left))
+					padding-left: 7.2vw
 				@media screen and (min-width: 1920px)
-					left: calc(19vw + var(--initial-left))
+					left: calc(12.3vw + var(--initial-left))
+					padding-left: 6.7vw
 			&__back
 				left: calc(37vw + var(--initial-left))
 				padding-right: var(--initial-left)
