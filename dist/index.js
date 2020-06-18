@@ -1,9 +1,34 @@
 let logoHasEnded = false;
+const loaderVideo = document.getElementById('loaderVideo');
+
 window.addEventListener("DOMContentLoaded", function () {
-	document.getElementById('loaderVideo').addEventListener('ended', () => {
+	loaderVideo.addEventListener('suspend', () => {
+		console.log('suspend');
+		(async function playLoaderVideo() {
+  		try {
+    		await loaderVideo.play();
+  		} catch(err) {
+				logoHasEnded = true;
+    		console.log(err);
+  		}
+		})();
+	});
+	// loaderVideo.addEventListener('pause', () => {
+	// 	console.log('pause');
+	// 	(async function playLoaderVideo() {
+  // 		try {
+  //   		await loaderVideo.play();
+  // 		} catch(err) {
+	// 			logoHasEnded = true;
+  //   		console.log(err);
+  // 		}
+	// 	})();
+	// })
+	loaderVideo.addEventListener('ended', () => {
 		logoHasEnded = true;
 	});
 });
+
 window.addEventListener("load", function () {
 	if (document.querySelector("body.pages-home")) {
 		if (window.pagesHomeCounter == undefined) {
