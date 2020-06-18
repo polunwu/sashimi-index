@@ -3,7 +3,6 @@ const loaderVideo = document.getElementById('loaderVideo');
 
 window.addEventListener("DOMContentLoaded", function () {
 	loaderVideo.addEventListener('suspend', () => {
-		console.log('suspend');
 		(async function playLoaderVideo() {
   		try {
     		await loaderVideo.play();
@@ -13,17 +12,6 @@ window.addEventListener("DOMContentLoaded", function () {
   		}
 		})();
 	});
-	// loaderVideo.addEventListener('pause', () => {
-	// 	console.log('pause');
-	// 	(async function playLoaderVideo() {
-  // 		try {
-  //   		await loaderVideo.play();
-  // 		} catch(err) {
-	// 			logoHasEnded = true;
-  //   		console.log(err);
-  // 		}
-	// 	})();
-	// })
 	loaderVideo.addEventListener('ended', () => {
 		logoHasEnded = true;
 	});
